@@ -632,8 +632,8 @@ a:hover { text-underline-offset: .25rem; }
 .content .navigation ul li:nth-child(4) { z-index: 2; }
 .content .navigation ul li:nth-child(5) { z-index: 1; }
 .content .navigation ul li:nth-child(6) { z-index: 0; }
-.content .navigation ul li:before { content: ""; display: block; width: 1rem; height: 100%; position: absolute; top: 0; left: -1rem; bottom: 0; background-color: #fff; }
-.content .navigation ul li > a { height: 3.2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #fff; padding: 0 .5rem; border-radius: 0 1rem 0 0; color: #F29600; text-decoration: none; font-size: 1rem; white-space: nowrap; }
+.content .navigation ul li:before { content: ""; display: block; width: 1.1rem; height: 100%; position: absolute; top: 0; left: -1rem; bottom: 0; background-color: #fff; }
+.content .navigation ul li > a { height: 3.2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #fff; padding: 0 .75rem; border-radius: 0 1rem 0 0; color: #F29600; text-decoration: none; font-size: 1rem; white-space: nowrap; }
 .content .navigation ul li:hover:before, .content .navigation ul li:focus:before, .content .navigation ul li:active:before { background-color: #fdf7e4; }
 .content .navigation ul li:hover > a, .content .navigation ul li:focus > a, .content .navigation ul li:active > a { background-color: #fdf7e4; transform: scale(1) !important; }
 .content .navigation ul li.active:before { background-color: #F8BC00; }

@@ -299,9 +299,12 @@
 <script>
 $(document).ready(function() {
     //call navigation 
-    $('.content .navigation').load('_navigation.html',function(){
+    $('.content .navigation').load('navigation.html',function(){
 		//當前頁
         $('.navGame').addClass('active');
+		
+		//滑動到.navigation .ative頁籤  
+		navSlide();
 		
 		//demo navigation完成頁
 		$('.navCW, .navText, .navSentence, .navQuiz').addClass('done');
@@ -313,6 +316,9 @@ $(document).ready(function() {
     $(window).on('hashchange', function() {
         showPage();
     });
+	
+	//滑動到.navigation .ative頁籤  
+	navSlide();
 }); 
 //顯示頁內容    
 function showPage() {

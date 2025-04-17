@@ -92,9 +92,12 @@
 <script>
 $(document).ready(function() {
     //call navigation 
-    $('.content .navigation').load('_navigation.html',function(){
+    $('.content .navigation').load('navigation.html',function(){
         //當前頁
         $('.navC').addClass('active');
+		
+		//滑動到.navigation .ative頁籤  
+		navSlide();
         
         //demo navigation完成
         //$('.navC').addClass('done');

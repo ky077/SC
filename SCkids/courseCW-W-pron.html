@@ -117,9 +117,12 @@
 <script>
 $(document).ready(function() {
     //call navigation 
-    $('.content .navigation').load('_navigation.html',function(){
+    $('.content .navigation').load('navigation.html',function(){
         //當前頁
         $('.navW').addClass('active');
+		
+		//滑動到.navigation .ative頁籤  
+		navSlide();
         
         //demo navigation完成
         //$('.navCW').addClass('done');

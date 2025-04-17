@@ -145,10 +145,21 @@ function navStar(el) {
   let startLength = $parent.find('.glyphicon-star').length;
   let doneLength = $parent.find('.done').length;
 
-  if (startLength === doneLength) {
-    $('.content .navigation >ul').animate({
-      scrollLeft: $('.active').offset().left
-    }, 800);
+  if (startLength === doneLength) {  
+	//滑動到.navigation .ative頁籤  
+	navSlide();
+	  
     collectStar($parent, $('.navigation'));
   }
 }
+
+//滑動到.navigation .ative頁籤
+function navSlide() {
+	let $active = $('.content .navigation > ul li.active');
+	let $container = $('.content .navigation > ul');
+	let targetScrollLeft = $active.offset().left - $container.offset().left + $container.scrollLeft();
+
+	$('.content .navigation > ul').animate({
+	  scrollLeft: targetScrollLeft
+	}, 800);
+}	

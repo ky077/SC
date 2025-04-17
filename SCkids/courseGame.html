@@ -78,12 +78,24 @@
 <script>
 $(document).ready(function() {
     //call navigation 
-    $('.content .navigation').load('_navigation.html',function(){
+    $('.content .navigation').load('navigation.html',function(){
         //當前頁
         $('.navGame').addClass('active');
+		
+		//滑動到.navigation .ative頁籤  
+		navSlide();
         
         //demo navigation完成頁
         $('.navCW, .navText, .navSentence, .navQuiz, .navGame').addClass('done');
+		
+		//開啟頁面時，滑動到ative頁籤
+		let $active = $('.content .navigation > ul li.active');
+		let $container = $('.content .navigation > ul');
+		let targetScrollLeft = $active.offset().left - $container.offset().left + $container.scrollLeft();
+
+		$('.content .navigation > ul').animate({
+		  scrollLeft: targetScrollLeft
+		}, 800);
     }); 
 }); 
 </script>
