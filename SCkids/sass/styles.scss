@@ -1277,12 +1277,13 @@ $word-border-color: rgba(#9B010A, .45);
 .word-copybook{ 
 	background-color: rgba(#ffffff, .85);
 	border: $word-border-width solid $word-border-color;
-    width: 63.26%;
-    height: 0;
-    padding-bottom: 63.26%;
     margin: .5rem auto;
     text-align: center;
     position: relative;
+	max-width: 100%;
+	width: 20rem;
+	height: 0;
+    padding-bottom: 20rem;
 	&::before{
 		content: "";
 		display: block;
@@ -1333,7 +1334,8 @@ $word-border-color: rgba(#9B010A, .45);
 	height: 46px;
 	line-height: 1;
 	margin:.5rem auto;
-	width: 63.26%;
+	width: 20rem;
+	max-width: 100%;
     font-size: 1rem;
 	display: flex;
 	justify-content: center;
@@ -2229,3 +2231,4 @@ $word-border-color: rgba(#9B010A, .45);
  25% { transform: scale(5.0) rotate(  0deg); }
 100% { transform: scale(1.0) rotate(360deg); }
 }
+/*20250417 1143*/
