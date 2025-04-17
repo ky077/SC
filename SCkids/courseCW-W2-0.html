@@ -82,6 +82,9 @@
 $(document).ready(function() {
     //call navigation 
     $('.content .navigation').load('navigation.html',function(){
+		//啟蒙無漢字
+		$('.navC').remove();
+		
         //當前頁
         $('.navW').addClass('active');
 		
