@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Chinese Kids</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+<div class="container"> 
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="top">
+    <button class="btn btn-warning btn-logout" type="button" onclick="window.location='index.html'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="topic"> <a class="topic-title grade-flag G1" href="lessonPanel-0-1-6.html">
+          <div class="grade_C">0</div>
+          <div class="grade_E">Starter</div>
+          </a>
+          <div class="topic-content">
+            <div class="topic-text">
+              <div>
+                我们真漂亮
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bear hidden-xs hidden-sm"> <img src="images/bearHi.png"> </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="content"> 
+    <!-- -->
+    <div class="navigation"> </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-header">
+      <div class="content-header-left"></div>
+      <div> 请选择词汇练习 </div>
+      <div class="content-header-right"></div>
+    </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-body" style="background-image: url(images/photo/10102-bg.jpg);">
+      <div class="artical course-words"> <a class="btn-learnWords" href="courseCW-W-def-0.html">
+        <ruby><rb>黄</rb><rt></rt></ruby>
+        <ruby><rb>色</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWords" href="courseCW-W-def-0.html">
+        <ruby><rb>红</rb><rt></rt></ruby>
+        <ruby><rb>色</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWords" href="courseCW-W-def-0.html">
+        <ruby><rb>绿</rb><rt></rt></ruby>
+        <ruby><rb>色</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWords" href="courseCW-W-def-0.html">
+        <ruby><rb>蓝</rb><rt></rt></ruby>
+        <ruby><rb>色</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWords" href="courseCW-W-def-0.html">
+        <ruby><rb>白</rb><rt></rt></ruby>
+        <ruby><rb>色</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWords" href="courseCW-W-def-0.html">
+        <ruby><rb>黑</rb><rt></rt></ruby>
+        <ruby><rb>色</rb><rt></rt></ruby>
+        </a></div>
+    </div>
+    <!-- --> 
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+</div>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/topTool.js"></script>
+<script src="js/achievementStar.js"></script>       
+<script>
+$(document).ready(function() {
+    //call navigation 
+    $('.content .navigation').load('_navigation.html',function(){
+        //當前頁
+        $('.navW').addClass('active');
+        
+        //navigation完成
+        //$('.navCW').addClass('done');
+        
+        //demo 詞彙完成
+        $('.btn-learnWords').addClass('done');
+		
+		//demo 字詞說和寫連結至[0啟蒙]的內容
+        $('.navCW a').attr('href', 'courseCW-W2-0.html');
+        
+        //demo 課文聽聽看連結至[0啟蒙]的內容
+        $('.navText a').attr('href', 'courseText-0.html');
+    }); 
+}); 
+</script>
+</body>
+</html>

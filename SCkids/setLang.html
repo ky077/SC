@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Chinese Kids</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<!-- widgets -->
+</head>
+
+<body>
+<div class="container">
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="top">
+    <button class="btn btn-warning btn-logout" type="button" onclick="window.location='index.html'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+        <div class="dialogue">
+          <div class="dialogue-content">
+            <div>
+              請選擇您的教材語言版本。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bear hidden-xs">
+      <img src="images/bearHi.png">
+    </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="content">
+    <div class="lang">
+      <!--  START -->
+      <div class="lang-demo">
+        <img src="images/index/logo.svg" alt="" class="img-responsive"/>
+      </div>
+      <div>
+        <input type="radio" class="btn-check" name="optionsLang" id="tra" value="tra" autocomplete="off" disabled>
+        <label class="btn btn-sys-primary btn-lg rounded-pill mx-3" for="tra"><span class="btn-check-radio"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>繁體</label>
+        <input type="radio" class="btn-check" name="optionsLang" id="sim" value="sim" autocomplete="off" disabled>
+        <label class="btn btn-sys-primary btn-lg rounded-pill mx-3" for="sim"><span class="btn-check-radio"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></span>简体</label>
+      </div>
+	  <div class="small mt-5">您無法自行修改語言教材。</div>
+      <!--  END --> 
+      <a class="ml-auto mt-auto mx-3" href="bookPanel.html">離開</a>
+    </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+</div>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/topTool.js"></script>      
+<!-- widgets --> 
+<script>
+$(document).ready(function(){
+    let lang = 'tra'; //預設教材語言：[繁|簡] [tra|sim]
+
+    $('.lang-demo img').attr('src', 'images/index/logo-' + lang + '.svg');
+    $('[name="optionsLang"][value="'+lang+'"]').prop('checked', true);
+    
+  	//切換教材語言
+    $('[name="optionsLang"]').change(function(){
+        let v = $('[name="optionsLang"]:checked').val();
+        
+        $('.lang-demo img').attr('src', 'images/index/logo-'+v+'.svg');
+        
+        setTimeout (function() {
+		  alert('已成功設定教材語言。');	
+		}, 300);
+        
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+html, body { width: 100%; height: 100%; font-size: 15px; }
+@media screen and (min-width: 768px) { html, body { font-size: 16px; } }
+@media screen and (min-width: 992px) { html, body { font-size: 18px; } }
+@media screen and (min-width: 1200px) { html, body { font-size: 20px; } }
+
+body { font-family: Arial, Helvetica, sans-serif, "Microsoft JhengHei"; }
+
+* { transition: all .35s ease-in; }
+
+.launcher { background-color: rgba(255, 0, 0, 0.1); width: 100%; height: 100%; background-image: url(../images/index/launcher-bg.jpg); background-repeat: no-repeat; background-size: 100% 100%; position: relative; }
+.launcher .launcher-screen { background-color: #FFF100; width: 100%; position: absolute; top: 0px; left: 0px; z-index: 4; }
+.launcher .launcher-book { position: absolute; z-index: 5; }
+.launcher .launcher-book > img { width: auto; height: 100%; }
+.launcher .launcher-book.book1 { height: 20vh; top: 0px; left: 0px; }
+.launcher .launcher-book.book2 { height: 20vh; top: 0px; right: 0px; }
+.launcher .launcher-book.book3 { height: 35vh; top: 28vh; left: 0px; }
+.launcher .launcher-book.book4 { height: 35vh; top: 21vh; right: 0px; }
+.launcher .launcher-book.book5 { height: 27vh; bottom: 0px; left: 0px; }
+.launcher .launcher-book.book6 { height: 38vh; bottom: 0px; right: 0px; }
+.launcher .launcher-banner { position: relative; z-index: 10; }
+
+.login { width: 100%; height: auto; min-height: 100%; background-image: url(../images/index/bg.png); background-repeat: no-repeat; background-position: center top; background-size: 100% 100%; }
+@media screen and (min-width: 992px) { .login { height: 100%; } }
+@media screen and (min-width: 1400px) { .login .container-fluid { margin-left: 8.33333333%; margin-right: 8.33333333%; } }
+.login [class*="container"] { position: relative; min-height: 100%; background-image: url(../images/index/login.png); background-repeat: no-repeat; background-position: center bottom 5vh; background-size: 92% auto; padding-bottom: calc(52.75% + 15vh); }
+@media screen and (min-width: 992px) { .login [class*="container"] { height: 100%; background-image: url(../images/index/login.png); background-repeat: no-repeat; background-position: left 3% bottom 10vh; background-size: 50% auto; padding-bottom: 0; } }
+@media screen and (min-width: 1200px) { .login [class*="container"] { background-size: 55% auto; } }
+.login [class*="container"] .login-logo { margin-top: 20px; margin-bottom: 20px; filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); }
+@media screen and (min-width: 992px) { .login [class*="container"] .login-logo { margin-top: 10vh; margin-bottom: 40px; } }
+@media screen and (min-width: 1200px) { .login [class*="container"] .login-logo { margin-top: 8vh; } }
+@media screen and (min-width: 1400px) { .login [class*="container"] .login-logo { margin-top: 15vh; } }
+.login [class*="container"] h1 { display: inline-block; background-image: url(../images/index/login-h1-bg.png); background-repeat: no-repeat; background-size: 100% 100%; color: #FFF; padding: 15px 20px; border-radius: 12px; margin-top: 30px; margin-bottom: 15px; }
+.login [class*="container"] .login-group { padding-left: 15px; }
+.login [class*="container"] .login-group > label { font-weight: 600; font-size: 1.1em; text-shadow: 1px 1px rgba(255, 255, 255, 0.5); }
+.login [class*="container"] .login-group > label:before { content: ""; display: inline-block; width: 11px; height: 11px; border-radius: 50%; background-color: #0057a8; vertical-align: middle; margin-right: 10px; margin-top: -5px; }
+.login [class*="container"] .login-group .login-control { background-color: #dcdcdc; border: none; box-shadow: none; border-radius: 17px; font-size: 1em; line-height: 1em; }
+.login [class*="container"] .login-group select.login-control { padding-top: 2px; padding-top: 7px\9; }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .login [class*="container"] .login-group select.login-control { padding-top: 7px; } }
+.login [class*="container"] .login-group select.login-control:focus, .login [class*="container"] .login-group select.login-control:active { border-radius: 17px 17px 0px 0px; }
+.login [class*="container"] .login-group .login-table { width: 100%; }
+.login [class*="container"] .login-group .login-table td { padding-top: 12px; }
+.login [class*="container"] .login-group .login-table td .login-a { font-size: 0.85em; color: #1258aa; font-weight: 600; text-decoration: underline; margin-left: 10px; }
+.login [class*="container"] .login-group .login-table td .login-a:hover, .login [class*="container"] .login-group .login-table td .login-a:focus, .login [class*="container"] .login-group .login-table td .login-a:active { color: #9c7310; }
+.login [class*="container"] .login-group .login-table td .login-btn { background-color: #fcc800; border-radius: 5rem; color: #333; font-size: 1.15em; font-weight: bold; padding: 5px 10px 0 10px; }
+.login [class*="container"] .login-group .login-table td .login-btn:hover, .login [class*="container"] .login-group .login-table td .login-btn:focus, .login [class*="container"] .login-group .login-table td .login-btn:active { transform: scale(1.05); }
+
+.copyright { background-color: #FCE0BA; /*img{ max-width: 300px;
+}*/ }
+@media screen and (min-width: 1400px) { .copyright .container-fluid { margin-left: 8.33333333%; margin-right: 8.33333333%; } }
+.copyright .container-fluid .row { display: flex; flex-wrap: wrap; align-items: center; }
+.copyright .container-fluid .row [class*="col"] { margin-top: .5rem; margin-bottom: .5rem; }
+.copyright .copyright-title { color: #7C3334; font-weight: bold; }
+.copyright .copyright-email { padding-left: 1.5rem; text-indent: -1.5rem; margin-bottom: .5rem; }
+.copyright .copyright-email .glyphicon { display: inline-block; width: 1.5rem; text-align: center; color: #C1564D; text-indent: 0; }
+.copyright .copyright-address { padding-left: 1.5rem; text-indent: -1.5rem; margin-bottom: .5rem; }
+.copyright .copyright-address .glyphicon { display: inline-block; width: 1.5rem; text-align: center; color: #C1564D; text-indent: 0; }

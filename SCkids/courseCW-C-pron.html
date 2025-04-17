@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Chinese Kids</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">	
+<link rel="stylesheet" type="text/css" href="css/styles.css">	
+</head>
+
+<body>
+<div class="container"> 
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="top">
+    <button class="btn btn-warning btn-logout" type="button" onclick="window.location='index.html'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="topic"> <a class="topic-title grade-flag G2" href="lessonPanel.html">
+          <div class="grade_C">1</div>
+          <div class="grade_E">Pre-A1</div>
+          </a>
+          <div class="topic-content">
+            <div class="topic-text">
+              <div>
+                <ruby><rb>第</rb><rt>dì</rt></ruby>
+                <ruby><rb>一</rb><rt>yī</rt></ruby>
+                <ruby><rb>课</rb><rt>kè</rt></ruby>
+                &nbsp;
+                <ruby><rb>早</rb><rt>zǎo</rt></ruby>
+                <ruby><rb>上</rb><rt>shang</rt></ruby>
+                <ruby><rb>好</rb><rt>hǎo</rt></ruby>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bear hidden-xs hidden-sm"> <img src="images/bearHi.png"> </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="content"> 
+    <!-- -->
+    <div class="navigation"> </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-header">
+      <div class="content-header-left"></div>
+      <div class="stepMenu">
+        <ul class="list-inline">
+          <li><a href="courseCW-C-def.html"><span class="glyphicon glyphicon-star hidden" aria-hidden="true"></span><img src="images/stepMenu-1.png">汉字</a></li>
+          <li class="active"><a href="courseCW-C-pron.html"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><img src="images/stepMenu-2.png">念念看</a></li>
+          <li><a href="courseCW-C-write.html"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><img src="images/stepMenu-3.png">写写看</a></li>
+        </ul>
+      </div>
+      <div class="content-header-right"></div>
+    </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-body" style="background-image: url(images/photo/11101-bg.jpg);">
+      <div class="artical">
+        <div class="row">
+          <div class="col-md-7">
+            <div class="word-copybook withZhuyin"> 
+              <div class="word-copybook-text">
+                <ruby>
+                  <rb>爸</rb>
+                </ruby>
+              </div>
+            </div>
+            <div class="word-pinyin">bà</div>
+          </div>
+          <div class="col-md-5">
+            <div class="word-block word-listen">
+              <div>
+                <div class="word-block-title"> <img src="images/listen.png">听听看&nbsp;<span class="glyphicon glyphicon-star" aria-hidden="true"></span></div>
+                <div class="word-block-content">
+                  <button class="btn-bear bearBtn-listen" type="submit">PLAY</button>
+                </div>
+              </div>
+            </div>
+            <div class="word-block word-rec">
+              <div>
+                <div class="word-block-title"> <img src="images/rec.png">念念看&nbsp;<span class="glyphicon glyphicon-star" aria-hidden="true"></span></div>
+                <div class="word-block-content">
+                  <button class="btn-bear bearBtn-rec" type="submit">REC</button>
+                </div>
+              </div>
+			  <div id="charMonoDetail" style="margin: 10px 2px 2px 2px;font-size:1rem;">
+			  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- --> 
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+</div>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/topTool.js"></script> 
+<script src="js/achievementStar.js"></script>       
+<script>
+$(document).ready(function() {
+    //call navigation 
+    $('.content .navigation').load('_navigation.html',function(){
+        //當前頁
+        $('.navC').addClass('active');
+        
+        //demo navigation完成
+        //$('.navC').addClass('done');
+		
+		//demo stepMenu完成頁
+        //$('.stepMenu li:nth-child(1), .stepMenu li:nth-child(3)').addClass('done');
+		
+		//demo 練習詞彙完成
+		//$('.btn-CW-W').addClass('done');
+    }); 
+	
+	//demo 成就系統 =======
+	//聽聽看
+	$('.bearBtn-listen').click(function(){
+		let button = $(this);
+		let targetStar = $(this).parents().prev('.word-block-title');
+		
+		//播放時，更換兔子圖為■，且不可按
+		button.addClass('stop');
+		button.prop('disabled', true);
+		
+		//demo 假設1秒後播放完畢
+		setTimeout(function() {
+			//更換兔子圖為▶，且可按
+			button.removeClass('stop');
+			button.prop('disabled', false);
+			
+			//星星旋轉  
+			rotateStar( targetStar );
+			
+			//計算article星星
+			articleStar( button );
+			
+			//計算練習字詞星星
+			setTimeout(function() {
+				CWStar(); 
+				
+				//計算navigation星星
+				setTimeout(function() {
+					navStar( $('[class*="content-header-"]') );   
+				}, 2000); 
+			}, 2000); 
+			
+		}, 1000);	
+	});
+	
+	//念念看
+	$('.bearBtn-rec').click(function(){
+		let button = $(this);
+		let targetStar = $(this).parents().prev('.word-block-title');
+		
+		//切換錄音●|結束錄音■
+		button.toggleClass('stop');
+		
+		if ($(this).hasClass('stop')) {
+			$('#charMonoDetail').html('recording...'); //錄音中
+		} else {
+			$('#charMonoDetail').html('processing...');//分析中
+			
+			//demo 假設1秒後分析完畢
+			setTimeout(function() {
+				$('#charMonoDetail').html(`<table class="table table-bordered table-hover table-condensed text-center" style="table-layout: fixed;">
+											  <thead>
+												<tr class="active">
+											  	  <td colspan="2"><strong>Analysis Result</strong></td>
+												</tr>
+											  </thead>
+											  <tbody>
+												
+												<tr class="active">
+												  <td style="vertical-align: middle;">声母 Initial</td>
+												  <td class="text-success"><i class="fa-regular fa-face-smile fa-2x"></i></td>
+												</tr>
+												<tr class="active">
+												  <td style="vertical-align: middle;">韵母 Final</td>
+												  <td class="text-success"><i class="fa-regular fa-face-smile fa-2x"></i></td>
+												</tr>
+												<tr class="active">
+												  <td style="vertical-align: middle;">声调 Tone</td>
+												  <td class="text-success">3</td>
+												</tr>
+											  </tbody>
+											</table>`);//顯示分析
+				//[ <td class="text-success"><i class="fa-regular fa-face-smile fa-2x"></i></td> |
+				//  <td class="text-danger"><i class="fa-regular fa-face-meh fa-2x"></i></td>    ]
+				
+				//demo 聲母、韻母、聲調都success
+				if ( $('#charMonoDetail .table .text-success').length === 3 ) {
+					//星星旋轉  
+					rotateStar( targetStar );
+
+					//計算article星星
+					articleStar( button );
+					
+					//計算練習字詞星星
+					setTimeout(function() {
+						CWStar(); 
+						
+						//計算navigation星星
+						setTimeout(function() {
+							navStar( $('[class*="content-header-"]') );   
+						}, 2000); 
+					}, 2000); 
+				}
+			}, 1000);
+		}
+	});
+}); 
+</script>
+</body>
+</html>

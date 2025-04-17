@@ -1,0 +1,406 @@
+/*.btn-default.btn-close {/*X clase*/
+	/*border: none;
+	background: #fff;
+}
+.btn-default.btn-close:hover {
+	background-image: none;
+}
+.label-default {
+	background-color: #858176;
+}
+.badge {
+	background-color: #999;
+}*/
+.btn-default {
+	background-image: url(../images/actTab/ui.png);
+	background-position: 0px -400px;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+	color: #333;
+	background-color: #e6e6e6;
+	background-image: url(../images/actTab/ui.png);
+	background-position: -500px -400px;
+	border-color: #adadad;
+}
+.btn-default.jp-play {
+	color: #3c763d;
+}
+.btn-default.jp-pause {
+	color: #a94442;
+}
+/******* step2.aspx *******/
+/*.well.noPadding {
+	padding: 0px;
+}
+.noPaddingRight {
+	padding-right: 0px;
+}
+.noPaddingLeft {
+	padding-left: 0px;
+}*/
+/*a.list-group-item {
+	color: #3e2e2f;
+}
+.list-group-item {
+	background: none;
+	border: none;
+	border-bottom: 1px solid #7b7371;
+	border-right: 1px solid #7b7371;
+	color: #3e2e2f;
+	line-height: 1em;
+	margin-bottom: 0px;
+	position: relative;
+	padding: 10px;
+}
+.list-group-item:first-child {
+	border-top-right-radius: 0px;
+}
+.list-group-item:last-child {
+	border-radius: 0px;
+}
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+	background-color: #7b7371;
+	border-color: #7b7371;
+	text-shadow: 1px 1px 1px #000;
+}
+a.list-group-item:hover, a.list-group-item:focus {
+	background-color: #e7d8d4;
+}
+.list-group-item.active span {
+	width: 30px;
+	height: 100%;
+	position: absolute;
+	right: -30px;
+	top: 0;
+	display: block;
+	background-image: url(images/group-item-pointer.png);
+	background-size: 30px 100%;
+}
+.list-group-item .num {
+	float: left;
+	font-style: italic;
+	font-size: 2em;
+	line-height: 1em;
+	margin-right: 5px;
+}
+.list-group-item .woerds {
+	float: left;
+}
+.list-group-item .numP {
+	float: left;
+	font-style: italic;
+	font-size: 1.5em;
+	line-height: 0.7em;
+	margin-right: 5px;
+}*/
+.tab-pane {
+	padding: 20px;
+}
+
+/*******************************************************/
+
+/*************/
+/*.actTab {
+	padding: 10px;
+}*/
+.actTab .nav-tabs {
+	border-bottom: 1px solid #bce8f1;
+	background-color: inherit;
+	box-shadow: none;
+}
+.actTab .nav-tabs > li {
+	text-align: center;
+	margin-bottom: -1px;
+}
+.actTab .nav-tabs > li.active > a, .actTab .nav-tabs > li.active > a:hover, .actTab .nav-tabs > li.active > a:focus {
+	color: #31708f;
+	font-weight: bold;
+	background-color: #fff;
+	border: 1px solid #bce8f1;
+	border-bottom: none;
+	box-shadow: none;
+	border-radius: 5px 5px 0 0;
+}
+.actTab .nav-tabs > li > a {
+	margin-right: 0;
+	line-height: 1.42857143;
+	border: none;
+	border-radius: 5px 5px 0 0;
+	/*border-right: 1px solid #ebf3ca;*/
+	color: #666;
+	border: 1px solid #bce8f1;
+	border-bottom: none;
+	margin-right: 5px;
+}
+.actTab .nav-tabs > li > a:hover {
+	background-color: #d9edf7;
+	box-shadow: none;
+	box-shadow: inset 0px -1px #bce8f1;
+}
+.actTab .tab-content {
+}
+.actTab .tab-content_footer {
+	padding: .5rem;
+}
+.actTab .tab-content_footer.sub {
+	border-top: none;
+	padding: 10px;
+	background-color: #FFF;
+}
+.btn-info-sub {
+	color: #fff;
+	background-color: #2489c5;
+	border-color: #285e8e;
+}
+.btn-info-sub:hover, .btn-info-sub:focus, .btn-info-sub:active, .btn-info-sub.active {
+	color: #fff;
+	background-color: #285e8e;
+	border-color: #285e8e;
+}
+/**/
+
+.actTab .list-group-item {
+	border: none;
+}
+.actTab .topic img {
+	display: block;/*margin: 10px auto;*/
+}
+.actTab .topic.withWords {
+	font-weight: bold;
+	color: #2489c5;
+	border-radius: 5px;
+	padding: 5px;
+	text-align: center;
+}
+.actTab .topic.witQnum {
+}
+.actTab .Qnum {
+	float: left;
+	width: 2rem;
+	text-align: center;
+    margin: .25rem;
+    margin-left: 0;
+}
+.actTab .Qnum > span {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 2rem;
+	height: 2rem;
+	font-size: 1rem;
+	font-weight: bold;
+	background-image: url("../images/bubble.png");
+	background-size: 100% 100%;
+}
+.actTab .Qcontent {
+	float: left;
+	width: 94%;
+}
+.actTab .Qcontent .topic{
+	font-size: 1.4rem;
+}
+/**/
+.draggable {
+	border-radius: .25rem;
+	background-color: #eea522;
+	color: #FFF;
+	font-size: 1.2rem;
+	cursor: move;
+	display: inline-block;
+	height: auto;
+	padding: .25rem .5rem;
+	margin: .5rem .25rem;
+	white-space: nowrap;
+	position: relative;
+}
+.draggable:hover {
+	/*background-color: #2d6970;*/
+	transform: scale(1.05);
+}
+.draggable.right {
+	border: 1px solid #306e30;
+	background-color: #419641;
+}
+.draggable.right:hover {
+	background-color: #306e30;
+}
+.draggable.wrong {
+	border: 1px solid #9c2522;
+	background-color: #c12e2a;
+}
+.draggable.wrong:hover {
+	background-color: #9c2522;
+}
+.draggable > i.delete {
+	position: absolute;
+	top: -0.5em;
+	right: -0.5em;
+	background-color: #c12e2a;
+	border: 1px solid #9c2522;
+	border-radius: 100%;
+	width: 18px;
+	height: 18px;
+	text-align: center;
+	line-height: 1em;
+	cursor: pointer;
+}
+.droppable {
+	/*background-color: #ebebeb;
+	box-shadow: inset .1rem .1rem .25rem rgba(0,0,0,.1);
+	vertical-align: middle;*/
+	margin: .5rem 0;
+}
+.droppable.mate, .droppable.fill {
+	display: inline-block;
+	height: 32px;
+	line-height: 32px;
+	white-space: nowrap;
+}
+.droppable.mate > .draggable, .droppable.fill > .draggable {
+	display: inline-block;
+	margin: 2px 2px;
+}
+.droppable.restructuring {
+	min-height: calc(2.69rem + .25rem*2);
+}
+.fillArea {
+	line-height: 40px;
+}
+.fillArea input {
+	line-height: 30px;
+	margin: 5px 2px;
+}
+.connect{
+    display: flex;
+    position: relative;
+}
+.connectCanvas{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.connectLeft, .connectRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.connectItem {
+	position: relative;
+	margin: .5rem 0px;
+    text-align: center;
+}
+.connectBtn {
+	display: inline-block;
+	border-radius: .5rem;
+	padding: .5rem;
+	color: #FFF;
+	font-size: 1.2rem;
+	line-height: 1.2;
+	position: relative;
+	text-align: center;
+}
+.connectLeft .connectBtn {
+	background-color: #eea522;
+}
+.connectRight .connectBtn {
+	background-color: #db6010;
+}
+.connectBtn.active{
+    background-color: #533C34;
+}
+.connectBtn.active:hover{
+    transform: scale(1.0);
+}
+.connectBtn img{
+    max-height: 10vh;
+}
+/*.connectDot {
+	display: inline-block;
+	background-color: #971c11;
+	border: 2px solid #FFF;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	margin: 1px 5px;
+	box-shadow: 1px 1px rgba(0,0,0,.5);
+	position: absolute;
+	top: 50%;
+	margin-top: -5px;
+}*/
+.connectLeft .connectDot {
+	right: 0;
+}
+.connectRight .connectDot {
+	left: 0;
+}
+.connectBtn:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+}
+.connectLeft .connectNum {
+	position: absolute;
+	top:50%;
+	left:-1.5em;
+	margin-top:-0.5em;
+	color:#333;
+	font-weight:normal;
+}
+
+/*************/
+
+/*************/
+.imgBtn {
+	width: 110px;
+	height: 110px;
+	border: none;
+	background-color: inherit;
+	display: block;
+	margin: 20px auto;
+	background-image: url(../images/actTab/imgbtn.png);
+	outline: none;
+}
+.imgBtn.right {
+	background-position: 0px 0px;
+}
+.imgBtn.right:hover, .imgBtn.right:active, .imgBtn.right:focus{
+	background-position: -110px 0px;
+	border: none;
+}
+.imgBtn.wrong {
+	background-position: 0px -110px;
+}
+.imgBtn.wrong:hover, .imgBtn.wrong:active, .imgBtn.wrong:focus {
+	background-position: -110px -110px;
+}
+
+/*************/
+.type-play{
+	background-color: #eea522;
+	border: none;
+	border-radius: .5rem;
+	color: #fff;
+	padding: .25rem .5rem;
+	position: relative;
+}
+.type-play::before{
+	content: "";
+	display: inline-block;
+	width: 2rem;
+    height: 2rem;
+	background-image: url("../images/volume3.svg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 80% auto;
+	margin-right: .25rem;
+	vertical-align: top;
+}
+.type-input:focus{
+	border-color: #eea522;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 .4rem rgba(238,165,34, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 .4rem rgba(238,165,34, 0.6);
+}

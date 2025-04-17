@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Chinese Kids</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<!-- widgets -->
+<link rel="stylesheet" type="text/css" href="css/actTab.css">
+</head>
+
+<body>
+<div class="container">
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="top">
+    <button class="btn btn-warning btn-logout" type="button" onclick="window.location='index.html'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="topic">
+          <a class="topic-title grade-flag G2" href="lessonPanel.html">
+          <div class="grade_C">
+            1
+          </div>
+          <div class="grade_E">
+            Pre-A1
+          </div>
+          </a>
+          <div class="topic-content">
+            <div class="topic-text">
+              <div>
+                <ruby><rb>第</rb><rt>dì</rt></ruby>
+                <ruby><rb>一</rb><rt>yī</rt></ruby>
+                <ruby><rb>课</rb><rt>kè</rt></ruby>
+                &nbsp;
+                <ruby><rb>早</rb><rt>zǎo</rt></ruby>
+                <ruby><rb>上</rb><rt>shang</rt></ruby>
+                <ruby><rb>好</rb><rt>hǎo</rt></ruby>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bear hidden-xs hidden-sm">
+      <img src="images/bearHi.png">
+    </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="content">
+    <!-- -->
+    <div class="navigation">
+    </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-header">
+    </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-body" style="background-image: url(images/actTab/bg.jpg);">
+      <div class="artical quizSection">
+        <div class="row">
+          <!-- -->
+          <div class="col-sm-6 col-md-3">
+            <a class="ui-item" href="courseQuiz2.html#TF" id="courseTFQuiz2"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <div class="item-img">
+              <img src="images/actTab/1.png" alt="" class="img-responsive" />
+            </div>
+            <h2 class="TF"> 是非题 </h2>
+            </a>
+          </div>
+          <!-- -->
+          <div class="col-sm-6 col-md-3">
+            <a class="ui-item" href="courseQuiz2.html#LINK" id="courseLinkQuiz2"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <div class="item-img">
+              <img src="images/actTab/4.png" alt="" class="img-responsive" />
+            </div>
+            <h2 class="LINK"> 连连看 </h2>
+            </a>
+          </div>
+          <!-- -->
+          <div class="col-sm-6 col-md-3">
+            <a class="ui-item" href="courseQuiz2.html#RE" id="courseReQuiz2"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <div class="item-img">
+              <img src="images/actTab/8.png" alt="" class="img-responsive" />
+            </div>
+            <h2 class="RE"> 重组 </h2>
+            </a>
+          </div>
+          <!-- -->
+          <div class="col-sm-6 col-md-3">
+            <a class="ui-item" href="courseQuiz2.html#TYPE" id="courseTypeQuiz2"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+            <div class="item-img">
+              <img src="images/actTab/9.png" alt="" class="img-responsive" />
+            </div>
+            <h2 class="TYPE"> 听打练习 </h2>
+            </a>
+          </div>
+          <!-- -->
+        </div>
+      </div>
+    </div>
+    <!-- -->
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+</div>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/topTool.js"></script> 
+<script src="js/achievementStar.js"></script>       
+<script>
+$(document).ready(function() {
+    //call navigation 
+    $('.content .navigation').load('_navigation.html',function(){
+        //當前頁
+        $('.navQuiz').addClass('active');
+        
+        //demo navigation完成頁
+        $('.navCW, .navText, .navSentence').addClass('done');
+        
+        //demo ui-item完成
+        $('#courseLinkQuiz2, #courseReQuiz2, #courseTypeQuiz2').addClass('done');
+    }); 
+}); 
+</script>
+</body>
+</html>

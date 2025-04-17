@@ -1,0 +1,626 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Chinese Kids</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">	
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+<div class="container"> 
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="top">
+    <button class="btn btn-warning btn-logout" type="button" onclick="window.location='index.html'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="topic"> <a class="topic-title grade-flag G2" href="lessonPanel.html">
+          <div class="grade_C">1</div>
+          <div class="grade_E">Pre-A1</div>
+          </a>
+          <div class="topic-content">
+            <div class="topic-text">
+              <div>
+                <ruby><rb>第</rb><rt>dì</rt></ruby>
+                <ruby><rb>一</rb><rt>yī</rt></ruby>
+                <ruby><rb>课</rb><rt>kè</rt></ruby>
+                &nbsp;
+                <ruby><rb>早</rb><rt>zǎo</rt></ruby>
+                <ruby><rb>上</rb><rt>shang</rt></ruby>
+                <ruby><rb>好</rb><rt>hǎo</rt></ruby>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bear hidden-xs hidden-sm"> <img src="images/bearHi.png"> </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="content"> 
+    <!-- -->
+    <div class="navigation"> </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-header">
+      <div class="stepMenu">
+        <ul class="list-inline">
+          <li><a href="courseText.html#page1"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>第1页</a></li>
+          <li><a href="courseText.html#page2"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>第2页</a></li>
+          <li><a href="courseText.html#page3"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>第3页</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-body" style="background-image: url(images/photo/11101-bg.jpg);">
+      <div class="artical textSection">
+        <div class="pageBlock" id="page1"> 
+          <!-- -->
+          <div class="dialog-p">
+            <div class="dialog-figure"><img src="images/photo/1-1-tianwen.jpg" alt="tiān wén"/><img src="images/photo/1-1-xinyi.jpg" alt="xīn yí"/></div>
+            <div class="dialog-content">
+              <div class="dialog-content-sentence">
+                <div class="dialog-content-text" onClick="PLAY(this, 'temp/爸爸媽媽早上好.mp3');">
+                  <button class="btn-play-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>PLAY</button><ruby><rb>爸</rb><rt>Bà</rt></ruby>
+                  <ruby><rb>爸</rb><rt>ba</rt></ruby>
+                  、
+                  <ruby><rb>妈</rb><rt>mā</rt></ruby>
+                  <ruby><rb>妈</rb><rt>ma</rt></ruby>
+                  ，
+                  <ruby><rb>早</rb><rt>zǎo</rt></ruby>
+                  <ruby><rb>上</rb><rt>shang</rt></ruby>
+                  <ruby><rb>好</rb><rt>hǎo</rt></ruby>
+                  。 </div>
+                <button class="btn-rec-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>REC</button>
+              </div>
+              <div class="dialog-content-feedback">
+                <div class="feedback-processing" style="display: none;">processing...</div>
+                <div class="feedback-detail" style="display: none;">
+                  <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  <div class="feedback-detail-ruby">
+                    <ruby><rt><span class="text-danger">Ba4</span></rt></ruby>
+                    <ruby><rt>ba<span class="text-danger">1</span></rt></ruby>
+                    <ruby><rt>ma5</rt></ruby>
+                    <ruby><rt>ma1</rt></ruby>
+                    <ruby><rt>zao3</rt></ruby>
+                    <ruby><rt><span class="text-danger">shang4</span></rt></ruby>
+                    <ruby><rt>hao3</rt></ruby>
+                  </div>
+                  <div class="feedback-detail-text">
+                    <div style="color:#D81159;"><i class="fas fa-hand-point-right"></i>&nbsp;你需要更多练习。</div>
+                    <div style="color:#FF9000; display: none;"><i class="fas fa-star"></i>&nbsp;你可以说得更好。</div>
+                    <div style="color:#2EC4B6; display: none;"><i class="fas fa-thumbs-up"></i>&nbsp;你说得不错！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- -->
+          <div class="dialog-p">
+            <div class="dialog-figure"><img src="images/photo/1-1-baba.jpg" alt="bà ba"/><img src="images/photo/1-1-mama.jpg" alt="mā ma"/></div>
+            <div class="dialog-content">
+              <div class="dialog-content-sentence">
+                <div class="dialog-content-text" onClick="PLAY(this, 'temp/早上好.mp3');">
+                  <button class="btn-play-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>PLAY</button><ruby><rb>早</rb><rt>zǎo</rt></ruby>
+                  <ruby><rb>上</rb><rt>shang</rt></ruby>
+                  <ruby><rb>好</rb><rt>hǎo</rt></ruby>
+                  。 </div>
+                <button class="btn-rec-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>REC</button>
+              </div>
+              <div class="dialog-content-feedback">
+                <div class="feedback-processing" style="display: none;">processing...</div>
+                <div class="feedback-detail" style="display: none;">
+                  <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  <div class="feedback-detail-ruby">
+                    <ruby><rt>zao<span class="text-danger">3</span></rt></ruby>
+                    <ruby><rt>shang4</rt></ruby>
+                    <ruby><rt>hao3</rt></ruby>
+                  </div>
+                  <div class="feedback-detail-text">
+                    <div style="color:#D81159; display: none;"><i class="fas fa-hand-point-right"></i>&nbsp;你需要更多练习。</div>
+                    <div style="color:#FF9000;"><i class="fas fa-star"></i>&nbsp;你可以说得更好。</div>
+                    <div style="color:#2EC4B6; display: none;"><i class="fas fa-thumbs-up"></i>&nbsp;你说得不错！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- --> 
+        </div>
+        <div class="pageBlock" id="page2"> 
+          <!-- -->
+          <div class="dialog-p">
+            <div class="dialog-figure"> <img src="images/photo/1-1-tianwen.jpg" alt="tiān wén"/></div>
+            <div class="dialog-content">
+              <div class="dialog-content-sentence">
+                <div class="dialog-content-text" onClick="PLAY(this, 'temp/這是誰.mp3');">
+                  <button class="btn-play-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>PLAY</button><ruby><rb>这</rb><rt>Zhè</rt></ruby>
+                  <ruby><rb>是</rb><rt>shì</rt></ruby>
+                  <ruby><rb>谁</rb><rt>shéi</rt></ruby>
+                  ？</div>
+                <button class="btn-rec-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>REC</button>
+              </div>
+              <div class="dialog-content-feedback">
+                <div class="feedback-processing" style="display: none;">processing...</div>
+                <div id="" class="feedback-detail" style="display: none;">
+                  <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  <div class="feedback-detail-ruby">
+                    <ruby><rt>Zhe4</rt></ruby>
+                    <ruby><rt>shi4</rt></ruby>
+                    <ruby><rt>shei<span class="text-danger">2</span></rt></ruby>
+                  </div>
+                  <div class="feedback-detail-text">
+                    <div style="color:#D81159; display: none;"><i class="fas fa-hand-point-right"></i>&nbsp;你需要更多练习。</div>
+                    <div style="color:#FF9000; display: none;"><i class="fas fa-star"></i>&nbsp;你可以说得更好。</div>
+                    <div style="color:#2EC4B6;"><i class="fas fa-thumbs-up"></i>&nbsp;你说得不错！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- -->
+          <div class="dialog-p">
+            <div class="dialog-figure"><img src="images/photo/1-1-baba.jpg" alt="bà ba"/></div>
+            <div class="dialog-content">
+              <div class="dialog-content-sentence">
+                <div class="dialog-content-text" onClick="PLAY(this, 'temp/這是爺爺.mp3');">
+                  <button class="btn-play-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>PLAY</button><ruby><rb>这</rb><rt>Zhè</rt></ruby>
+                  <ruby><rb>是</rb><rt>shì</rt></ruby>
+                  <ruby><rb>爷</rb><rt>yé</rt></ruby>
+                  <ruby><rb>爷</rb><rt>ye</rt></ruby>
+                  。 </div>
+                <button class="btn-rec-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>REC</button>
+              </div>
+              <div class="dialog-content-feedback">
+                <div class="feedback-processing" style="display: none;">processing...</div>
+                <div id="" class="feedback-detail" style="display: none;">
+                  <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  <div class="feedback-detail-ruby">
+                    <ruby><rt>Zhe4</rt></ruby>
+                    <ruby><rt>shi4</rt></ruby>
+                    <ruby><rt>ye2</rt></ruby>
+                    <ruby><rt>ye1</rt></ruby>
+                  </div>
+                  <div class="feedback-detail-text">
+                    <div style="color:#D81159; display: none;"><i class="fas fa-hand-point-right"></i>&nbsp;你需要更多练习。</div>
+                    <div style="color:#FF9000; display: none;"><i class="fas fa-star"></i>&nbsp;你可以说得更好。</div>
+                    <div style="color:#2EC4B6;"><i class="fas fa-thumbs-up"></i>&nbsp;你说得不错！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- -->
+          <div class="dialog-p">
+            <div class="dialog-figure"><img src="images/photo/1-1-tianwen.jpg" alt="tiān wén"/></div>
+            <div class="dialog-content">
+              <div class="dialog-content-sentence">
+                <div class="dialog-content-text" onClick="PLAY(this, 'temp/那是誰.mp3');">
+                  <button class="btn-play-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>PLAY</button><ruby><rb>那</rb><rt>Nà</rt></ruby>
+                  <ruby><rb>是</rb><rt>shì</rt></ruby>
+                  <ruby><rb>谁</rb><rt>shéi</rt></ruby>
+                  。</div>
+                <button class="btn-rec-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>REC</button>
+              </div>
+              <div class="dialog-content-feedback">
+                <div class="feedback-processing" style="display: none;">processing...</div>
+                <div id="" class="feedback-detail" style="display: none;">
+                  <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  <div class="feedback-detail-ruby">
+                    <ruby><rt><span class="text-danger">Na4</span></rt></ruby>
+                    <ruby><rt>shi4</rt></ruby>
+                    <ruby><rt>shei2</rt></ruby>
+                  </div>
+                  <div class="feedback-detail-text">
+                    <div style="color:#D81159; display: none;"><i class="fas fa-hand-point-right"></i>&nbsp;你需要更多练习。</div>
+                    <div style="color:#FF9000;"><i class="fas fa-star"></i>&nbsp;你可以说得更好。</div>
+                    <div style="color:#2EC4B6; display: none;"><i class="fas fa-thumbs-up"></i>&nbsp;你说得不错！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- -->
+          <div class="dialog-p">
+            <div class="dialog-figure"><img src="images/photo/1-1-baba.jpg" alt="bà ba"/></div>
+            <div class="dialog-content">
+              <div class="dialog-content-sentence">
+                <div class="dialog-content-text" onClick="PLAY(this, 'temp/那是奶奶.mp3');">
+                  <button class="btn-play-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>PLAY</button><ruby><rb>那</rb><rt>Nà</rt></ruby>
+                  <ruby><rb>是</rb><rt>shì</rt></ruby>
+                  <ruby><rb>奶</rb><rt>nǎi</rt></ruby>
+                  <ruby><rb>奶</rb><rt>nai</rt></ruby>
+                  。 </div>
+                <button class="btn-rec-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>REC</button>
+              </div>
+              <div class="dialog-content-feedback">
+                <div class="feedback-processing" style="display: none;">processing...</div>
+                <div id="" class="feedback-detail" style="display: none;">
+                  <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  <div class="feedback-detail-ruby">
+                    <ruby><rt>N14</rt></ruby>
+                    <ruby><rt>shi4</rt></ruby>
+                    <ruby><rt>nai3</rt></ruby>
+                    <ruby><rt>nai1</rt></ruby>
+                  </div>
+                  <div class="feedback-detail-text">
+                    <div style="color:#D81159; display: none;"><i class="fas fa-hand-point-right"></i>&nbsp;你需要更多练习。</div>
+                    <div style="color:#FF9000; display: none;"><i class="fas fa-star"></i>&nbsp;你可以说得更好。</div>
+                    <div style="color:#2EC4B6;"><i class="fas fa-thumbs-up"></i>&nbsp;你说得不错！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- --> 
+        </div>
+        <div class="pageBlock" id="page3"> 
+          <!-- -->
+          <div class="dialog-p">
+            <div class="dialog-figure"><img src="images/photo/1-1-xinyi.jpg" alt="xīn yí"/></div>
+            <div class="dialog-content">
+              <div class="dialog-content-sentence">
+                <div class="dialog-content-text" onClick="PLAY(this, 'temp/這是誰的衣服.mp3');">
+                  <button class="btn-play-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>PLAY</button><ruby><rb>这</rb><rt>Zhè</rt></ruby>
+                  <ruby><rb>是</rb><rt>shì</rt></ruby>
+                  <ruby><rb>谁</rb><rt>shéi</rt></ruby>
+                  <ruby><rb>的</rb><rt>de</rt></ruby>
+                  <ruby><rb>衣</rb><rt>yī</rt></ruby>
+                  <ruby><rb>服</rb><rt>fu</rt></ruby>
+                  ？ </div>
+                <button class="btn-rec-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>REC</button>
+              </div>
+              <div class="dialog-content-feedback">
+                <div class="feedback-processing" style="display: none;">processing...</div>
+                <div class="feedback-detail" style="display: none;">
+                  <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  <div class="feedback-detail-ruby">
+                    <ruby><rt><span class="text-danger">Zhe4</span></rt></ruby>
+                    <ruby><rt><span class="text-danger">shi4</span></rt></ruby>
+                    <ruby><rt><span class="text-danger">shei2</span></rt></ruby>
+                    <ruby><rt>de5</rt></ruby>
+                    <ruby><rt><span class="text-danger">yi1</span></rt></ruby>
+                    <ruby><rt>fu2</rt></ruby>
+                  </div>
+                  <div class="feedback-detail-text">
+                    <div style="color:#D81159;"><i class="fas fa-hand-point-right"></i>&nbsp;你需要更多练习。</div>
+                    <div style="color:#FF9000; display: none;"><i class="fas fa-star"></i>&nbsp;你可以说得更好。</div>
+                    <div style="color:#2EC4B6; display: none;"><i class="fas fa-thumbs-up"></i>&nbsp;你说得不错！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- -->
+          <div class="dialog-p">
+            <div class="dialog-figure"><img src="images/photo/1-1-mama.jpg" alt="mā ma"/></div>
+            <div class="dialog-content">
+              <div class="dialog-content-sentence">
+                <div class="dialog-content-text" onClick="PLAY(this, 'temp/這是爸爸的衣服.mp3');">
+                  <button class="btn-play-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>PLAY</button><ruby><rb>这</rb><rt>Zhè</rt></ruby>
+                  <ruby><rb>是</rb><rt>shì</rt></ruby>
+                  <ruby><rb>爸</rb><rt>bà</rt></ruby>
+                  <ruby><rb>爸</rb><rt>ba</rt></ruby>
+                  <ruby><rb>的</rb><rt>de</rt></ruby>
+                  <ruby><rb>衣</rb><rt>yī</rt></ruby>
+                  <ruby><rb>服</rb><rt>fu</rt></ruby>
+                  。 </div>
+                <button class="btn-rec-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>REC</button>
+              </div>
+              <div class="dialog-content-feedback">
+                <div class="feedback-processing" style="display: none;">processing...</div>
+                <div class="feedback-detail" style="display: none;">
+                  <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  <div class="feedback-detail-ruby">
+                    <ruby><rt>Zhe4</rt></ruby>
+                    <ruby><rt>shìi4</rt></ruby>
+                    <ruby><rt>ba4</rt></ruby>
+                    <ruby><rt>ba5</rt></ruby>
+                    <ruby><rt><span class="text-danger">de1</span></rt></ruby>
+                    <ruby><rt><span class="text-danger">yi1</span></rt></ruby>
+                    <ruby><rt><span class="text-danger">fu2</span></rt></ruby>
+                  </div>
+                  <div class="feedback-detail-text">
+                    <div style="color:#D81159;"><i class="fas fa-hand-point-right"></i>&nbsp;你需要更多练习。</div>
+                    <div style="color:#FF9000; display: none;"><i class="fas fa-star"></i>&nbsp;你可以说得更好。</div>
+                    <div style="color:#2EC4B6; display: none;"><i class="fas fa-thumbs-up"></i>&nbsp;你说得不错！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- -->
+          <div class="dialog-p">
+            <div class="dialog-figure"><img src="images/photo/1-1-xinyi.jpg" alt="xīn yí"/></div>
+            <div class="dialog-content">
+              <div class="dialog-content-sentence">
+                <div class="dialog-content-text" onClick="PLAY(this, 'temp/那是誰的褲子.mp3');">
+                  <button class="btn-play-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>PLAY</button>
+                  <ruby><rb>那</rb><rt>Nà</rt></ruby>
+                  <ruby><rb>是</rb><rt>shì</rt></ruby>
+                  <ruby><rb>谁</rb><rt>shéi</rt></ruby>
+                  <ruby><rb>的</rb><rt>de</rt></ruby>
+                  <ruby><rb>裤</rb><rt>kù</rt></ruby>
+                  <ruby><rb>子</rb><rt>zi</rt></ruby>
+                  。 </div>
+                <button class="btn-rec-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>REC</button>
+              </div>
+              <div class="dialog-content-feedback">
+                <div class="feedback-processing" style="display: none;">processing...</div>
+                <div class="feedback-detail" style="display: none;">
+                  <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  <div class="feedback-detail-ruby">
+                    <ruby><rt>Na4</rt></ruby>
+                    <ruby><rt>shi4</rt></ruby>
+                    <ruby><rt>shei2</rt></ruby>
+                    <ruby><rt>de5</rt></ruby>
+                    <ruby><rt>ki4</rt></ruby>
+                    <ruby><rt>zi5</rt></ruby>
+                  </div>
+                  <div class="feedback-detail-text">
+                    <div style="color:#D81159; display: none;"><i class="fas fa-hand-point-right"></i>&nbsp;你需要更多练习。</div>
+                    <div style="color:#FF9000; display: none;"><i class="fas fa-star"></i>&nbsp;你可以说得更好。</div>
+                    <div style="color:#2EC4B6;"><i class="fas fa-thumbs-up"></i>&nbsp;你说得不错！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- -->
+          <div class="dialog-p">
+            <div class="dialog-figure"><img src="images/photo/1-1-tianwen.jpg" alt="tiān wén"/></div>
+            <div class="dialog-content">
+              <div class="dialog-content-sentence">
+                <div class="dialog-content-text" onClick="PLAY(this, 'temp/那是我的褲子.mp3');">
+                  <button class="btn-play-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>PLAY</button>
+                  <ruby><rb>那</rb><rt>Nà</rt></ruby>
+                  <ruby><rb>是</rb><rt>shì</rt></ruby>
+                  <ruby><rb>我</rb><rt>wǒ</rt></ruby>
+                  <ruby><rb>的</rb><rt>de</rt></ruby>
+                  <ruby><rb>裤</rb><rt>kù</rt></ruby>
+                  <ruby><rb>子</rb><rt>zi</rt></ruby>
+                  。 </div>
+                <button class="btn-rec-small"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>REC</button>
+              </div>
+              <div class="dialog-content-feedback">
+                <div class="feedback-processing" style="display: none;">processing...</div>
+                <div class="feedback-detail" style="display: none;">
+                  <button type="button" class="close" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                  <div class="feedback-detail-ruby">
+                    <ruby><rt>Na4</rt></ruby>
+                    <ruby><rt>shi4</rt></ruby>
+                    <ruby><rt>wo3</rt></ruby>
+                    <ruby><rt>de5</rt></ruby>
+                    <ruby><rt>ku4</rt></ruby>
+                    <ruby><rt>zi5</rt></ruby>
+                  </div>
+                  <div class="feedback-detail-text">
+                    <div style="color:#D81159; display: none;"><i class="fas fa-hand-point-right"></i>&nbsp;你需要更多练习。</div>
+                    <div style="color:#FF9000; display: none;"><i class="fas fa-star"></i>&nbsp;你可以说得更好。</div>
+                    <div style="color:#2EC4B6;"><i class="fas fa-thumbs-up"></i>&nbsp;你说得不错！</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- --> 
+        </div>
+        <!-- -->
+        <div class="pagePagination">
+          <div>
+            <button type="button" class="btn-gradient" id="PREV"> <span class="glyphicon glyphicon-chevron-left"></span>上一页 </button>
+          </div>
+          <div>
+            <button type="button" class="btn-gradient" id="NEXT"> 下一页 <span class="glyphicon glyphicon-chevron-right"></span> </button>
+          </div>
+        </div>
+        <!-- --> 
+      </div>
+    </div>
+  </div>
+  <!-- --> 
+</div>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/topTool.js"></script> 
+<script src="js/achievementStar.js"></script>    
+<script>
+$(document).ready(function() {
+    //call navigation 
+    $('.content .navigation').load('_navigation.html',function(){
+        //當前頁
+        $('.navText').addClass('active');
+        
+        //demo navigation完成
+        $('.navCW').addClass('done');
+
+        //demo stepMenu完成
+        $('.stepMenu li:nth-child(1)').addClass('done');
+        
+        //demo 課文完成
+        $(`#page1 .dialog-p:nth-child(1) .btn-play-small,
+           #page1 .dialog-p:nth-child(1) .btn-rec-small,
+           #page1 .dialog-p:nth-child(2) .btn-play-small,
+           #page1 .dialog-p:nth-child(2) .btn-rec-small`).addClass('done');
+    }); 
+}); 
+</script> 
+<script>
+$(document).ready(function(){
+    showPage();
+
+    //demo 依據hash顯示頁數內容
+    $(window).on('hashchange', function() {
+        showPage();
+    });
+
+    // [下一頁]
+    $('#NEXT').on('click', function() {
+        showNextPage();
+    });
+
+    // [上一頁]
+    $('#PREV').on('click', function() {
+        showPrevPage();
+    });
+    
+    //[PLAY]
+    /*$('.dialog-content-text').click(function (e) {//.btn-play-small
+        PLAY(this, 'temp/爸爸媽媽早上好.mp3');
+    });*/
+    
+	//[REC] demo
+	$('.btn-rec-small').click(function(){
+        var $this = $(this);
+        
+		$this.toggleClass('recording');
+		
+		if( !$this.hasClass('recording') ){ 
+            
+			$this.parents('.dialog-p').find('.feedback-processing').show();
+            
+            setTimeout(function() {
+                $this.parents('.dialog-p').find('.feedback-processing').hide();    
+                $this.parents('.dialog-p').find('.feedback-detail').show();
+                
+                //星星旋轉 
+                rotateStar( $this );
+				
+                //計算pageBlock星星
+                pageStar( $this ); 
+				
+				//計算navigation星星
+				setTimeout(function() {
+					navStar();    
+				}, 2000);
+            }, 1000);
+		}
+		
+		// close
+		$('.feedback-detail .close').click(function(){
+			$this.parents('.dialog-p').find('.feedback-processing').hide();    
+            $this.parents('.dialog-p').find('.feedback-detail').hide();  
+		});
+	});
+});
+
+//顯示頁內容    
+function showPage() {
+	var currenthHash = window.location.hash ? window.location.hash : '#page1';
+	
+	// active stepMenu
+	$('.stepMenu ul li a').each(function() {
+		if ($(this).attr('href').indexOf(currenthHash) !== -1) {
+		  $(this).parents('li').addClass('active').siblings().removeClass('active');
+		}
+	});
+	
+	// show currenthHash section
+    $(currenthHash).show().siblings('.pageBlock').hide();
+    
+    //  current bg
+    switch (currenthHash) {
+        case '#page1':
+            $('.content-body').css('background-image', 'url(images/photo/11101-bg1.jpg)');
+            break;
+        case '#page2':
+            $('.content-body').css('background-image', 'url(images/photo/11101-bg2.jpg)');
+            break;
+        case '#page3':
+            $('.content-body').css('background-image', 'url(images/photo/11101-bg3.jpg)');
+            break;
+        default:
+            $('.content-body').css('background-image', 'url(images/photo/11101-bg.jpg)');
+            break;    
+    }
+	
+    // [上一頁][下一頁]按鈕顯示
+    if ( $(currenthHash).index() === 0 ) {
+        $("#PREV").hide();
+        $("#NEXT").show();
+    } else if ( $(currenthHash).index() === $('.pageBlock').length-1 ) {
+        $("#PREV").show();
+        $("#NEXT").hide();
+    } else {
+        $("#PREV").show();
+        $("#NEXT").show();
+    }
+}	
+
+// 顯示下一頁內容
+function showNextPage() {
+	var currenthHash = window.location.hash ? window.location.hash : '#page1';
+    
+    var currentIndex = $(currenthHash).index();
+
+    var nextPage = $('.pageBlock').eq(currentIndex + 1).attr('id');
+    window.location.hash = '#' + nextPage;
+}
+
+// 顯示上一頁內容    
+function showPrevPage() {
+    var currenthHash = window.location.hash ? window.location.hash : '#page1';
+    
+    var currentIndex = $(currenthHash).index();
+
+    var prevPage = $('.pageBlock').eq(currentIndex - 1).attr('id');
+    window.location.hash = '#' + prevPage;
+}
+
+var isPlaying = false;
+var audio; 
+var currentPlaybackTimes = {};    
+function PLAY(e, mp3) {
+  // 如果是第一次播放或暫停後的再次播放，則創建新的 Audio 物件
+  if (!isPlaying || audio.paused) {
+    audio = new Audio(mp3);
+      
+    // 取得當前音檔的當前播放秒數，如果不存在則設為0
+    var currentTime = currentPlaybackTimes[mp3] || 0;  
+                                   
+    audio.currentTime = currentTime;                            
+    audio.play();
+                                   
+    isPlaying = true;
+                                   
+    $(e).find("button").removeClass("btn-pause-small").addClass("btn-play-small");                              
+  } else { 
+    audio.pause();  // 暫停當前音檔
+    isPlaying = false;
+          
+    currentPlaybackTimes[mp3] = audio.currentTime;
+      
+    $(e).find("button").removeClass("btn-pause-small").addClass("btn-play-small");  
+  }
+    
+  audio.addEventListener('ended', function () {
+    isPlaying = false;
+      
+    currentPlaybackTime = {}; 
+      
+    //結束播放移除閃爍效果
+    $(e).find("button").removeClass("btn-pause-small").addClass("btn-play-small");
+      
+    //星星旋轉  
+	rotateStar( $(e).find(".btn-play-small") );  
+
+    //計算pageBlock星星
+    pageStar( $(e).find(".btn-play-small") );  
+	  
+	//計算navigation星星
+	setTimeout(function() {
+		navStar();    
+	}, 2000); 
+  });  
+}
+</script>
+</body>
+</html>

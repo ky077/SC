@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Chinese Kids</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<!-- widgets -->
+</head>
+
+<body>
+<div class="container"> 
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="top">
+    <button class="btn btn-warning btn-logout" type="button" onclick="window.location='index.html'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+        <div class="dialogue">
+          <div class="dialogue-content">
+            <div>
+              开始前，请检查一下你的耳机麦克风。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bear hidden-xs"> <img src="images/bearHi.png"> </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="content">
+    <div class="test"> 
+      <!-- step1 START -->
+      <div class="test-step step1 text-center"> <br>
+        <img src="images/test/headsetMicrophone.png" width="400" class="img-thumbnail img-responsive center-block" style="background-color:#EBEBEB;"><br>
+        <button class="btn btn-default btn-lg rounded-pill" type="button" onclick="alert('课程中有发音练习，建议使用耳机麦克风来练习喔!')"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;
+        我没有耳机麦克风</button>
+        <button class="btn btn-sys-primary btn-lg btnCheck1 rounded-pill" type="button"> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;
+        我有耳机麦克风</button> <br>
+      </div>
+      <!-- step1 END --> 
+      
+      <!-- step2 START -->
+      <div class="test-step step2 text-center" style="display:none;"> 
+        <!-- -->
+        <div class="step2-check"><br>
+          <img src="images/test/1.png" width="72" height="72" class="center-block img-num">
+          <p>请按&nbsp;<span class="glyphicon glyphicon-play" aria-hidden="true"></span></p>
+          <button class="btn-bear bearBtn-listen btn-control" type="button">PLAY</button>
+          <audio id="audio1" class="audio" src="images/test/Short_Guitar_Clip.mp3" type="audio/mpeg">Your browser does not support HTML5 audio playback</audio>
+          <div class="btn-control-show" style="display:none;">
+            <button class="btn btn-default btn-lg rounded-pill" type="button" onclick="alert('检查一下喇叭，声音开了吗?')"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;没有声音</button>
+            <button class="btn btn-sys-primary btn-lg btnCheck2-1 rounded-pill" type="button"> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;有声音</button>
+          </div>
+        </div>
+        <!-- -->
+        <div class="step2-check" style="display:none;"><br>
+          <img src="images/test/2.png" width="72" height="72" class=" center-block img-num">
+          <p>
+            请按&nbsp;<span class="glyphicon glyphicon-record" aria-hidden="true"></span>&nbsp;录下自己的声音
+          </p>
+          <button class="btn-bear bearBtn-rec" type="button">REC</button>
+          <div class="btn-control-show" style="display:none;">
+            <p>请按&nbsp;<span class="glyphicon glyphicon-play" aria-hidden="true"></span>&nbsp;听一听自己的声音
+            </p>
+            <button class="btn-bear bearBtn-listen" type="button">PLAY</button>
+            <audio id="audio2" class="audio" src="images/test/On_My_Way_Home_Sting.mp3" type="audio/mpeg">Your browser does not support HTML5 audio playback.</audio>
+            <div class="btn-control-show" style="display:none;">
+              <button class="btn btn-default btn-lg rounded-pill" type="button" onclick="alert('检查一下麦克风和喇叭，是不是都开了呢?')"> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;不可以
+              </button>
+              <button class="btn btn-sys-primary btn-lg btnCheck2-2 rounded-pill" type="button"> <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;可以
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- --> 
+      </div>
+      <!-- step2 END --> 
+      
+      <!-- step3 START -->
+      <div class="test-step step3 text-center" style="display:none;">
+        <p><big>我准备好了!</big></p>
+        <a href="bookPanel.html" class="btn btn-lg btn-go">GO</a> </div>
+      <!-- step3 END --> 
+        
+      <a class="test-pass" href="bookPanel.html">略过检查，我要开始练习!</a>   
+    </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+</div>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/topTool.js"></script> 
+<!-- widgets --> 
+<script>
+$(document).ready(function(){
+  	//绿按钮效果 画面显示
+	$('.btnCheck1').click(function(){
+		$("html,body").animate({scrollTop:0},500);
+		$(this).parents('.test-step').hide().next('.test-step').fadeIn();
+		$('.dialogue .dialogue-content div').html(`听听看，有没有声音呢?`);
+                                                  
+                                                 
+	});
+	$('.btnCheck2-1').click(function(){
+		$("html,body").animate({scrollTop:0},500);
+		$(this).parents('.step2-check').hide().next('.step2-check').fadeIn();
+	});
+	$('.btnCheck2-2').click(function(){
+		$("html,body").animate({scrollTop:0},500);
+		$(this).parents('.test-step').hide().next('.test-step').fadeIn();
+		$('.dialogue .dialogue-content div').html(`你准备好了吗?`);
+        
+        $('.test-pass').hide();
+	});
+	
+	//PLAY REC for demo
+	$('.bearBtn-listen').click(function(){
+		$(this).toggleClass('stop');
+		var audio =  $(this).next('.audio')[0];
+		if (audio.paused) { 
+			audio.play(); 
+		} else { 
+			audio.pause(); 
+			$(this).removeClass('stop').nextAll('.btn-control-show').show();
+		}
+	});
+	$('.bearBtn-rec').click(function(){
+		$(this).toggleClass('stop btn-control').click(function(){
+			$(this).nextAll('.btn-control-show').show();		
+		});
+	});
+	//for demo
+	$("#audio1")[0].addEventListener("ended",function(){
+         $(this).prev('.bearBtn-listen').removeClass('stop').nextAll('.btn-control-show').show();
+    })
+	$("#audio2")[0].addEventListener("ended",function(){
+         $(this).prev('.bearBtn-listen').removeClass('stop').nextAll('.btn-control-show').show();
+    })
+});
+</script>
+</body>
+</html>

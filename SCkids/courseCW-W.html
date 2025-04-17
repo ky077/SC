@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Chinese Kids</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+<div class="container"> 
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="top">
+    <button class="btn btn-warning btn-logout" type="button" onclick="window.location='index.html'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="topic"> <a class="topic-title grade-flag G2" href="lessonPanel.html">
+          <div class="grade_C"> 1 </div>
+          <div class="grade_E"> Pre-A1 </div>
+          </a>
+          <div class="topic-content">
+            <div class="topic-text">
+              <div>
+                <ruby><rb>第</rb><rt>dì</rt></ruby>
+                <ruby><rb>一</rb><rt>yī</rt></ruby>
+                <ruby><rb>课</rb><rt>kè</rt></ruby>
+                &nbsp;
+                <ruby><rb>早</rb><rt>zǎo</rt></ruby>
+                <ruby><rb>上</rb><rt>shang</rt></ruby>
+                <ruby><rb>好</rb><rt>hǎo</rt></ruby>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bear hidden-xs hidden-sm"> <img src="images/bearHi.png"> </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="content"> 
+    <!-- -->
+    <div class="navigation"> </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-header">
+      <div class="content-header-left"></div>
+      <div> 请选择词群练习 </div>
+      <div class="content-header-right"></div>
+    </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-body" style="background-image: url(images/photo/11101-bg.jpg);">
+      <div class="artical course-words"> <a class="btn-learnWords" href="courseCW-W2.html?g=1"> 一 </a> <a class="btn-learnWords" href="courseCW-W2.html?g=2"> 二 </a> <a class="btn-learnWords" href="courseCW-W2.html?g=3"> 三 </a> </div>
+    </div>
+    <!-- --> 
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+</div>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/topTool.js"></script> 
+<script src="js/achievementStar.js"></script>       
+<script>
+$(document).ready(function() {
+    //call navigation 
+    $('.content .navigation').load('_navigation.html',function(){
+        //當前頁
+        $('.navW').addClass('active');
+        
+        //demo 詞群完成
+        $('.btn-learnWords').each(function() {
+            let href = $(this).attr('href');
+            let urlParams = new URLSearchParams(href.split('?')[1]);
+
+            if (urlParams.get('g') === '1') {
+                $(this).addClass('done');
+            }
+        });
+    }); 
+}); 
+</script>
+</body>
+</html>

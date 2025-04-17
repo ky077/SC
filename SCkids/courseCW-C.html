@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Chinese Kids</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+<div class="container"> 
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="top">
+    <button class="btn btn-warning btn-logout" type="button" onclick="window.location='index.html'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="topic"> <a class="topic-title grade-flag G2" href="lessonPanel.html">
+          <div class="grade_C">1</div>
+          <div class="grade_E">Pre-A1</div>
+          </a>
+          <div class="topic-content">
+            <div class="topic-text">
+              <div>
+                <ruby><rb>第</rb><rt>dì</rt></ruby>
+                <ruby><rb>一</rb><rt>yī</rt></ruby>
+                <ruby><rb>课</rb><rt>kè</rt></ruby>
+                &nbsp;
+                <ruby><rb>早</rb><rt>zǎo</rt></ruby>
+                <ruby><rb>上</rb><rt>shang</rt></ruby>
+                <ruby><rb>好</rb><rt>hǎo</rt></ruby>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bear hidden-xs hidden-sm"> <img src="images/bearHi.png"> </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="content"> 
+    <!-- -->
+    <div class="navigation"> </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-header">
+      <div class="content-header-left"></div>
+      <div>请选择汉字练习</div>
+      <div class="content-header-right"></div>
+    </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-body" style="background-image: url(images/photo/11101-bg.jpg);">
+      <div class="artical course-words"> <a class="btn-learnWord" href="courseCW-C-def.html?sn=1">
+        <ruby><rb>远</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=2">
+        <ruby><rb>浪</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=3">
+        <ruby><rb>船</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=4">
+        <ruby><rb>连</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=5">
+        <ruby><rb>出</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=6">
+        <ruby><rb>海</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=7">
+        <ruby><rb>耍</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=8">
+        <ruby><rb>再</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=9">
+        <ruby><rb>向</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=09">
+        <ruby><rb>谈</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=11">
+        <ruby><rb>堡</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=12">
+        <ruby><rb>沙</rb><rt></rt></ruby>
+        </a> <a class="btn-learnWord" href="courseCW-C-def.html?sn=13">
+        <ruby><rb>退</rb><rt></rt></ruby>
+        </a> 
+        <!--<div class="text-right"> <a class="btn-gradient btn-goWords" href="courseCW-W.html">
+          <ruby><rb>词</rb><rt>cí</rt></ruby>
+          <ruby><rb>群</rb><rt>qún</rt></ruby>
+          <ruby><rb>练</rb><rt>liàn</rt></ruby>
+          <ruby><rb>习</rb><rt>xí</rt></ruby>
+          <ruby><rb>说</rb><rt>shuō</rt></ruby>
+          </a></div>--> 
+      </div>
+    </div>
+    <!-- --> 
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+</div>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/topTool.js"></script> 
+<script src="js/achievementStar.js"></script>       
+<script>
+$(document).ready(function() {
+    //call navigation 
+    $('.content .navigation').load('_navigation.html',function(){
+        //當前頁
+        $('.navC').addClass('active');
+		
+        //demo 漢字完成
+        $('.btn-learnWord').each(function() {
+            let href = $(this).attr('href');
+            let urlParams = new URLSearchParams(href.split('?')[1]);
+
+            if (urlParams.get('sn') === '1' || 
+                urlParams.get('sn') === '2') {
+                $(this).addClass('done');
+            }
+        });
+    }); 
+}); 
+</script>
+</body>
+</html>

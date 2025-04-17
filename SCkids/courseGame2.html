@@ -1,0 +1,557 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Chinese Kids</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<!-- widgets -->
+<link rel="stylesheet" type="text/css" href="css/actTab.css">
+<link rel="stylesheet" type="text/css" href="css/CA.css">
+</head>
+
+<body>
+<div class="container"> 
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="top">
+    <button class="btn btn-warning btn-logout" type="button" onclick="window.location='index.html'"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></button>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="topic"> <a class="topic-title grade-flag G2" href="lessonPanel.html">
+          <div class="grade_C"> 1 </div>
+          <div class="grade_E"> pre </div>
+          </a>
+          <div class="topic-content">
+            <div class="topic-text">
+              <div>
+                <ruby>
+                  <rb>第</rb>
+                  <rt>dì</rt>
+                </ruby>
+                <ruby>
+                  <rb>一</rb>
+                  <rt>yī</rt>
+                </ruby>
+                <ruby>
+                  <rb>课</rb>
+                  <rt>kè</rt>
+                </ruby>
+                &nbsp;
+                <ruby>
+                  <rb>早</rb>
+                  <rt>zǎo</rt>
+                </ruby>
+                <ruby>
+                  <rb>上</rb>
+                  <rt>shang</rt>
+                </ruby>
+                <ruby>
+                  <rb>好</rb>
+                  <rt>hǎo</rt>
+                </ruby>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bear hidden-xs hidden-sm"> <img src="images/bearHi.png"> </div>
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- -->
+  <div class="content"> 
+    <!-- -->
+    <div class="navigation"> </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-header">
+      <div class="stepMenu">
+        <ul class="list-inline">
+          <li><a href="courseQuiz2.html#FLIP"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span>翻转卡片 </a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- --> 
+    <!-- -->
+    <div class="content-body" style="background-image: url(images/game/bg.png);">
+      <div class="artical game2Section"> 
+        <!-- start -->
+        <div class="actTab"> 
+          <!-- Tab panes -->
+          <div class="tab-content"> 
+            <!-- 計時器 start-->
+            <div class="game-counter"><span class="game-counter-time" id="COUNTER">30:00</span></div>
+            <!-- 計時器 end--> 
+            
+            <!-- 翻转卡片 start-->
+            <div role="tabpanel" class="tab-pane" id="FLIP">
+              <div class="col-xs-12">
+                <div class="CA-flip__card">
+                  <div class="card-wrap" data-framework="<div>增" style="order: 5;">
+                    <div class="card-front">
+                      <div>
+                        <div>增</div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>增</div>" style="order: 5;">
+                    <div class="card-front">
+                      <div>
+                        <div>
+                          <ruby>
+                            <rbt>
+                              <rt>zēng</rt>
+                            </rbt>
+                          </ruby>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>好</div>" style="order: 9;">
+                    <div class="card-front">
+                      <div>
+                        <div>好</div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>好</div>" style="order: 1;">
+                    <div class="card-front">
+                      <div>
+                        <div>
+                          <ruby>
+                            <rbt>
+                              <rt>hǎu</rt>
+                            </rbt>
+                          </ruby>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>与众不同</div>" style="order: 7;">
+                    <div class="card-front">
+                      <div>
+                        <div>与众不同</div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>与众不同</div>" style="order: 3;">
+                    <div class="card-front">
+                      <div>
+                        <div>
+                          <ruby>
+                            <rbt>
+                              <rt>yǔ</rt>
+                              <rt>zhòng</rt>
+                              <rt>bù</rt>
+                              <rt>tóng</rt>
+                            </rbt>
+                          </ruby>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>货比三家不吃亏</div>" style="order: 7;">
+                    <div class="card-front">
+                      <div>
+                        <div>货比三家不吃亏</div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>货比三家不吃亏</div>" style="order: 9;">
+                    <div class="card-front">
+                      <div>
+                        <div>
+                          <ruby>
+                            <rbt>
+                              <rt>huò</rt>
+                              <rt>bǐ</rt>
+                              <rt>sān</rt>
+                              <rt>jiā</rt>
+                              <rt>bù</rt>
+                              <rt>chī</rt>
+                              <rt>kuī</rt>
+                            </rbt>
+                          </ruby>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>兴</div>" style="order: 7;">
+                    <div class="card-front">
+                      <div>
+                        <div>兴</div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>兴</div>" style="order: 10;">
+                    <div class="card-front">
+                      <div>
+                        <div>
+                          <ruby>
+                            <rbt>
+                              <rt>xìng</rt>
+                            </rbt>
+                          </ruby>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>级</div>" style="order: 8;">
+                    <div class="card-front">
+                      <div>
+                        <div>级</div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>级</div>" style="order: 8;">
+                    <div class="card-front">
+                      <div>
+                        <div>
+                          <ruby>
+                            <rbt>
+                              <rt>jí</rt>
+                            </rbt>
+                          </ruby>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>已</div>" style="order: 4;">
+                    <div class="card-front">
+                      <div>
+                        <div>已</div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>已</div>" style="order: 7;">
+                    <div class="card-front">
+                      <div>
+                        <div>
+                          <ruby>
+                            <rbt>
+                              <rt>yǐ</rt>
+                            </rbt>
+                          </ruby>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>照片</div>" style="order: 9;">
+                    <div class="card-front">
+                      <div>
+                        <div>照片</div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                  <div class="card-wrap" data-framework="<div>照片</div>" style="order: 9;">
+                    <div class="card-front">
+                      <div>
+                        <div>
+                          <ruby>
+                            <rbt>
+                              <rt>zhào</rt>
+                              <rt>piàn</rt>
+                            </rbt>
+                          </ruby>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-back"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 翻转卡片 end--> 
+          </div>
+          <!-- Tab panes --> 
+        </div>
+        <!-- end --> 
+      </div>
+    </div>
+    <!-- --> 
+  </div>
+  <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+</div>
+
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/topTool.js"></script> 
+<script src="js/achievementStar.js"></script> 
+<script>
+$(document).ready(function() {
+    //call navigation 
+    $('.content .navigation').load('_navigation.html',function(){
+		//當前頁
+        $('.navGame').addClass('active');
+		
+		//demo navigation完成頁
+		$('.navCW, .navText, .navSentence, .navQuiz').addClass('done');
+    }); 
+    
+    showPage();
+
+    //demo 依據hash顯示頁數內容
+    $(window).on('hashchange', function() {
+        showPage();
+    });
+}); 
+//顯示頁內容    
+function showPage() {
+    var currenthHash = window.location.hash ? window.location.hash : '#FLIP';
+	
+	// active stepMenu
+	$('.stepMenu ul li a').each(function() {
+		if ($(this).attr('href').indexOf(currenthHash) !== -1) {
+		  $(this).parents('li').addClass('active').siblings().removeClass('active');
+		}
+	});
+	
+	// show currenthHash section
+    $(currenthHash).show().siblings('.tab-pane').hide();
+
+}	    
+</script> 
+<script> 
+let data = [
+      {
+        "word": "蛋糕",
+        "pinyin": "<rt>dàngāo</rt>",
+        "def": "", 
+        "pic": "images/photo/0-1-dangao.jpg"
+      },
+      {
+        "word": "果汁",
+        "pinyin": "<rt>guǒzhī</rt>",
+        "def": "", 
+        "pic": "images/photo/0-1-guozhi.jpg" 
+      },
+      {
+        "word": "牛奶",
+        "pinyin": "<rt>niúnǎi</rt>",
+        "def": "", 
+        "pic": "images/photo/0-1-niunai.jpg"  
+      }
+  ]; 
+
+function getType() {
+    let type = 'cpp';
+
+    let params = new URLSearchParams(document.location.search);
+    if (params.has('type')){
+        type = params.get('type');    
+    }
+
+    return type;
+};   
+    
+//let type = 'cpd';  //漢字+拼音：cp | 漢字+解釋：cd | 漢字有拼音+解釋：cpd | 漢字有拼音+圖片 cpp
+let type = getType(); 
+let html = ''; 
+
+//載入題目       
+(function getData(){
+    for (let i = 0; i < data.length; i++) {
+        let firstText =  '';
+        let secondText = '';  
+
+        switch (type){
+            case 'cp':
+                firstText  = '<div>'+data[i].word+'</div>';
+                secondText = '<div><ruby><rbt>'+data[i].pinyin+'</rbt></ruby></div>';     
+                break;
+
+            case 'cd':
+                firstText  = '<div>'+data[i].word+'</div>';
+                secondText = '<div>'+data[i].def+'</div>'; 
+                break;
+                
+            case 'cpd':
+                firstText  = '<div>'+data[i].word +'</div><div><ruby><rbt>'+ data[i].pinyin + '</rbt></ruby></div>';
+                secondText = '<div>'+data[i].def+'</div>'; 
+                break;  
+           
+            case 'cpp':
+                firstText  = '<ruby><rb>' + data[i].word + '</rb><rt>' + data[i].pinyin + '</rt></ruby>';
+                secondText = '<img src="' + data[i].pic + '">'; 
+                break;     
+                
+            default:
+                break;
+        }
+
+        html +=`<div class="card-wrap" data-framework="`+firstText+`">
+                  <div class="card-front"><div>`+firstText+`</div> </div>
+                  <div class="card-back"></div>
+                </div>
+                <div class="card-wrap" data-framework="`+firstText+`">
+                  <div class="card-front"><div>`+secondText+`</div> </div>
+                  <div class="card-back"></div>
+                </div>`;
+    }
+
+    document.querySelector('.CA-flip__card').innerHTML = html;
+    
+    //依牌數排版
+    document.querySelector('.CA-flip__card').classList.add('flow' + data.length);
+})();
+     
+//翻牌  
+let cards = document.querySelectorAll('.card-wrap');    
+    
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;  
+    
+let countFlip = 0, //計算翻牌次數
+    countMatch = 0;//計算成功配對次數
+    
+
+function flipCard() {
+    // 剛剛沒配對成功的話，就把牌蓋起來
+    if (lockBoard) return;
+
+    // 避免翻同一張牌當做第二張
+    if (this === firstCard) return;
+
+    this.classList.add('flip');
+
+    if (!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this; // this => the clicked card
+        return;
+    }
+
+    secondCard = this;
+
+    countFlip++; //計算翻牌次數
+
+    checkForMatch();
+}
+
+function checkForMatch() {
+    // 如果牌組配對成功 => isMatch
+    // 就不可以再點擊那組牌 => disableCards()
+    // 配對錯誤就把該牌組蓋起來 => unflipCards()
+    let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    isMatch ? disableCards() : unflipCards();
+
+    if(isMatch){
+        countMatch++;//計算成功配對次數
+        
+        if(countMatch == data.length){//成功配對
+            //console.log('all match!'); 
+            
+            if( document.querySelector('#COUNTER').textContent == '00:00'){
+                //時間外，放煙火
+                setTimeout(() => {
+                    $('.content-body').append(`<div class="game-award fireworks"><div class="game-award-btn"> <a class="btn-gradient" href="courseGame.html">離開</a><a class="btn-gradient" href="courseGame2.html">重玩</a></div></div>`);
+                }, 1000);  //stepMenu星星旋轉1秒後放煙火
+				
+				//煙火5秒後消失
+                setTimeout(() => {
+                    $('.game-award').removeClass('fireworks');
+                }, 1000+5000); 
+                
+                
+            } else{
+                //時間內，拍手 
+                setTimeout(() => {
+                    $('.content-body').append(`<div class="game-award clapping"><div class="game-award-btn"> <a class="btn-gradient" href="courseGame.html">離開</a><a class="btn-gradient" href="courseGame2.html">重玩</a></div></div>`);
+                }, 1000);  //stepMenu星星旋轉1秒後拍手 
+				
+                //移除時間特效
+                document.querySelector('#COUNTER').classList.remove('bounce');
+                
+                //停止計時
+                clearInterval(intervalId);
+            }
+            
+			//星星旋轉 
+            rotateStar( $('.stepMenu a[href*="#FLIP"]') );
+			
+			//計算navigation星星
+			navStar();
+        }  
+    }
+}
+
+function disableCards() {
+    // 移除監聽事件，釋放記憶體
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+
+    resetBoard();
+}
+
+function unflipCards() {
+    lockBoard = true;
+
+    // 把牌蓋起來
+    setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+        resetBoard();
+    }, 1000);
+}
+
+function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+}
+
+(function shuffle() {
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
+    });
+})(); 
+    
+cards.forEach(card => card.addEventListener('click', flipCard));    
+    
+//計時
+const countdownTime = 30; // 設定倒數秒數
+let remainingTime = countdownTime; // 剩餘時間初始化為倒數時間
+let endTime = Date.now() + countdownTime * 1000; // 計算倒數結束時間
+const intervalId = setInterval(updateCounter, 15);    
+    
+function updateCounter() {
+    let currentTime = Date.now();
+    
+    const remainingMilliseconds = endTime - currentTime; // 計算剩餘的毫秒數
+
+    if (remainingMilliseconds <= 0) { // 倒數時間結束
+        clearInterval(intervalId); 
+        document.querySelector('#COUNTER').textContent = '00:00'; // 顯示倒數結束
+        document.querySelector('#COUNTER').classList.add('bounce');
+        return;
+    }
+
+    const msecond = ('0' + (remainingMilliseconds % 1000)).substr(-3, 3); // 計算剩餘毫秒
+    const counter = Math.floor(remainingMilliseconds / 1000); // 剩餘秒數
+    const minute = ('0' + Math.floor(counter / 60)).substr(-2, 2); // 計算剩餘分鐘數，並格式化為兩位數
+    const second = ('0' + (counter % 60)).substr(-2, 2); // 計算剩餘秒數，並格式化為兩位數
+    
+    document.querySelector('#COUNTER').textContent = `${minute}:${second}`; 
+}    
+</script>
+</body>
+</html>
