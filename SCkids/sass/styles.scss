@@ -1265,6 +1265,13 @@ ruby.blank{
 	}
 }
 
+.def-flex{
+	@media screen and (min-width: 992px) {
+		display: flex;
+		align-items: center;
+	}	
+}
+
 $word-border-width: 3px;
 $word-border-color: rgba(#9B010A, .45);
 .word-copybook{ 
