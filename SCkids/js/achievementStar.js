@@ -89,9 +89,7 @@ function pageStar(el) {
 
   if (startLength === doneLength) {
     setTimeout(function () {
-      $("html,body").animate({
-        scrollTop: 0
-      }, 500, function () {
+      $("html,body").animate({scrollTop: 0}, 500, function () {
         rotateStar($('.stepMenu li').eq(index));
       });
     }, 1000); //延遲1秒 
@@ -108,9 +106,7 @@ function articleStar(el) {
 
   if (startLength === doneLength) {
     setTimeout(function () {
-      $("html,body").animate({
-        scrollTop: 0
-      }, 500, function () {
+      $("html,body").animate({scrollTop: 0}, 500, function () {
         rotateStar($('.stepMenu li').eq(1));
       });
     }, 1000); //延遲1秒 
@@ -128,9 +124,7 @@ function CWStar() {
 
   if (startLength === doneLength) {
     setTimeout(function () {
-      $("html,body").animate({
-        scrollTop: 0
-      }, 500, function () {
+      $("html,body").animate({ scrollTop: 0}, 500, function () {
         rotateStar($('[class*="btn-CW"].active'));
       });
     }, 1000); //延遲1秒 	
