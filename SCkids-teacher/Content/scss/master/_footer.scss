@@ -1,0 +1,98 @@
+footer{
+    background-color: $tertiary;
+    color: $white;
+    font-size: .8rem;
+    .footer-info{
+        padding: 1rem 0;
+        .info-logo{
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            > img{
+                max-width: 12.5rem;
+                width: auto;
+                height: auto;
+            } 
+            @media screen and (min-width: 1900px) {
+            margin-left: -8.33333333%;    
+            }
+        }
+        .info-social{
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            .social-facebook{
+                vertical-align: middle;
+                display: inline-block;
+                width: 2.9rem;
+                height: 2.9rem;
+                border-radius: 100%;
+                text-align:center;
+                background-color: #4267b2;
+                overflow: hidden;
+                margin: .75rem;
+                > i{
+                    color:#FFF;
+                    font-size: 2.5rem;
+                    line-height: 1.4;
+                }
+            }
+            .social-youtube{
+                vertical-align: middle;
+                display: inline-block;
+                width: 2.9rem;
+                height: 2.9rem;
+                border-radius: 100%;
+                text-align: center;
+                background-color:#FFF;
+                margin: .75rem;
+                > i{ 
+                    color: #ff0000;
+                    font-size: 2rem;
+                    line-height: 1.45;
+                }
+            } 
+        }
+        .info-info{
+            padding: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @media screen and (min-width: 1200px) {
+            align-items: flex-start;   
+            }
+            h6{
+                font-weight: 300;    
+            }
+            .info-div{
+                padding-left: 1.2rem + .25rem;
+                i{ 
+                    display: inline-block;
+                    text-align: center;
+                    width: 1.2rem;
+                    font-size: 1.2rem;
+                    vertical-align: middle;
+                    margin-left: -1.2rem - .25rem;
+                    margin-right: .25rem;
+                    text-indent: 0;
+                   
+                }
+                @media screen and (min-width: 1200px) {
+                br{
+                    display: none;
+                }
+                br + i {
+                    margin-left: 3rem;
+                }
+                br + span{
+                    margin-left: 2rem;    
+                }    
+                }
+            }
+        }
+    }
+    .footer-copyright{
+        border-top: 1px solid $yellow-100;
+        padding: 2rem 0;    
+    }
+}

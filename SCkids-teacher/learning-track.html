@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SmartReading 適性閱讀 教師端">
+<meta name="author" content="smartreading">
+<meta name="generator" content="smartreading">
+<title>Smart Chinese Kids 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+<body>
+<header> </header>
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-xl-2 d-xl-block sidebarMenu collapse"> </nav>
+    <main class="col-xl-10"> 
+      <!-- ------- ------- ------- ------- ------- ------- ------- -->
+      <h2>追蹤學習</h2>
+      <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
+        <!-- 搜尋 start -->
+        <div class="col-xl-12 mb-3" id="blockSearch">
+          <div class="row g-2 align-items-center justify-content-between">
+            <div class="col-auto">
+              <div class="row gy-1">
+                <div class="col-auto">
+                  <div class="row g-2 align-items-center">
+                    <div class="col-auto">
+                      <label for="searchStartTime" class="col-form-label fs-8">開始時間</label>
+                    </div>
+                    <div class="col-auto">
+                      <input type="date" class="form-control" id="searchStartTime" min="" max="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="row g-2 align-items-center">
+                    <div class="col-auto">
+                      <label for="searchEndTime" class="col-form-label fs-8">結束時間</label>
+                    </div>
+                    <div class="col-auto">
+                      <input type="date" class="form-control" id="searchEndTime" min="" max="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="row gy-2 align-items-center">
+                <div class="col-auto">
+                  <div class="row g-2 align-items-center">
+                    <div class="col-auto">
+                      <label for="searchKeywords" class="col-form-label fs-7">搜尋</label>
+                    </div>
+                    <div class="col-auto">
+                      <div class="input-group">
+                        <div class="input-group-clear">
+                          <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
+                          <button class="btn btn-close" type="button"></button>
+                        </div>
+                        <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary lh-1" type="button" id="btnSearch"><i class="fa-solid fa-magnifying-glass fs-5 mx-n1"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 搜尋  end  --> 
+        <!-- 表格 start -->
+        <div class="col-xl-12 mb-5">
+          <table class="table table-bordered cs-table table-trackLists" id="trackLists">
+            <thead>
+              <tr>
+                <th scope="col" class="td-no">序號</th>
+                <th scope="col" class="td-account">帳號</th>
+                <th scope="col" class="td-Cname">中文姓名</th>
+                <th scope="col" class="td-Ename">英文姓名</th>
+                <th scope="col" class="td-grade">年級</th>
+                <th scope="col" class="td-class">班級</th>
+                <th scope="col" class="td-onlineCount">上線次數</th>
+                <th scope="col" class="td-usageTime">實際使用時間</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-no">1</td>
+                <td class="td-account">srtt01@smartreading.com</td>
+                <td class="td-Cname">張花花</td>
+                <td class="td-Ename"></td>
+                <td class="td-grade">3</td>
+                <td class="td-class">Test 01</td>
+                <td class="td-onlineCount">10</td>
+                <td class="td-usageTime">300小時 52分 30秒</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- 表格  end  --> 
+      </div>
+      <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+    </main>
+  </div>
+</div>
+<footer> </footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+
+<!-- widgets JS --> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script src="Content/js/doubleScorollbar.js"></script> 
+
+<!-- my JS --> 
+<script src="Content/js/main.js"></script> 
+<script>
+$(document).ready(function() {    
+    //call header、footer、 sidebar  
+    $('header').load('master_header.html', function(){
+        //當前頁名稱顯示
+        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
+    });  
+    $('footer').load('master_footer.html'); 
+    $('#sidebarMenu').load('master_sidebar.html', function(){
+        //當前頁actvie
+        $('#sidebarMenu .nav-link[href*="learning-track"]').addClass('active'); 
+    }); 
+    
+    const list = $('#trackLists');
+    
+    //datatables 
+	list.DataTable({
+        //serverSide: true,
+        order: [],  //取消默認排序icon
+        autoWidth: false,
+        responsive: false,
+		searching: true,
+		pageLength: 10,
+		pagingType: "simple_numbers",
+        dom: '<r<"table-responsive"t>>'+
+			 '<"datatables-custom-footer clearfix"pi>',
+        language: {
+          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+        },
+        ajax: 'Content/json/learning-track/track.json',
+        columnDefs: [
+            { //序號
+                targets: 0, 
+                title: '序號',
+                width: '4%',
+                className: 'td-no',
+                orderable: false,
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    return meta.row + 1; 
+                } 
+            },
+            {//帳號
+                targets: 1,
+                title: '帳號',
+                data: 'account',
+                width: '15%',
+                className: 'td-account',
+                orderable: true,
+                orderDataType: 'dom-text',
+                type: 'string',
+            },
+            {//中文姓名
+                targets: 2, 
+                title: '中文姓名',
+                data: 'Cname',
+                width: '8%',
+                className: 'td-Cname',
+                orderable: true,
+                orderDataType: 'dom-text',
+                type: 'string',
+            },
+            {//英文姓名
+                targets: 3, 
+                title: '英文姓名',
+                data: 'Ename',
+                width: '8%',
+                className: 'td-Ename',
+                orderable: true,
+                orderDataType: 'dom-text',
+                type: 'string',
+            },
+            {//年級
+                targets: 4, 
+                title: '年級',
+                data: 'grade',
+                width: '8%',
+                className: 'td-grade',
+                orderable: true,
+                orderDataType: 'dom-text',
+                type: 'string',
+            },
+            {//班級
+                targets: 5, 
+                title: '班級',
+                data: 'class',
+                width: '7%',
+                className: 'td-class',
+                orderable: false,
+                orderDataType: 'dom-text',
+                type: 'string',
+            },
+            {//上線次數
+                targets: 6, 
+                title: '上線次數',
+                data: 'onlineCount',
+                width: '8%',
+                className: 'td-onlineCount',
+                orderable: true,
+                type: 'numeric',
+            },
+            {//實際使用時間
+                targets: 7, 
+                title: '實際使用時間',
+                data: 'usageTime',
+                width: '7%',
+                className: 'td-usageTime',
+                orderable: true,
+                orderDataType: 'dom-text',
+                type: 'string',
+            }   
+        ],
+        initComplete: function() {
+            //datatable footer input page
+            datatableInputPage(list);
+        }
+    });
+    
+    //[修改資料]
+    $('#edit').click(function(){
+        //功能按鈕、搜尋 區域不可按
+        $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', true); 
+        
+        //表格排序關閉
+        list.find('thead th, thead td')
+                .removeClass('sorting sorting sorting_asc sorting_desc')
+                .unbind('click');
+        
+        //表格欄位可編輯
+        list.find('input, select').attr('disabled', false).removeClass('readonly'); 
+        
+        //頁碼隱藏(因僅可編輯目前畫面的資料)
+        $('.datatables-custom-footer').hide(); 
+        
+        //[修改資料]-按鈕 區域顯示
+        $('#blockEditBtns').show(); 
+    });
+    
+    //[修改資料]>[取消]
+    $('#editCancel').click(function(){
+        //do something... (若有修改資料，則還原為原資料)
+        
+        //功能按鈕、搜尋 區域可按
+        $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+        
+        //表格排序開啟
+        list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
+                .addClass('sorting')
+                .each(function(){
+                    let i = $(this).index(),
+                        c = $(this).attr('class').replace(' sorting','');
+                    list.DataTable().order.listener('.' + c, i);
+                });
+        
+        //表格欄位不可編輯
+        list.find('input, select').attr('disabled', true).addClass('readonly');
+        
+        //頁碼顯示
+        $('.datatables-custom-footer').show(); 
+        
+        //[修改資料]-訊息 清空錯誤
+        $('#blockEditMsg').text(''); 
+        list.find('.invalid').removeClass('invalid');
+        
+        //[修改資料]-按鈕 區域隱藏
+        $('#blockEditBtns').hide(); 
+    });
+    
+    //[修改資料]>[確定修改]
+    $('#editOk').click(function(){
+        let editOk = true; //[true | false] [成功 | 錯誤]
+        
+        //do something... (驗證)
+        
+        if(editOk == true){//成功修改
+            //do something... (修改)
+            
+            alertModal('<div class="text-red">修改成功！</div>');
+            
+            $('#alertModal').on('hidden.bs.modal', function () {
+                //功能按鈕、搜尋 區域可按
+                $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+                
+                //表格排序開啟
+                list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
+                        .addClass('sorting')
+                        .each(function(){
+                            let i = $(this).index(),
+                                c = $(this).attr('class').replace(' sorting','');
+                            list.DataTable().order.listener('.' + c, i);
+                        });
+
+                //表格欄位不可編輯
+                list.find('input, select').attr('disabled', true).addClass('readonly');
+
+                //頁碼顯示
+                $('.datatables-custom-footer').show(); 
+
+                //[修改資料]-訊息 清空錯誤
+                $('#blockEditMsg').text(''); 
+                list.find('.invalid').removeClass('invalid');
+
+                //[修改資料]-按鈕 區域隱藏
+                $('#blockEditBtns').hide();     
+            });  
+        }else{//錯誤修改 demo
+            $('#blockEditMsg').text('密碼請勿小於4碼！');  
+            list.find('tbody tr:nth-child(1) .td-password input').addClass('invalid');
+        }
+    });
+    
+    //[新增學生]
+    $('#insert').click(function(){
+        $('#insertModal').modal('show');
+    });
+    
+    //[新增學生]-批次新增[新增]disabled狀態
+    $('#inputCSV').change(function(){
+        if( $('#inputCSV').val() ){
+            $('#insertBat').attr('disabled', false);   
+        }    
+    });
+    
+    //[新增學生]-單筆新增、批次新增[新增]
+    $('#insertSin, #insertBat').click(function(){
+        let insertOk = true; //[true | false] [成功 | 失敗]
+        
+        //demo驗證
+        let errorText = '';
+        let validationField = '';
+        if($(this).attr('id') == 'insertSin'){
+            validationField = '#insertAccount, #insertPassword, #insertCname, #insertLang';
+        }else if($(this).attr('id') == 'insertBat'){
+            validationField = '#inputCSV'; 
+        } 
+        
+        //demo偵測欄位是否為空值、密碼#inputPassword是否小於4碼
+        $(validationField).each(function(){
+            if( $(this).val().trim() == '' ){
+                $(this).addClass('empty invalid');
+            }else if ($(this).attr('id') == 'insertPassword' && $(this).val().trim().length < 4){
+                $(this).removeClass('empty invalid').addClass('short invalid'); 
+            }else {
+                $(this).removeClass('empty short invalid');
+            }
+        });
+        
+        //demo錯誤訊息內容
+        if( $(validationField).hasClass('empty') ){
+             errorText += '*號為必填欄位<br>';    
+        }
+        if( $(validationField).hasClass('short') ){
+            errorText += '密碼不得小於4碼<br>'; 
+        }
+        
+        //demo是否有錯誤訊息、驗證是否成功
+        if (errorText != ''){
+            insertOk = false;  
+        }else{
+            insertOk = true;    
+        }
+        
+        if(insertOk == true){ //新增成功
+            $('#insertSinMsg, #insertBatMsg').html(''); 
+            $('#insertModal').find('input, select').removeClass('empty short invalid');
+            
+            alertModal('<div class="text-red">新增成功！</div>');
+            
+            $('#alertModal').on('hidden.bs.modal', function(){
+                //清空表單
+                $('#insertModal').find('input, select').val('');
+                $('#insertModal').find('input[type="radio"]').prop('checked', false);
+                
+                $('#insertBat').attr('disabled', true);    
+            });    
+        }else{//新增失敗
+            if($(this).attr('id') == 'insertSin'){
+                $('#insertSinMsg').html(errorText); 
+            }else if($(this).attr('id') == 'insertBat'){
+                $('#insertBatMsg').html('請檢查上傳表格內容是否有誤！');//demo訊息內容(前端無法檢查)
+            } 
+        }   
+    });   
+    
+    //[搜尋]
+    $('#btnSearch').click(function(){ 
+        list.DataTable().search( $('#searchKeywords').val() ).draw();    
+    });
+    //[搜尋][X]重置
+    $('#searchKeywords + .btn-close').click(function(){ 
+        list.DataTable().search('').draw();                                    
+    }); 
+});    
+</script>
+</body>
+</html>

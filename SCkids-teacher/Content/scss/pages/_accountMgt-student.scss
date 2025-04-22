@@ -1,0 +1,22 @@
+.table-studentLists{
+    min-width: 1430px;
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.td-no{  width: 4%; }
+                &.td-account{  width: 15%; }
+                &.td-password{  width: 7%; } 
+                &.td-Cname{  width: 8%; }
+                &.td-Ename{  width: 8%; } 
+                &.td-IDnumber{  width: 10%; }
+                &.td-grade{  width: 8%; }
+                &.td-class{  width: 7%; }
+                &.td-Sid{  width: 8%; }
+                &.td-year{  width: 7%; }
+                &.td-lang{  width: 6%; } 
+                &.td-gender{  width: 6%; }
+                &.td-status{  width: 6%; }      
+            }   
+        }
+    }
+}

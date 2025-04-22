@@ -1,0 +1,20 @@
+.table-teacherLists{
+    min-width: 1430px;
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.td-no{        width: 4%;  }
+                &.td-identity{  width: 8%;  } 
+                &.td-account{   width: 19%; }
+                &.td-password{  width: 15%; } 
+                &.td-Cname{     width: 12%; }
+                &.td-Ename{     width: 12%; } 
+                &.td-IDnumber{  width: 12%; }
+                &.td-lang{      width:  6%; } 
+                &.td-gender{    width:  6%; }
+                &.td-state{     width:  6%; } 
+                &.td-time{      width:  6%; display: none; }
+            }   
+        }
+    }
+}

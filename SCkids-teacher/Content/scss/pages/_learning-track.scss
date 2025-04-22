@@ -1,0 +1,17 @@
+.table-trackLists{
+    min-width: 1430px;
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.td-no{ 		  width:  4%; }
+                &.td-account{  	  width: 10%; }
+                &.td-Cname{  	  width: 15%; }
+                &.td-Ename{  	  width: 15%; } 
+                &.td-grade{  	  width: 10%; }
+                &.td-class{ 	  width: 10%; }
+                &.td-onlineCount{ width: 13%; }
+                &.td-usageTime{   width: 23%; }  
+            }   
+        }
+    }
+}

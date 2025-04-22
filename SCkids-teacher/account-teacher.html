@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="smartreading-XXXX">
+<meta name="author" content="smartreading">
+<meta name="generator" content="smartreading">
+<title>Smart Chinese Kids 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">	
+	
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+<body>
+<header> </header>
+    
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-xl-2 d-xl-block sidebarMenu collapse"> </nav>
+    <main class="col-xl-10"> 
+      <!-- ------- ------- ------- ------- ------- ------- ------- -->
+      <h2>教師管理</h2>
+      <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
+        <!-- 按鈕 start -->
+        <div class="col-xxl-5 mb-3" id="blockBtns">
+          <button type="button" class="btn btn-outline-primary bg-gradient my-1" id="edit"><i class="fa-solid fa-pen-to-square me-1"></i>修改資料</button>
+          <button type="button" class="btn btn-outline-primary bg-gradient my-1" id="insert"><i class="fa-solid fa-plus me-1"></i>新增帳號</button>
+        </div>
+        <!-- 按鈕  end  --> 
+        <!-- 搜尋 start -->
+        <div class="col-xxl-7 mb-3" id="blockSearch">
+          <div class="row g-2 align-items-center justify-content-end">
+            <div class="col-auto"> <label for="searchState" class="col-form-label fs-7">狀態</label> </div>
+            <div class="col-auto">
+              <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchState">
+                <option value="" selected>全部</option>
+                <option value="ON">ON</option>
+                <option value="OFF">OFF</option>
+              </select>
+            </div>
+            <div class="col-auto d-none d-lg-inline ms-3"> <label for="searchKeywords" class="col-form-label fs-7">搜尋</label> </div>
+            <div class="col-auto">
+              <div class="input-group">
+                <div class="input-group-clear">
+                  <input type="text" class="form-control rounded-0" placeholder="請輸入關鍵字..." aria-label="請輸入關鍵字..." aria-describedby="btnSearch" id="searchKeywords">
+                  <button class="btn btn-close" type="button"></button>
+                </div>
+                <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary lh-1" type="button" id="btnSearch"><i class="fa-solid fa-magnifying-glass fs-5 mx-n1"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 搜尋  end  --> 
+        <!-- [修改資料]-依帳號新增時間排序 start -->
+        <div class="col-xl-12" id="blockSortTime" style="display: none;">
+          <div class="bg-gray-300 p-1">
+            <button type="button" class="btn btn-primary rounded-0" id="sortTime">依帳號新增時間排序<i class="fa-solid fa-up-long ms-1"></i></button>
+          </div>
+        </div>
+        <!-- [修改資料]-依帳號新增時間排序  end  --> 
+        <!-- 表格 start -->
+        <div class="col-xl-12 mb-5">
+          <table class="table table-bordered cs-table table-teacherLists" id="teacherLists">
+            <thead>
+              <tr>
+                <th scope="col" class="td-no">序號</th>
+                <th scope="col" class="td-identity">身份</th>
+                <th scope="col" class="td-account">帳號/信箱</th>
+                <th scope="col" class="td-password">密碼</th>
+                <th scope="col" class="td-Cname">中文姓名</th>
+                <th scope="col" class="td-Ename">英文姓名</th>
+                <th scope="col" class="td-IDnumber">身份證號</th>
+                <th scope="col" class="td-lang">語系</th>
+                <th scope="col" class="td-gender">性別</th>
+                <th scope="col" class="td-state">狀態</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-no">1</td>
+                <td class="d-identity"><select class="form-select form-select-arrow-sm rounded-0">
+                    <option value="" selected>教師</option>
+                    <option value="">??</option>
+                  </select></td>
+                <td class="td-account"><input type="text" class="form-control rounded-0 readonly" value="srtt01@smartreading.com" disabled readonly></td>
+                <td class="td-password"><input type="text" class="form-control rounded-0" value="123456789"></td>
+                <td class="td-Cname"><input type="text" class="form-control rounded-0" value="張花花"></td>
+                <td class="td-Ename"><input type="text" class="form-control rounded-0" value=""></td>
+                <td class="td-IDnumber"><input type="text" class="form-control rounded-0" value="A123456789"></td>
+                <td class="td-lang"><select class="form-select form-select-arrow-sm rounded-0">
+                    <option value="TW">TW</option>
+                    <option value="CN">CN</option>
+                    <option value="EN">EN</option>
+                  </select></td>
+                <td class="d-gender"><select class="form-select form-select-arrow-sm rounded-0">
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                  </select></td>
+                <td class="d-state"><div class="form-check form-switch form-check-inline m-0">
+                    <input class="form-check-input" type="checkbox" role="switch">
+                  </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- 表格  end  --> 
+        <!-- [修改資料]-訊息 start -->
+        <div class="col-xl-12 text-center text-red fs-8 mb-2" id="blockEditMsg"><!--錯誤訊息在這--></div>
+        <!-- [修改資料]-訊息  end  --> 
+        <!-- [修改資料]-按鈕 start -->
+        <div class="col-xl-12 text-center mb-5" id="blockEditBtns" style="display: none;">
+          <div>
+            <button type="button" class="btn btn-outline-primary m-1" id="editCancel">取消</button>
+            <button type="button" class="btn btn-primary m-1" id="editOk">確定修改</button>
+          </div>
+        </div>
+        <!-- [修改資料]-按鈕  end  --> 
+      </div>
+      <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+    </main>
+  </div>
+</div>
+
+<!-- Modal#insertModal 新增帳號 start -->
+<div class="modal fade" id="insertModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="insertModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-full modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-0">
+      <div class="modal-header">
+        <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"> 
+        <!-- 單筆新增 start -->
+        <div class="mb-3 row">
+          <h3 class="col-sm-4 text-sm-end h6">單筆新增</h3>
+        </div>
+        <div class="cs-form mb-4 col-lg-10 col-xl-7 mx-auto">
+          <div class="mb-3 row align-items-center"> <label for="insertAccount" class="col-sm-4 col-form-label text-sm-end">帳號/信箱<span class="text-red">*</span></label>
+            <div class="col-sm-6">
+              <input type="email" class="form-control rounded-0" id="insertAccount">
+            </div>
+          </div>
+          <div class="mb-3 row align-items-center"> <label for="insertPassword" class="col-sm-4 col-form-label text-sm-end">密碼<span class="text-red">*</span></label>
+            <div class="col-sm-6">
+              <div class="input-group pd-show-hide">
+                <input type="password" class="form-control rounded-0 border-end-0" id="insertPassword" aria-describedby="btnPdShowHide">
+                <button class="btn rounded-0 border border-start-0 px-3" type="button" id="btnPdShowHide"><i class="fa-solid fa-eye-slash"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 row align-items-center"> <label for="insertCname" class="col-sm-4 col-form-label text-sm-end">中文姓名<span class="text-red">*</span></label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control rounded-0" id="insertCname">
+            </div>
+          </div>
+          <div class="mb-3 row align-items-center"> <label for="insertEname" class="col-sm-4 col-form-label text-sm-end" value="zhanghuahua">英文姓名</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control rounded-0" id="insertEname">
+            </div>
+          </div>
+          <div class="mb-3 row align-items-center"> <label for="insertId" class="col-sm-4 col-form-label text-sm-end">身分證號</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control rounded-0" id="insertIDnumber">
+            </div>
+          </div>
+          <div class="mb-3 row align-items-center"> <label for="insertLang" class="col-sm-4 col-form-label text-sm-end">語系<span class="text-red">*</span></label>
+            <div class="col-sm-6">
+              <select class="form-select rounded-0" id="insertLang">
+                <option value="">請選擇...</option>
+                <option value="TW">TW</option>
+                <option value="CN">CN</option>
+                <option value="EN">EN</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3 row align-items-center"> <label for="insertGender" class="col-sm-4 col-form-label text-sm-end">性別</label>
+            <div class="col-sm-6">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="insertGender" id="insertGender1" value="1">
+                <label class="form-check-label" for="insertGender1">男</label> </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="insertGender" id="insertGender2" value="2">
+                <label class="form-check-label" for="insertGender2">女</label> </div>
+            </div>
+          </div>
+          <div class="mb-3 row align-items-center">
+            <div class="col-sm-6 offset-sm-4">
+              <div class="text-red text-center fs-8 mb-n2" id="insertSinMsg"><!--錯誤訊息在這--></div>
+            </div>
+          </div>
+          <div class="mb-3 row align-items-center">
+            <div class="col-sm-6 offset-sm-4">
+              <button type="button" class="btn btn-primary w-100" id="insertSin">新增</button>
+            </div>
+          </div>
+        </div>
+        <!-- 單筆新增  end  --> 
+        <!-- 批次新增 start-->
+        <div class="mb-3 row">
+          <h3 class="col-sm-4 text-sm-end h6">批次新增</h3>
+        </div>
+        <div class="mb-3 text-center fs-8">*請先下載<a href="" class="mx-1">範例模板</a>格式，並在填寫完畢後上傳，詳情請見<a href="" class="mx-1">批次上傳說明</a>。</div>
+        <div class="cs-form mb-4 col-lg-10 col-xl-7 mx-auto">
+          <div class="mb-3 row align-items-center">
+            <div class="col-sm-9 mx-auto ps-md-3 ps-lg-5 pe-sm-0">
+              <div class="input-group input-group-file"> <span class="d-none d-sm-inline-flex me-2 SRicon-upload"></span>
+                <input type="text" class="form-control rounded-0" placeholder="請選擇檔案.CSV..." aria-describedby="btnCSV" id="fileInputText" readonly>
+                <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary" type="button" id="fileBrowse">瀏覽...</button>
+                <input type="file" class="form-control rounded-0" id="inputCSV" accept=".csv" required>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 row align-items-center">
+            <div class="col-sm-6 offset-sm-4">
+              <div class="text-red text-center fs-8 mb-n2" id="insertBatMsg"><!--錯誤訊息在這--></div>
+            </div>
+          </div>
+          <div class="mb-3 row align-items-center">
+            <div class="col-sm-6 offset-sm-4">
+              <button type="button" class="btn btn-primary w-100" id="insertBat" disabled>新增</button>
+            </div>
+          </div>
+        </div>
+        <!-- 批次新增  end--> 
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal#insertModal 新增帳號  end  -->
+
+<footer> </footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script> 
+
+<!-- widgets JS --> 
+<script src="Content/js/bootstrap.bundle.min.js"></script> 
+<script src="Content/widgets/DataTables/datatables.min.js"></script> 
+<script src="Content/js/doubleScorollbar.js"></script> 
+
+<!-- my JS --> 
+<script src="Content/js/main.js"></script> 
+<script>
+$(document).ready(function() {    
+    //call header、footer、 sidebar  
+    $('header').load('master_header.html', function(){
+        //當前頁名稱顯示
+        $('#currentPage').text( $('main h2').text() ).addClass('active'); 
+    }); 
+	
+    $('footer').load('master_footer.html'); 
+    $('#sidebarMenu').load('master_sidebar.html', function(){
+        //當前頁actvie
+        $('#sidebarMenu .nav-link[href*="account-teacher"]').addClass('active');
+    }); 
+    
+    const list = $('#teacherLists');
+
+    //datatables 
+	list.DataTable({
+        //serverSide: true,
+        order: [],  //取消默認排序icon
+        autoWidth: false,
+        responsive: false,
+		searching: true,
+		pageLength: 10,
+		pagingType: "simple_numbers",
+        dom: '<r<"table-responsive"t>>'+
+			 '<"datatables-custom-footer clearfix"pi>',
+        language: {
+          url: 'Content/widgets/DataTables/lang/Chinese-traditional.json'
+        },
+        ajax: 'Content/json/accountMgt-teacher/teacherLists.json',
+        columnDefs: [
+            {//序號
+                targets: 0,
+                title: '序號',
+                width: '4%',
+                className: 'td-no',
+                orderable: false,
+                type: 'numeric',
+                render: function (data, type, row, meta) {
+                    return meta.row + 1; 
+                } 
+            },
+            {//身分
+                targets: 1, 
+                title: '身分',
+                data: 'identity',
+                width: '8%',
+                className: 'td-identity',
+                orderable: true,
+                orderDataType: 'dom-select',
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
+                                      <option value="帳號管理者">帳號管理者</option>
+                                      <option value="教師">教師</option> 
+                                      <option value="學生">學生</option>  
+                                     </select>`);
+
+                    $select.find('option[value="' + data + '"]').attr('selected', 'selected');
+
+                    return $select[0].outerHTML; 
+                }  
+            },
+            {//帳號/信箱 
+                targets: 2,
+                title: '帳號/信箱',
+                data: 'account',
+                width: '19%',
+                className: 'td-account',
+                orderable: true,
+                orderDataType: 'dom-text',
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled readonly>`;
+                }
+            },
+            {//密碼
+                targets: 3, 
+                title: '密碼',
+                data: 'password',
+                width: '15%',
+                className: 'td-password',
+                orderable: false,
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+                }
+            },
+            {//中文姓名
+                targets: 4, 
+                title: '中文姓名',
+                data: 'Cname',
+                width: '12%',
+                className: 'td-Cname',
+                orderable: true,
+                orderDataType: 'dom-text',
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+                } 
+            },
+            {//英文姓名
+                targets: 5, 
+                title: '英文姓名',
+                data: 'Ename',
+                width: '12%',
+                className: 'td-Ename',
+                orderable: false,
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+                } 
+            },
+            {//身分證號
+                targets: 6, 
+                title: '身分證號',
+                data: 'IDnumber',
+                width: '12%',
+                className: 'td-IDnumber',
+                orderable: false,
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    return `<input type="text" class="form-control rounded-0 readonly" value="` + data + `" disabled>`;
+                } 
+            },
+            {//語系
+                targets: 7, 
+                title: '語系',
+                data: 'lang',
+                width: '6%',
+                className: 'td-lang',
+                orderable: false,
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
+                                      <option value="TW">TW</option>
+                                      <option value="CN">CN</option>
+                                      <option value="EN">EN</option>
+                                    </select>`);
+
+                    $select.find('option[value="' + data + '"]').attr('selected', 'selected');
+
+                    return $select[0].outerHTML;
+                }
+            },
+            {//性別
+                targets: 8, 
+                title: '性別',
+                data: 'gender',
+                width: '6%',
+                className: 'td-gender',
+                orderable: false,
+                type: 'string',
+                render: function (data, type, row, meta) {
+                    var $select = $(`<select class="form-select form-select-arrow-sm rounded-0 readonly" disabled>
+                                      <option value="1">男</option>
+                                      <option value="2">女</option>
+                                    </select>`);
+
+                    $select.find('option[value="' + data + '"]').attr('selected', 'selected');
+
+                    return $select[0].outerHTML;
+                } 
+            },
+            {//狀態
+                targets: 9, 
+                title: '狀態',
+                data: 'state',
+                width: '6%',
+                className: 'td-state',
+                orderable: false,
+                //orderDataType: 'dom-html', //orderDataType: 'dom-checkbox',
+                //type: 'string',
+                render: function (data, type, row, meta) {
+                    let state;
+                    switch (data) {
+                        case 'ON':
+                            state = `<div class="form-check form-switch form-check-inline m-0">
+                                        <input class="form-check-input readonly" type="checkbox" role="switch" checked disabled>
+                                      </div>`;
+                            break
+                        case 'OFF':
+                            state = `<div class="form-check form-switch form-check-inline m-0">
+                                        <input class="form-check-input readonly" type="checkbox" role="switch" disabled>
+                                      </div>`;
+                            break    
+                        default:
+                            state = '';
+                            break 
+                    }
+                    return state;
+                } 
+            }
+            
+        ],
+        initComplete: function() {
+            //datatable footer input page
+            datatableInputPage(list);
+        }
+    });
+
+    //[修改資料]
+    $('#edit').click(function(){
+        //功能按鈕、搜尋 區域不可按
+        $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', true);
+        
+        //[依帳號新增時間排序] 區域顯示
+        $('#blockSortTime').show(); 
+        
+        //表格排序關閉
+        list.find('thead th, thead td')
+                .removeClass('sorting sorting sorting_asc sorting_desc')
+                .unbind('click');
+
+        //表格欄位可編輯
+        list.find('td:not(.td-account)')
+            .find('input, select').attr('disabled', false).removeClass('readonly'); 
+        
+        //頁碼隱藏(因僅可編輯目前畫面的資料)
+        $('.datatables-custom-footer').hide(); 
+
+        //[修改資料]-按鈕 區域顯示
+        $('#blockEditBtns').show(); 
+    });
+    
+    //[修改資料]>[取消]
+    $('#editCancel').click(function(){
+        //do something... (若有修改資料，則還原為原資料)
+        
+        //功能按鈕、搜尋 區域可按
+        $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+        
+        //[依帳號新增時間排序] 區域隱藏
+        $('#blockSortTime').hide(); 
+        
+        //表格排序開啟
+        list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
+            .addClass('sorting')
+            .each(function(){
+                let i = $(this).index(),
+                    c = $(this).attr('class').replace(' sorting','');
+                list.DataTable().order.listener('.' + c, i);
+            });
+        
+        //表格欄位不可編輯
+        list.find('input, select').attr('disabled', true).addClass('readonly');
+        
+        //頁碼顯示
+        $('.datatables-custom-footer').show(); 
+        
+        //[修改資料]-訊息 清空錯誤
+        $('#blockEditMsg').text(''); 
+        list.find('.invalid').removeClass('invalid');
+        
+        //[修改資料]-按鈕 區域隱藏
+        $('#blockEditBtns').hide(); 
+    });
+    
+    //[修改資料]>[確定修改]
+    $('#editOk').click(function(){
+        let editOk = true; //[true | false] [成功 | 失敗]
+        
+        //do something... (驗證)
+        
+        if(editOk == true){//修改成功
+            //do something... (修改)
+            
+            alertModal('<div class="text-red">修改成功！</div>');
+            
+            $('#alertModal').on('hidden.bs.modal', function () {
+                //功能按鈕、搜尋 區域可按
+                $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
+
+                //[依帳號新增時間排序] 區域隱藏
+                $('#blockSortTime').hide(); 
+                
+                //表格排序開啟
+                list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
+                        .addClass('sorting')
+                        .each(function(){
+                            let i = $(this).index(),
+                                c = $(this).attr('class').replace(' sorting','');
+                            list.DataTable().order.listener('.' + c, i);
+                        });
+
+                //表格欄位不可編輯
+                list.find('input, select').attr('disabled', true).addClass('readonly');
+
+                //頁碼顯示
+                $('.datatables-custom-footer').show(); 
+
+                //[修改資料]-訊息 清空錯誤
+                $('#blockEditMsg').text(''); 
+                list.find('.invalid').removeClass('invalid');
+
+                //[修改資料]-按鈕 區域隱藏
+                $('#blockEditBtns').hide();     
+            });  
+        }else{//修改失敗 demo
+            $('#blockEditMsg').text('密碼請勿小於4碼！');
+            list.find('tbody tr:nth-child(1) .td-password input').addClass('invalid'); 
+        }
+    });
+
+    //[新增帳號]
+    $('#insert').click(function(){
+        $('#insertModal').modal('show');
+    });
+    
+    //[新增帳號]-批次新增[新增]disabled狀態
+    $('#inputCSV').change(function(){
+        if( $('#inputCSV').val() ){
+            $('#insertBat').attr('disabled', false);   
+        }    
+    });
+    
+    //[新增帳號]-單筆新增、批次新增[新增]
+    $('#insertSin, #insertBat').click(function(){
+        let insertOk = true; //[true | false] [成功 | 失敗]
+        
+        //demo驗證
+        let errorText = '';
+        let validationField = '';
+        if($(this).attr('id') == 'insertSin'){
+            validationField = '#insertAccount, #insertPassword, #insertCname, #insertLang';
+        }else if($(this).attr('id') == 'insertBat'){
+            validationField = '#inputCSV'; 
+        } 
+        
+        //demo偵測欄位是否為空值、密碼#inputPassword是否小於4碼
+        $(validationField).each(function(){
+            if( $(this).val().trim() == '' ){
+                $(this).addClass('empty invalid');
+            }else if ($(this).attr('id') == 'insertPassword' && $(this).val().trim().length < 4){
+                $(this).removeClass('empty invalid').addClass('short invalid'); 
+            }else {
+                $(this).removeClass('empty short invalid');
+            }
+        });
+        
+        //demo錯誤訊息內容
+        if( $(validationField).hasClass('empty') ){
+             errorText += '*號為必填欄位<br>';    
+        }
+        if( $(validationField).hasClass('short') ){
+            errorText += '密碼不得小於4碼<br>'; 
+        }
+        
+        //demo是否有錯誤訊息、驗證是否成功
+        if (errorText != ''){
+            insertOk = false;  
+        }else{
+            insertOk = true;    
+        }
+        
+        if(insertOk == true){ //新增成功
+            $('#insertSinMsg, #insertBatMsg').html('');
+            $('#insertModal').find('input, select').removeClass('empty short invalid');
+            
+            alertModal('<div class="text-red">新增成功！</div>');
+            
+            $('#alertModal').on('hidden.bs.modal', function(){
+                //清空表單
+                $('#insertModal').find('input, select').val('');
+                $('#insertModal').find('input[type="radio"]').prop('checked', false);
+                
+                $('#insertBat').attr('disabled', true);    
+            });    
+        }else{//新增失敗
+            if($(this).attr('id') == 'insertSin'){
+                $('#insertSinMsg').html(errorText); 
+            }else if($(this).attr('id') == 'insertBat'){
+                $('#insertBatMsg').html('請檢查上傳表格內容是否有誤！');//demo訊息內容(前端無法檢查)
+            } 
+        }
+    });  
+    
+    //[搜尋]
+    $('#btnSearch').click(function(){ 
+        list.DataTable().search( $('#searchKeywords').val() ).draw();  
+    }); 
+    //[搜尋][X]重置
+    $('#searchKeywords + .btn-close').click(function(){ 
+        list.DataTable().search('').draw();                                    
+    }); 
+});    
+</script>
+</body>
+</html>

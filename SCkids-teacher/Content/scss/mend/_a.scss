@@ -1,0 +1,6 @@
+a {
+    &.disabled, &[disabled], &[disabled="disabled"]{
+        pointer-events: none;  
+        opacity: $btn-disabled-opacity;
+    }
+}

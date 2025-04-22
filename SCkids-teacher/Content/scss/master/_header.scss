@@ -1,0 +1,169 @@
+header {
+    background-color: $white;
+    border-bottom: 1px solid $brown-100;
+    .navbar{
+        padding-top: 2rem;
+        @media screen and (min-width: 576px) {
+        padding-top: 0;    
+        min-height: 5.8rem;       
+        align-items: center;
+        padding-bottom: $navbar-padding-y;   
+        }
+    }
+    
+    .navbar-brand{
+        margin-right: 0;
+        h1{
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            font-size: 1.2rem;
+            @media screen and (min-width: 576px) {
+            font-size: 1.5rem; 
+            transform: none;    
+            }
+        }
+        .cs-logo{
+            width: 5.1rem;
+            @media screen and (min-width: 576px) {
+            width: 7.7rem;
+            }    
+        }
+        .cs-h1{
+            &::before{
+                content: "";
+                display: inline-block;
+                width: 1px;
+                height: 1.5rem*1.1;
+                background-color: $gray-900;
+                margin: 0 .5rem;
+                vertical-align: middle;
+                @media screen and (min-width: 576px) {
+                margin: 0 .75rem;    
+                }
+            }
+            .cs-h1-current{
+                display: none;
+                font-size: 1.2rem;
+                &.active::before{
+                    content: "";
+                    display: inline-block;
+                    width: .75rem;
+                    height: .75rem;
+                    border-right: 1px solid $gray-900;
+                    border-bottom: 1px solid $gray-900;
+                    transform: rotate(-45deg);
+                    margin-left: .25rem;
+                    margin-right: .75rem;
+                }
+                @media screen and (min-width: 576px) {
+                display: inline-block;   
+                }
+            }
+        }
+    }
+    .cs-user{
+        position: absolute;
+        top: .75rem;
+        right: .75rem;   
+        font-size: .8rem;
+        @media screen and (min-width: 576px) {
+        position: relative;
+        top: 0;
+        right: 0;     
+        margin-right: .75rem;  
+        font-size: 1rem;    
+        }
+        @media screen and (min-width: 1200px) {
+        margin-right: 0;    
+        }
+        .nav-link{
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            font-weight: 400;
+            background-color: $gray-300; 
+            @media screen and (min-width: 576px) {
+            background-color: transparent;
+            }
+            &::before{
+                content: "";
+                display: inline-block;
+                width: 1.1rem;
+                height: 1.1rem;
+                background-image: escape-svg(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--%3E%3Cpath fill='#{$primary}' d='M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z'/%3E%3C/svg%3E"));
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 100% 100%;
+                margin-right: .25rem;
+            }
+            .cs-user-name{ 
+                white-space: nowrap; 
+                text-overflow: ellipsis;
+                overflow: hidden;
+                max-width: 10rem;
+                @media screen and (min-width: 576px) {
+                max-width: 5rem;    
+                }
+                @media screen and (min-width: 992px) {
+                max-width: 10rem;    
+                }
+            }
+            .cs-user-identity{ 
+                display: none; 
+                @media screen and (min-width: 992px) {
+                display: inline-block;
+                margin-left: 1rem;    
+                white-space: nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis;       
+                max-width: calc(5em + 1rem);    
+                }
+            }
+            
+            &:hover, &:focus, &:active,
+            &.hover, &.focus, &.active,
+            &.show{
+                background-color: $gray-300;   
+                label{
+                    cursor: pointer;        
+                }
+            }
+            + .dropdown-menu{
+                left: auto;
+                right: 0;
+                padding: 0;
+                border-radius: 0;
+                border-color: transparent;
+                @media screen and (min-width: 992px) {
+                left: 50%;
+                transform: translateX(-50%);    
+                }
+                .dropdown-item{
+                    text-align: center;
+                    &:hover, &:focus, &:active{
+                        background-color: $gray-100; 
+                        color: $dropdown-link-color; 
+                    }    
+                }
+            }    
+        }   
+    }
+    .navbar-toggler{
+        font-size: 1rem;
+        padding: 0.1rem 0.4rem;
+        border-radius: .25rem;
+        @media screen and (min-width: 576px) {
+        font-size: 1.25rem;  
+        }
+        &[aria-expanded="true"]{ 
+            .navbar-toggler-icon{
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");  
+                background-size: 70% auto;
+            }
+        }
+        
+    }
+}

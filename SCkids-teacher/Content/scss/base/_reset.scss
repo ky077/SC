@@ -1,0 +1,18 @@
+html, body{ 
+    font-family: 'Noto Sans',
+                 'Noto Sans TC', 'Microsoft JhengHei', 
+                 'PingFang TC', 
+                 'Heiti TC', 
+                 'LiHei Pro',
+                 sans-serif !important;
+    font-size: 18px;
+    @media screen and (min-width: 768px) {
+    font-size: 19px;    
+    }
+    @media screen and (min-width: 1200px) {
+    font-size: 20px;    
+    }
+    ///*line-height: 1.8;*/
+    letter-spacing: .05rem;
+    font-weight: 400;
+}

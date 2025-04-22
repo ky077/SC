@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "sn": "1",
+      "school": "師大附中",
+      "year": "2023",
+      "grade": "3",
+      "class": "Test 02",
+      "teacher": "李夏夏",
+      "num": "22",
+      "list": "",
+      "state": "ON"
+    },
+    {
+      "sn": "2",
+      "school": "師大附中",
+      "year": "2022-1",
+      "grade": "2",
+      "class": "Test 01",
+      "teacher": "李夏一",
+      "num": "20",
+      "list": "",
+      "state": "ON"
+    },
+    {
+      "sn": "2",
+      "school": "師大附中",
+      "year": "2022-2",
+      "grade": "2",
+      "class": "Test 01",
+      "teacher": "李夏一",
+      "num": "20",
+      "list": "",
+      "state": "OFF"
+    },
+    {
+      "sn": "2",
+      "school": "師大附中",
+      "year": "2022-1",
+      "grade": "2",
+      "class": "Test 03",
+      "teacher": "李夏一",
+      "num": "20",
+      "list": "",
+      "state": "OFF"
+    }       
+
+  ]
+}

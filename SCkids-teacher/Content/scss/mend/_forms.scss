@@ -1,0 +1,233 @@
+//清除系統預設autofill底色樣式
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-internal-autofill-selected {
+    -webkit-text-fill-color: $gray-900 !important;
+    background-color: rgb(255,255,255) !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+//驗證樣式 invalid
+.form-control, .form-select {
+    &.invalid {
+        border-color: $red;
+        &:focus{
+            box-shadow: 0 0 0 .25rem rgba($red, .25);    
+        }    
+    }    
+}
+
+.form-select {
+    padding: .375rem calc(2.25rem + .75rem) .375rem .75rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='17.5px' height='12.5px'%3E %3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='1px' stroke-linecap='butt' stroke-linejoin='miter' fill='rgb(197, 197, 197)' d='M8.630,11.480 L1.131,1.481 L16.128,1.481 L8.630,11.480 Z'/%3E %3C/svg%3E"),
+                      linear-gradient(to left, #f9f9f9 0%, 
+                                               #f9f9f9 calc(2.25rem - 1px), 
+                                               $gray-400 calc(2.25rem - 1px), 
+                                               $gray-400 2.25rem, 
+                                               #ffffff 2.25rem, 
+                                               #ffffff 100%); 
+    
+    background-repeat: no-repeat, no-repeat;
+    background-position: right calc((2.25rem - 18px)/2) center, right center;
+    background-size: 16px 12px, 100% 100%;
+    &:disabled, &[disabled], &[disabled="disabled"]{
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='17.5px' height='12.5px'%3E %3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='1px' stroke-linecap='butt' stroke-linejoin='miter' fill='rgb(197, 197, 197)' d='M8.630,11.480 L1.131,1.481 L16.128,1.481 L8.630,11.480 Z'/%3E %3C/svg%3E"),
+                      linear-gradient(to left, #f9f9f9 0%,
+                                               #f9f9f9 calc(2.25rem - 1px),
+                                               $gray-400 calc(2.25rem - 1px),
+                                               $gray-400 2.25rem,
+                                               $gray-200 2.25rem,
+                                               $gray-200 100%);     
+    }
+    /*&:selected{
+        background-color: red;
+    }
+    option[value=""]{
+        color: $secondary;  
+    }*/
+}
+.form-select-sm {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+}
+.form-select.form-select-arrow-sm{
+    padding-right: calc(1.15rem + 0.5rem);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='17.5px' height='12.5px'%3E %3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='1px' stroke-linecap='butt' stroke-linejoin='miter' fill='rgb(197, 197, 197)' d='M8.630,11.480 L1.131,1.481 L16.128,1.481 L8.630,11.480 Z'/%3E %3C/svg%3E"),
+                      linear-gradient(to left, #f9f9f9 0%,
+                                               #f9f9f9 calc(1.15rem - 1px),
+                                               $gray-400 calc(1.15rem - 1px),
+                                               $gray-400 1.15rem,
+                                               #ffffff 1.15rem,
+                                               #ffffff 100%); 
+    background-repeat: no-repeat, no-repeat;
+    background-position: right calc((1.15rem - 18px)/2) center, right center;
+    background-size: 16px 12px, 100% 100%;
+    &:disabled, &[disabled], &[disabled="disabled"]{
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='17.5px' height='12.5px'%3E %3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='1px' stroke-linecap='butt' stroke-linejoin='miter' fill='rgb(197, 197, 197)' d='M8.630,11.480 L1.131,1.481 L16.128,1.481 L8.630,11.480 Z'/%3E %3C/svg%3E"),
+                      linear-gradient(to left, #f9f9f9 0%,
+                                               #f9f9f9 calc(1.15rem - 1px),
+                                               $gray-400 calc(1.15rem - 1px),
+                                               $gray-400 1.15rem,
+                                               $gray-200 1.15rem,
+                                               $gray-200 100%);     
+    }
+}
+
+.form-check-input{
+    //margin-top: ($line-height-base - $form-check-input-width) * .5;    
+}
+.form-check {
+    padding-left: 0;
+    margin-bottom: 0;
+    .form-check-input {
+        margin-left: 0;
+        margin-right: .5rem;
+    }
+}
+.form-check-inline{
+    margin-right: 0;
+    vertical-align: middle;
+    float: left;  //for index Gender
+    .form-check-label{
+        margin-right: 1rem;   
+    } 
+}
+.form-check-input[type="radio"] {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='%23c6c6c6'/></svg>");
+    background-size: 140% 140%;
+}
+
+.form-switch .form-check-input {
+    background-position: right center;
+    width: 3.5rem;
+    height: 1.5rem;
+    background-color: $white;
+    border-color: $gray-500;
+    position: relative;
+    margin-top: 0;
+    &::after{ 
+        content: "OFF";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: calc(1.5rem - 2px);
+        bottom: 0;
+        color: $gray-500;
+        font-size: .8rem;
+        line-height: calc(1.5rem - 2px);
+        text-align: center;
+        border-radius: 2rem;
+        padding: 0 .25rem;
+    }
+	&:focus {
+		box-shadow: 0 0 0 0.25rem rgba($success, 0.25);
+	}
+}
+.form-switch .form-check-input:checked {
+    background-position: left center; 
+	background-color: $success;
+    border-color: $success;
+    &::after{ 
+        content: "ON";
+        left: calc(1.5rem - 2px);
+        right: 0;
+		color: $white;
+    }
+}
+.form-switch .form-check-input {
+    &:disabled, &[disabled], &[disabled="disabled"]{
+		filter: grayscale(1);
+		opacity: .5;
+    }
+}
+
+
+//用.readonly + [disabled] 呈現[readonly]樣式 
+[class*="form-control"].readonly {
+    &:disabled, &[disabled], &[disabled="disabled"]{
+        background-color: #fff !important;
+        border-color: transparent !important;
+        box-shadow: none !important; 
+        padding-left: 0;
+    }    
+}
+.form-select.readonly {
+    &:disabled, &[disabled], &[disabled="disabled"]{
+    background-color: transparent !important;
+    border-color: transparent !important;
+    background-image: none !important;  
+    padding-left: 0;
+    padding-right: 0;     
+    }    
+}
+.form-check-input.readonly {
+    &:disabled, &[disabled], &[disabled="disabled"]{
+        display: none;
+        & ~ .form-check-label{
+            opacity: 1;
+        }
+        &:not(:checked) {
+            ~ .form-check-label{ 
+                display: none; 
+            }
+        }
+    }
+}
+.form-switch .form-check-input.readonly {
+    &:disabled, &[disabled], &[disabled="disabled"]{
+        display: block;
+        opacity: .5;
+    }
+}
+.input-group > button.readonly {
+    &:disabled, &[disabled], &[disabled="disabled"]{
+        display: none;
+    } 
+}
+
+//自製 上傳檔案樣式 (Custom file input)
+.input-group-file{
+    position: relative;
+    input[type="file"]{
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+        opacity: 0;
+        
+    }
+}
+
+//自製 (搜尋)清除 (input with btn-close absolute)
+.input-group-clear{
+    display: inline-flex;
+    position: relative;
+    z-index: 3;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    .form-control{
+        padding-right: 1.5rem;
+    }
+    .btn-close{
+        display: none;
+        position: absolute;
+        right: .25rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.input-group-clear.active{
+    .btn-close{
+        display: block;
+    }
+}
+
+

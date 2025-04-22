@@ -1,0 +1,119 @@
+.waitingBlock{
+    background-color: lighten($primary, 52%);
+    border: 2px dashed $gray-400;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    @media screen and (min-width: 1200px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 50%;
+    }
+    h3{
+        margin-bottom: 1.5rem;
+    }
+    .input-group-clear > input{
+        max-width: 240px;
+    }
+}
+.classStudentBlock{
+    background-color: transparent;
+    border: 2px dashed transparent;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    @media screen and (min-width: 1200px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;    
+    width: 83.33333333%;
+    } 
+    h3{
+        margin-bottom: 1.5rem;
+    }
+    .input-group-clear > input{
+        max-width: 240px;
+    }
+}
+
+
+.waitingBlock, 
+.waitingBlock + .classStudentBlock{
+    &.step1, .step1{
+        display: block;    
+    }
+    &.step2, .step2{
+        display: none;    
+    }
+}
+.waitingBlock.open, 
+.waitingBlock.open + .classStudentBlock{
+    width: 100%;
+    @media screen and (min-width: 1200px) {
+    width: 50%;
+    } 
+    &.step1, .step1{
+        display: none;    
+    }
+    &.step2, .step2{
+        display: block;    
+    }
+}
+
+
+.table-classLists{
+    min-width: 1430px;
+    > thead, > tbody{
+        > tr{
+            >th, > td {
+                &.td-delete{     width:  4%; }
+                &.td-no{         width:  4%; }
+                &.td-school{     width: 20%; } 
+                &.td-year{       width: 10%; }
+                &.td-grade{      width:  9%; } 
+                &.td-class{      width: 15%; }
+                &.td-teacher{    width: 10%; } 
+                &.td-num{        width: 12%; }
+                &.td-list{       width: 10%; } 
+                &.td-state{      width: 10%; }      
+            }   
+        }
+    }
+    > tbody{
+        > tr{
+            > td {
+                &.td-list{ 
+                    padding-left: .5rem;
+                    padding-right: .5rem;
+                }      
+            }   
+        }
+    }
+}
+
+.table-classStudentLists, .table-waitingLists{ 
+   min-width: 840px;
+   > thead, > tbody{
+        > tr{
+            >th, > td {
+                 &.td-check{      width:  8%; }
+                 &.td-no{         width:  8%; }  
+                 &.td-account{    width: 26%; }  
+                 &.td-password{   width: 11%; }  
+                 &.td-Cname{      width: 11%; }  
+                 &.td-grade{      width: 11%; }  
+                 &.td-class{      width: 11%; }  
+                 &.td-Sid{        width: 11%; }  
+                 &.td-year{       width: 11%; }       
+            }   
+        }
+    } 
+}
+.table-waitingLists, { 
+   > thead, > tbody{
+        > tr{
+            >th, > td {
+                 &.td-no{ display: none; }     
+            }   
+        }
+    } 
+}

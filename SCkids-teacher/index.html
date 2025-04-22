@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="zh-hant-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="smartreading-XXXX">
+<meta name="author" content="smartreading">
+<meta name="generator" content="smartreading">
+<title>Smart Chinese Kids 教師端</title>
+<link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
+<!-- google fonts -->	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">	
+	
+<!-- widgets CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="Content/widgets/DataTables/datatables.min.css">
+
+<!-- template CSS -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">    
+<link rel="stylesheet" type="text/css" href="Content/css/SRv3-manager.css">
+</head>
+<body>
+<header> </header>
+    
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-xl-2 d-xl-block sidebarMenu collapse"> </nav>
+    <main class="col-xl-10"> 
+      <!-- ------- ------- ------- ------- ------- ------- ------- -->
+      <h2>帳號資訊</h2>
+      <div class="row justify-content-center py-4">
+        <div class="col-xl-7 col-xxl-6"> 
+          <!-- [編輯資料] start -->
+          <div class="mb-3 row">
+            <div class="col-sm-6 offset-sm-4 text-end">
+              <button type="button" class="btn btn-outline-primary bg-gradient" id="edit"><i class="fa-solid fa-pen-to-square me-1"></i>編輯資料</button>
+            </div>
+          </div>
+          <!-- [編輯資料]  end  --> 
+          <!-- 管理者帳戶 start -->
+          <div class="mb-3 row">
+            <h3 class="col-sm-4 text-sm-end h6">管理者帳戶</h3>
+          </div>
+          <div class="mb-4 cs-form" id="userAccount">
+            <div class="mb-3 row align-items-center"> <label class="col-sm-4 col-form-label text-sm-end">帳號/信箱</label>
+              <div class="col-sm-6">
+                <div>sr_admin@smartchinese.com</div>
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center"> <label for="inputPassword" class="col-sm-4 col-form-label text-sm-end">密碼<span class="text-red">*</span></label>
+              <div class="col-sm-6">
+                <div class="input-group pd-show-hide">
+                  <input type="password" class="form-control rounded-0 border-end-0" id="inputPassword" value="123456789" aria-describedby="btnPdShowHide" placeholder="請輸入4至15位英數字混合之帳號">
+                  <button class="btn rounded-0 border border-start-0 px-3" type="button" id="btnPdShowHide"><i class="fa-solid fa-eye-slash"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center"> <label for="inputCname" class="col-sm-4 col-form-label text-sm-end">中文姓名<span class="text-red">*</span></label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control rounded-0" id="inputCname" value="莊老師">
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center"> <label for="inputEname" class="col-sm-4 col-form-label text-sm-end" value="zhanghuahua">英文姓名</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control rounded-0" id="inputEname" value="Zhuang,lao-shi">
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center"> <label for="inputIDnumber" class="col-sm-4 col-form-label text-sm-end">身分證號</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control rounded-0" id="inputIDnumber" value="A223456789">
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center"> <label class="col-sm-4 col-form-label text-sm-end">所在院校</label>
+              <div class="col-sm-6">
+                <div>師大附中</div>
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center"> <label for="inputLang" class="col-sm-4 col-form-label text-sm-end">語系<span class="text-red">*</span></label>
+              <div class="col-sm-6">
+                <select class="form-select rounded-0" id="inputLang">
+                  <option value="">請選擇...</option>
+                  <option value="TW" selected>TW</option>
+                  <option value="CN">CN</option>
+                  <option value="EN">EN</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center"> <label for="inputGender" class="col-sm-4 col-form-label text-sm-end">性別</label>
+              <div class="col-sm-6">    
+                <div class="form-check form-check-inline py-2">
+                  <input class="form-check-input" type="radio" name="inputGender" id="inputGender1" value="1">
+                  <label class="form-check-label" for="inputGender1">男</label> </div>
+                <div class="form-check form-check-inline py-2">
+                  <input class="form-check-input" type="radio" name="inputGender" id="inputGender2" value="2" checked>
+                  <label class="form-check-label" for="inputGender2">女</label> </div>
+              </div>
+            </div>
+          </div>
+          <!-- 管理者帳戶  end  --> 
+          <!-- 所管理學校 start -->
+          <div class="mb-3 row">
+            <h3 class="col-sm-4 text-sm-end h6">所管理學校</h3>
+          </div>
+          <div class="mb-4 cs-form" id="userMgtSchool">
+            <div class="mb-3 row align-items-center"> <label class="col-sm-4 col-form-label text-sm-end">管理學校</label>
+              <div class="col-sm-6">
+                <div>師大附中</div>
+              </div>
+            </div>
+            <div class="mb-3 row align-items-center"> <label class="col-sm-4 col-form-label text-sm-end">所屬縣市</label>
+              <div class="col-sm-6">
+                <div>臺北市</div>
+              </div>
+            </div>
+          </div>
+          <!-- 所管理學校  end  --> 
+          <!-- 錯誤訊息 start -->
+          <div class="mb-3 text-red text-center fs-8" id="blockEditMsg"><!--錯誤訊息在這--></div>
+          <!-- 錯誤訊息  end  --> 
+          <!-- 按鈕 start -->
+          <div class="mb-3 text-center" id="editBtns">
+            <button type="reset" class="btn btn-outline-primary m-1" id="editCancel">取消</button>
+            <button type="submit" class="btn btn-primary m-1" id="editOk">確定修改</button>
+          </div>
+          <!-- 按鈕  end  --> 
+        </div>
+        <div class="col-xl-4 col-xxl-3"> 
+          
+        </div>
+      </div>
+      <!-- ------- ------- ------- ------- ------- ------- ------- --> 
+    </main>
+  </div>
+</div>
+    
+<footer> </footer>
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<!-- ------- ------- ------- ------- ------- ------- ------- --> 
+<script src="Content/js/jquery-3.6.0.min.js"></script>
+    
+<!-- widgets JS -->     
+<script src="Content/js/bootstrap.bundle.min.js"></script>   
+
+<!-- my JS -->     
+<script src="Content/js/main.js"></script>  
+    
+<script>
+$(document).ready(function() {
+    //call header、footer、 sidebar  
+    $('header').load('master_header.html', function(){
+    }); 
+	
+    $('footer').load('master_footer.html'); 
+	
+    $('#sidebarMenu').load('master_sidebar.html', function(){
+    }); 
+    
+    //初始畫面
+    editFieldState('editable');//不可編輯
+    
+    //[編輯資料]
+    $('#edit').click(function(){
+        editFieldState('editing');//可編輯
+    });
+    
+    //[編輯資料] > [取消]
+    $('#editCancel').click(function(){
+        //do something...... (若修改則改回原值)
+        
+        editFieldState('editable');//不可編輯
+    }); 
+    
+    //[編輯資料] > [確定修改]
+    $('#editOk').click(function(){
+        let editOk = true; //[true | false] [成功 | 錯誤]
+        
+        //demo驗證
+        let errorText = '';
+        let validationField = '#inputPassword, #inputCname, #inputLang';
+            
+        //demo偵測欄位是否為空值、密碼#inputPassword是否小於4碼
+        $(validationField).each(function(){
+            if( $(this).val().trim() == '' ){
+                $(this).addClass('empty invalid');
+            }else if ($(this).attr('id') == 'inputPassword' && $(this).val().trim().length < 4){
+                $(this).removeClass('empty invalid').addClass('short invalid'); 
+            }else {
+                $(this).removeClass('empty short invalid');
+            }
+        });
+        
+        //demo錯誤訊息內容
+        if( $(validationField).hasClass('empty') ){
+             errorText += '*號為必填欄位<br>';    
+        }
+        if( $(validationField).hasClass('short') ){
+            errorText += '密碼不得小於4碼<br>'; 
+        }
+        
+        //demo是否有錯誤訊息、驗證是否成功
+        if (errorText != ''){
+            editOk = false;  
+        }else{
+            editOk = true;    
+        }
+        
+        if(editOk == true){ //修改成功
+            $('#blockEditMsg').html(''); 
+            
+            alertModal('<div class="text-red">修改成功！</div>'); 
+            
+            $('#alertModal').on('hidden.bs.modal', function(){
+                editFieldState('editable');//不可編輯   
+            });    
+        }else{//修改失敗
+            $('#blockEditMsg').html(errorText); 
+        }
+    });        
+});    
+    
+function editFieldState(val){
+    switch (val) {
+        case 'editing': //可編輯
+            $('#edit').attr('disabled', false);                                     //[編輯資料] - 不可按
+            
+            $('.tobeGradedBlock a').addClass('disabled');                           //[點此批閱學生閱讀計畫] - 不可按
+            
+            $('#userAccount').find('[class*="form-label"] .text-red').show();       //* - 隱藏
+            $('#userAccount').find('input, select, button').attr('disabled', false)
+                                                           .removeClass('readonly');//欄位 - 不可填改
+            $('#blockEditMsg').show().text('');                                          //訊息 - 隱藏
+            $('#editBtns').show();                                                  //編輯按鈕 - 隱藏
+            break;
+            
+        case 'editable'://不可編輯
+            $('#edit').attr('disabled', false);                                     //[編輯資料] - 可按
+            
+            $('.tobeGradedBlock a').removeClass('disabled');                        //[點此批閱學生閱讀計畫] - 可按
+            
+            $('#userAccount').find('[class*="form-label"] .text-red').hide();       //* - 隱藏
+            $('#userAccount').find('input, select, button').attr('disabled', true)
+                                                           .addClass('readonly');   //欄位 - 不可填改
+            $('#blockEditMsg').hide().text('');                                          //訊息 - 隱藏
+            $('#editBtns').hide();                                                  //編輯按鈕 - 隱藏
+            break;
+            
+        default:
+            break;           
+    }
+}    
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+main{
+    border: 1rem solid $body-bg;
+    background-color: $white;
+    @media screen and (min-width: 1200px) {
+    border-right: none;
+    border-bottom: none;
+    }
+    
+    h2{
+        background-color: $body-bg;
+        text-align: center;
+        font-size: 1.1rem;
+        padding-bottom: 1rem;
+        margin-right: -$grid-gutter-width *.5;
+        margin-left: -$grid-gutter-width * .5;
+        margin-bottom: 0;
+        @media screen and (min-width: 576px) {
+        display: none;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.btn.bg-gradient{
+    background-image: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 6%, #f0f0f0 100%) !important; 
+    background-image: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 6%,#f0f0f0 100%); 
+    background-image: linear-gradient(to bottom,  #ffffff 0%,#ffffff 6%,#f0f0f0 100%) !important; 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 ) !important;  
+    &:hover, &:focus, &:active{
+        background-image:none !important;      
+    }
+}
+
+.btn-close{
+    &:focus{
+        box-shadow: none;
+    }
+}
+
+[class*="btn-outline-"]{
+	&.bg-gradient{
+		&:hover, &.hover{
+			>img{
+				filter:brightness(100);
+			}
+		}	
+	}
+}
