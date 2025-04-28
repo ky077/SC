@@ -115,7 +115,7 @@ function datatableInputPage(table){
         if( parseInt(textGoPage.val())>0 && parseInt(textGoPage.val())<=info.pages ){
             table.DataTable().page(parseInt(textGoPage.val()) - 1).draw(false);
         }else{
-            alertModal('<div class="text-red">請輸入正確頁數。</div>');
+            alertModal('<div>請輸入正確頁數。</div>');
 
             $('#alertModal').on('hidden.bs.modal', function () {
                textGoPage.addClass('invalid').focus();    

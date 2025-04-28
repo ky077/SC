@@ -446,7 +446,7 @@ $position-values: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $yellow-100 !default;  //<-- change
+$body-bg:                   $yellow-100 !default;  //<-- change 
 $body-color:                $gray-900 !default;
 $body-text-align:           null !default;
 
@@ -823,7 +823,7 @@ $btn-font-weight:             $font-weight-normal !default;
 $btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
 $btn-focus-width:             $input-btn-focus-width !default;
 $btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
-$btn-disabled-opacity:        .65 !default;
+$btn-disabled-opacity:        .5 !default; //.65 !default;
 $btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125) !default;
 
 $btn-link-color:              var(--#{$prefix}link-color) !default;

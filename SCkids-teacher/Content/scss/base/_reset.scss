@@ -5,6 +5,11 @@ html, body{
                  'Heiti TC', 
                  'LiHei Pro',
                  sans-serif !important;
+	background-image: url("../images/bg.png");
+	background-position: left top; 
+	background-size: 100% 100%; 
+	background-attachment: fixed; 
+	background-repeat: no-repeat;	
     font-size: 18px;
     @media screen and (min-width: 768px) {
     font-size: 19px;    
@@ -12,7 +17,6 @@ html, body{
     @media screen and (min-width: 1200px) {
     font-size: 20px;    
     }
-    ///*line-height: 1.8;*/
     letter-spacing: .05rem;
     font-weight: 400;
 }

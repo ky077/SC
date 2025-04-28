@@ -1,11 +1,8 @@
 .sidebarMenu{
-	background-color: $white;
-	border-right:  1px solid $brown-100;
-	.sidebar{
+	.sidebar{ background-color: rgba(255,0,4,.1);
 		min-height: calc(100vh - (5.8rem + 1px));
 		padding-top: 2rem;
 		padding-bottom: 2rem;
-		/*text-align: center;*/
 		@media screen and (min-width: 1200px) and (max-width: 1399px) {
 		font-size: .9rem;    
 		}
@@ -15,15 +12,13 @@
 		}
 
 		.nav{
-			/*display: inline-flex;*/
 			flex-direction: column; 
-			/*text-align: left;*/
 			li{
 				list-style: none;
 			}
 		}
 		.sidebar-title{
-			color: $gray-700;
+			color: $body-color;
 			font-weight: 500;
 			font-size: 1.1em;
 			margin-bottom: .25rem;
@@ -46,14 +41,27 @@
 		}
 		.nav-link{
 			color: $gray-900;
-			padding-left: 1.4rem + .25rem;
+			margin-left: 1.4rem;
 			padding-top: 0.375rem;
 			padding-bottom: 0.375rem;
-			padding-right: 0;
+			padding-left: .5rem;
+			padding-right: .5rem;
 			line-height: 1.5;
-			&:hover, &:focus, &:active,
-			&.hover, &.focus, &.active{
+			border-radius: .25rem 0 0 .25rem;
+			clip-path: polygon(0 0, calc(100% - .75rem) 0, 100% 50%, calc(100% - .75rem) 100%, 0 100%);
+			&:hover,
+			&.hover {
 				color: $primary;    
+			}
+			&:focus, &:active,
+			&.focus, &.active{ 
+				background-color: tint-color($primary, 40%); 
+				
+				&:hover,
+				&.hover {
+					background-color: tint-color($primary, 20%); 
+					color: $gray-900;    
+				}
 			}
 			&[data-bs-toggle="collapse"][aria-expanded="false"]{
 				&::after{

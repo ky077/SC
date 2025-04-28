@@ -23,7 +23,7 @@
 <meta name="twitter:image" content="Content/images/logo-tra.png">
 <meta itemprop="name" content="Smart Chinese Kids 教師端">
 <meta itemprop="description" content="Smart Chinese Kids 教師端">
-<meta itemprop="image" content="Content/images/logo-tra.png">	
+<meta itemprop="image" content="Content/images/logo-tra.png">
 <title>Smart Chinese Kids 教師端</title>
 <link rel="shortcut icon" type="image/x-icon" href="Content/images/favicon.ico">
 <!-- google fonts -->
@@ -56,21 +56,20 @@
                 <div class="col-auto">
                   <div class="row g-2 align-items-center">
                     <div class="col-auto">
-                      <label for="searchStartTime" class="col-form-label fs-8">開始時間</label>
+                      <label class="col-form-label fs-8">符合</label>
                     </div>
                     <div class="col-auto">
-                      <input type="date" class="form-control" id="searchStartTime" min="" max="">
+                      <select class="form-select rounded-0 form-select-sm form-select-arrow-sm" id="searchState">
+                        <option value="">最近7天</option>
+                        <option value="">最近14天</option>
+                        <option value="">最近1個月</option>
+                        <option value="">最近3個月</option>
+                        <option value="">最近6個月</option>
+                      </select>
                     </div>
-                  </div>
-                </div>
-                <div class="col-auto">
-                  <div class="row g-2 align-items-center">
-                    <div class="col-auto">
-                      <label for="searchEndTime" class="col-form-label fs-8">結束時間</label>
-                    </div>
-                    <div class="col-auto">
-                      <input type="date" class="form-control" id="searchEndTime" min="" max="">
-                    </div>
+					<div class="col-auto">
+                      <label class="col-form-label fs-8">的學習清單</label>
+                    </div>  
                   </div>
                 </div>
               </div>
@@ -323,7 +322,7 @@ $(document).ready(function() {
         if(editOk == true){//成功修改
             //do something... (修改)
             
-            alertModal('<div class="text-red">修改成功！</div>');
+            alertModal('<div>修改成功！</div>');
             
             $('#alertModal').on('hidden.bs.modal', function () {
                 //功能按鈕、搜尋 區域可按
@@ -412,7 +411,7 @@ $(document).ready(function() {
             $('#insertSinMsg, #insertBatMsg').html(''); 
             $('#insertModal').find('input, select').removeClass('empty short invalid');
             
-            alertModal('<div class="text-red">新增成功！</div>');
+            alertModal('<div>新增成功！</div>');
             
             $('#alertModal').on('hidden.bs.modal', function(){
                 //清空表單

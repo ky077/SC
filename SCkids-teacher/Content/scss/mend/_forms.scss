@@ -105,7 +105,7 @@ input:-internal-autofill-selected {
     width: 3.5rem;
     height: 1.5rem;
     background-color: $white;
-    border-color: $gray-500;
+    border-color: $success; 
     position: relative;
     margin-top: 0;
     &::after{ 
@@ -116,7 +116,7 @@ input:-internal-autofill-selected {
         left: 0;
         right: calc(1.5rem - 2px);
         bottom: 0;
-        color: $gray-500;
+        color: $success; 
         font-size: .8rem;
         line-height: calc(1.5rem - 2px);
         text-align: center;
@@ -149,7 +149,7 @@ input:-internal-autofill-selected {
 //用.readonly + [disabled] 呈現[readonly]樣式 
 [class*="form-control"].readonly {
     &:disabled, &[disabled], &[disabled="disabled"]{
-        background-color: #fff !important;
+        background-color: transparent !important;
         border-color: transparent !important;
         box-shadow: none !important; 
         padding-left: 0;
@@ -192,6 +192,13 @@ input:-internal-autofill-selected {
 //自製 上傳檔案樣式 (Custom file input)
 .input-group-file{
     position: relative;
+	.icon-file{
+		display: inline-flex;
+    	align-items: center;
+		font-size: 1.5em;
+		margin-right: .5rem;
+		color: $gray-800;
+	}
     input[type="file"]{
         position: absolute;
         top:0;
@@ -201,7 +208,6 @@ input:-internal-autofill-selected {
         width: 100%;
         z-index: 100;
         opacity: 0;
-        
     }
 }
 

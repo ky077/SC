@@ -15,6 +15,7 @@
 }
 
 [class*="btn-outline-"]{
+	background-color: $white;
 	&.bg-gradient{
 		&:hover, &.hover{
 			>img{

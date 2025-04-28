@@ -8,13 +8,13 @@
     }
 }    
 *::-webkit-scrollbar-track{
-  background-color: #d4d4d4;
+  background-color: #7AE2E5;
 } 
 *::-webkit-scrollbar-thumb{ 
     background-color: $white;
     border-radius: 1.1rem;
-    border: 2px solid #d4d4d4;
+    border: 2px solid #7AE2E5;
     &:hover{
-        border-color: shade-color(#d4d4d4, 10%);      
+        border-color: #7AE2E5;      
     }
 } 

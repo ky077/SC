@@ -51,8 +51,8 @@
       <div class="row py-3 py-xl-5 px-1 px-xl-4"> 
         <!-- 按鈕 start -->
         <div class="col-xxl-5 mb-3" id="blockBtns">
-          <button type="button" class="btn btn-outline-primary bg-gradient my-1" id="edit"><i class="fa-solid fa-pen-to-square me-1"></i>修改資料</button>
-          <button type="button" class="btn btn-outline-primary bg-gradient my-1" id="insert"><i class="fa-solid fa-plus me-1"></i>新增班級</button>
+          <button type="button" class="btn btn-primary my-1" id="edit"><i class="fa-solid fa-pen-to-square me-1"></i>修改資料</button>
+          <button type="button" class="btn btn-primary my-1" id="insert"><i class="fa-solid fa-plus me-1"></i>新增班級</button>
         </div>
         <!-- 按鈕  end  --> 
         <!-- 搜尋 start -->
@@ -124,7 +124,7 @@
                     <option value="李夏一">李夏一</option>
                   </select></td>
                 <td class="td-num">22</td>
-                <td class="td-list"><button type="button" class="btn btn-outline-primary bg-gradient w-100">查看</button></td>
+                <td class="td-list"><button type="button" class="btn btn-primary w-100">查看</button></td>
                 <td class="td-state"><div class="form-check form-switch">
                     <input class="form-check-input" type="checkbox" role="switch">
                   </div></td>
@@ -225,7 +225,7 @@
         <div class="cs-form mb-4 col-lg-10 col-xl-7 mx-auto">
           <div class="mb-3 row align-items-center">
             <div class="col-sm-9 mx-auto ps-md-3 ps-lg-5 pe-sm-0">
-              <div class="input-group input-group-file"> <span class="d-none d-sm-inline-flex me-2 SRicon-upload"></span>
+              <div class="input-group input-group-file"> <i class="fa-solid fa-cloud-arrow-up icon-file"></i>
                 <input type="text" class="form-control rounded-0" placeholder="請選擇檔案.CSV..." aria-describedby="btnCSV" id="fileInputText" readonly>
                 <button class="btn btn-gray-100 rounded-0 border-gray-400 text-primary" type="button" id="fileBrowse">瀏覽...</button>
                 <input type="file" class="form-control rounded-0" id="inputCSV" accept=".csv" required>
@@ -373,7 +373,7 @@
             <div class="row justify-content-center"> 
               <!-- 按鈕 start -->
               <div class="col-xl-4 mb-3">
-                <button type="button" class="btn btn-outline-primary bg-gradient my-1 step1" id="insertClassStudent"><i class="fa-solid fa-plus me-1"></i>新增學生</button>
+                <button type="button" class="btn btn-primary my-1 step1" id="insertClassStudent"><i class="fa-solid fa-plus me-1"></i>新增學生</button>
               </div>
               <!-- 按鈕  end  --> 
               <!-- 搜尋 start -->
@@ -622,7 +622,7 @@ $(document).ready(function() {
                 className: 'td-list',
                 orderable: false,
                 render: function (data, type, row, meta) {
-                    return `<button type="button" class="btn btn-outline-primary bg-gradient w-100">查看</button>`;
+                    return `<button type="button" class="btn btn-primary w-100">查看</button>`;
                 }
             },
             {//狀態
@@ -667,14 +667,10 @@ $(document).ready(function() {
         //功能按鈕、搜尋 區域不可按
         $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', true);
         
-        //表格排序關閉
-        list.find('thead th, thead td')
-                .removeClass('sorting sorting sorting_asc sorting_desc')
-                .unbind('click');
-        
         //表格欄位 刪除顯示 序號隱藏
         list.DataTable().column('.td-delete').visible(true); 
         list.DataTable().column('.td-no').visible(false); 
+
         
         //表格欄位可編輯
         list.find('td:not(.td-school)')
@@ -696,15 +692,6 @@ $(document).ready(function() {
         
         //功能按鈕、搜尋 區域可按
         $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
-        
-        //表格排序開啟
-        list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
-                .addClass('sorting')
-                .each(function(){
-                    let i = $(this).index(),
-                        c = $(this).attr('class').replace(' sorting','');
-                    list.DataTable().order.listener('.' + c, i);
-                });
         
         //表格欄位 刪除隱藏 序號顯示
         list.DataTable().column('.td-delete').visible(false); 
@@ -743,7 +730,7 @@ $(document).ready(function() {
             }).get();
         
             if( selectedCount > 0){ //有刪除則跳出確認視窗
-                confirmModal('是否確定要刪除班級：<b class="text-red">' + selectedClass.join('、') +'</b>？');
+                confirmModal('是否確定要刪除班級：<b>' + selectedClass.join('、') +'</b>？');
                 
                 $('#confirmOk').click(function(){
                     //do something... (修改)
@@ -757,20 +744,11 @@ $(document).ready(function() {
             }
             
             function editOkAlert(){
-                alertModal('<div class="text-red">修改成功！</div>');
+                alertModal('<div>修改成功！</div>');
             
                 $('#alertModal').on('hidden.bs.modal', function () {
                     //功能按鈕、搜尋 區域可按
                     $('#blockBtns, #blockSearch').find('button, input, select').attr('disabled', false);
-
-                    //表格排序開啟
-                    list.find('thead th:not(.sorting_disabled), thead td:not(.sorting_disabled)')
-                            .addClass('sorting')
-                            .each(function(){
-                                let i = $(this).index(),
-                                    c = $(this).attr('class').replace(' sorting','');
-                                list.DataTable().order.listener('.' + c, i);
-                            });
 
                     //表格欄位 刪除隱藏 序號顯示
                     list.DataTable().column('.td-delete').visible(false); 
@@ -849,7 +827,7 @@ $(document).ready(function() {
             $('#insertSinMsg, #insertBatMsg').html('');
             $('#insertModal').find('input, select').removeClass('empty invalid');
             
-            alertModal('<div class="text-red">新增成功！</div>');
+            alertModal('<div>新增成功！</div>');
             
             $('#alertModal').on('hidden.bs.modal', function(){
                 //清空表單

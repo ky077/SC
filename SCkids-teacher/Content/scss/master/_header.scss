@@ -1,6 +1,6 @@
 header {
-    background-color: $white;
-    border-bottom: 1px solid $brown-100;
+    //background-color: #D5FFFD;
+   //border-bottom: 1px solid $brown-100;
     .navbar{
         padding-top: 2rem;
         @media screen and (min-width: 576px) {
@@ -84,7 +84,6 @@ header {
             display: flex;
             align-items: center;
             font-weight: 400;
-            background-color: $gray-300; 
             @media screen and (min-width: 576px) {
             background-color: transparent;
             }
@@ -126,7 +125,7 @@ header {
             &:hover, &:focus, &:active,
             &.hover, &.focus, &.active,
             &.show{
-                background-color: $gray-300;   
+                background-color: $yellow-100;   
                 label{
                     cursor: pointer;        
                 }
@@ -137,6 +136,7 @@ header {
                 padding: 0;
                 border-radius: 0;
                 border-color: transparent;
+				background-color: $yellow-100;
                 @media screen and (min-width: 992px) {
                 left: 50%;
                 transform: translateX(-50%);    
@@ -144,8 +144,8 @@ header {
                 .dropdown-item{
                     text-align: center;
                     &:hover, &:focus, &:active{
-                        background-color: $gray-100; 
-                        color: $dropdown-link-color; 
+                        background-color: $yellow-100; 
+                        color: $primary; 
                     }    
                 }
             }    

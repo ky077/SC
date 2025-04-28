@@ -4,6 +4,7 @@ footer{
     font-size: .8rem;
     .footer-info{
         padding: 1rem 0;
+		border-top: 5px solid $primary;
         .info-logo{
             padding: 1rem 0;
             display: flex;
@@ -93,6 +94,6 @@ footer{
     }
     .footer-copyright{
         border-top: 1px solid $yellow-100;
-        padding: 2rem 0;    
+        padding: 1rem 0;    
     }
 }

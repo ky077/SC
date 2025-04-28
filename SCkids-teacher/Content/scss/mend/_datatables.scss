@@ -39,8 +39,7 @@
                     border-radius: 0;
                     &:hover, &:focus, &:active,
                     &.hover, &.focus, &.active {
-                        background-color: darken($gray-200, 10%);
-                        border-color: darken($gray-400, 10%);   
+                        background-color: tint-color($primary, 80%);
                     }
                 }
                 [data-dt-idx="previous"]{
@@ -79,14 +78,16 @@
                     border: 1px solid transparent;
                     box-shadow: none;
                     cursor: default;
-                    color: $red;
+                    color: $primary;
+					font-weight: bold;
                     &:hover, &:focus, &:active,
                     &.hover, &.focus, &.active {
                         background-color: transparent;
                         border: 1px solid transparent;
                         box-shadow: none;
                         cursor: default;
-                        color: $red;
+                        color: $primary;
+						font-weight: bold;
                     }
                 }
 			}
@@ -134,9 +135,9 @@
 			}
 			.paginate_button{
 				margin-left: 2rem;
-				background-color: $gray-200;
-                border: 1px solid $gray-400;
-				color: $gray-900;
+				background-color: $white;
+                border: 1px solid $primary;
+				color: $primary;
                 padding: .375em .75em;
                 font-size: .9rem;
                 border-radius: .25rem;
@@ -145,15 +146,17 @@
 				&.hover,
 				&:hover:not(.disabled),
 				&.hover:not(.disabled){
-					background-color: darken($gray-200, 10%);
-                    border-color: darken($gray-400, 10%);   
+					background-color: $primary;
+                    border-color: $primary;   
+					color: $white;
 				}
 				&:focus, &:active,
 				&.focus, &.active,
 				&:focus:not(.disabled), &:active:not(.disabled),
 				&.focus:not(.disabled), &.active:not(.disabled){
-					background-color: darken($gray-200, 10%);
-                    border-color: darken($gray-400, 10%);   
+					background-color: $primary;
+                    border-color: $primary;   
+					color: $white;
 				}
 			}
 		}

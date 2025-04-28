@@ -1,6 +1,6 @@
 main{
-    border: 1rem solid $body-bg;
-    background-color: $white;
+    //border: 1rem solid $body-bg;
+    background-color: rgba($white, .75);	
     @media screen and (min-width: 1200px) {
     border-right: none;
     border-bottom: none;
