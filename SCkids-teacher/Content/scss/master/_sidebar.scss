@@ -1,5 +1,5 @@
 .sidebarMenu{
-	.sidebar{ background-color: rgba(255,0,4,.1);
+	.sidebar{ 
 		min-height: calc(100vh - (5.8rem + 1px));
 		padding-top: 2rem;
 		padding-bottom: 2rem;
@@ -10,7 +10,24 @@
 		padding-left: .75rem;
 		padding-right: .75rem;
 		}
-
+		
+		@media screen and (min-width: 1200px) {
+		&::after{
+			content: "";
+			display: block;
+			width: 100%;
+			height: 0;
+			padding-bottom: calc(100%*(687/1006));
+			background-image: url("../images/animal-rgf.png");
+			background-size: cover;
+			position: sticky;
+        	top: 33.766%;
+			margin-top: 2rem;
+			animation: boatingAn 15s infinite;
+			transition: transform 0.35s linear; 
+		}
+		}
+		
 		.nav{
 			flex-direction: column; 
 			li{
@@ -49,19 +66,13 @@
 			line-height: 1.5;
 			border-radius: .25rem 0 0 .25rem;
 			clip-path: polygon(0 0, calc(100% - .75rem) 0, 100% 50%, calc(100% - .75rem) 100%, 0 100%);
-			&:hover,
-			&.hover {
+			&:hover, &:focus, &:active,
+			&.hover, &.focus, &.active {
 				color: $primary;    
 			}
-			&:focus, &:active,
-			&.focus, &.active{ 
-				background-color: tint-color($primary, 40%); 
-				
-				&:hover,
-				&.hover {
-					background-color: tint-color($primary, 20%); 
-					color: $gray-900;    
-				}
+			&:active,
+			&.active{ 
+				background-color: rgba($white, .75); 
 			}
 			&[data-bs-toggle="collapse"][aria-expanded="false"]{
 				&::after{
@@ -96,5 +107,26 @@
 			}
 		}
 	}
+}
+
+@keyframes boatingAn {
+0%{
+	 transform: translateX(0);
+}
+10%{
+	transform: translateX(5px);
+}
+20%{
+	transform: translateX(0);
+}	
+30%{
+	transform: translateX(5px);
+}
+40%{
+	transform: translateX(0);
+}	
+100%{
+	transform: translateX(0);
+}	
 }
 

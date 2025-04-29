@@ -5,11 +5,9 @@ html, body{
                  'Heiti TC', 
                  'LiHei Pro',
                  sans-serif !important;
-	background-image: url("../images/bg.png");
-	background-position: left top; 
-	background-size: 100% 100%; 
-	background-attachment: fixed; 
-	background-repeat: no-repeat;	
+	
+	letter-spacing: .05rem;
+    font-weight: 400;
     font-size: 18px;
     @media screen and (min-width: 768px) {
     font-size: 19px;    
@@ -17,6 +15,71 @@ html, body{
     @media screen and (min-width: 1200px) {
     font-size: 20px;    
     }
-    letter-spacing: .05rem;
-    font-weight: 400;
+	
+	background-image: url("../images/animal-rgf.png"), url("../images/bg.png");
+	background-attachment: fixed; 
+	background-repeat: no-repeat;	
+	background-size: 75% auto, auto 100%; 
+	background-position: center bottom 1rem, center top; 
+	@media screen and (min-width: 768px) {
+    background-size: 62.5% auto, auto 100%;  
+    }
+	@media screen and (min-width: 992px) {
+    background-size: 50% auto, auto 100%;  
+	background-position: left 10% bottom 1rem, center top; 	
+    }
+	
+	@media screen and (min-width: 1200px) {
+	background-image: url("../images/bg.png");
+	background-attachment: fixed; 
+	background-repeat: no-repeat;	
+	background-size: auto 100%; 
+	background-position: center top; 
+	position: relative;
+		
+	}
+	/*@media screen and (min-width: 1200px) {
+	background-size: calc(16.66666667% - .75rem*2) auto, 100% 100%; 	
+    background-position: left .75rem bottom 1rem, left top; 
+    }
+	@media screen and (min-width: 1400px) {
+	background-size: calc(16.66666667% - .75rem*2) auto, 100% 100%; 	
+    background-position: left .75rem bottom 30%, left top; 
+    }*/
+	/*background-image: url("../images/bg.png");
+	background-attachment: fixed; 
+	background-repeat: no-repeat;	
+	background-size: auto 100%; 
+	background-position: center top; 
+	
+	position: relative;
+	&::after{
+		content: "";
+		display: block;
+		width: 16.66666667%;
+		height: 0;
+		padding-bottom: 16.66666667%*(687/1006);
+		background-image: url("../images/animal-rgf.png");
+		background-size: cover;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+	}*/
 }
+/*html {
+		@media screen and (min-width: 1200px) {
+	&::after{
+		content: "";
+		display: block;
+		width: calc(16.66666667% - .75rem*2);
+		height: 0;
+		padding-bottom: calc((16.66666667% - .75rem*2)*(687/1006));
+		background-image: url("../images/animal-rgf.png");
+		background-size: cover;
+		position: fixed;
+		top: 50%;
+		left: .75rem;
+	}
+	}
+}
+*/

@@ -2,10 +2,6 @@
     background-color: transparent;
     width: 1.1rem;  
     height:1.1rem; 
-    @media screen and (min-width: 992px) {
-    width: 1.1rem;  
-    height:1.1rem;      
-    }
 }    
 *::-webkit-scrollbar-track{
   background-color: #7AE2E5;
@@ -18,3 +14,19 @@
         border-color: #7AE2E5;      
     }
 } 
+
+.table-responsive{
+	&::-webkit-scrollbar{  
+		background-color: transparent;
+		width: .75rem;  
+		height:.75rem; 
+	}
+	&::-webkit-scrollbar-track{
+	  background-color: $border-color;
+	} 
+	&::-webkit-scrollbar-thumb{ 
+		background-color: $yellow-100;
+		border-radius: .75rem;
+		border: 3px solid $border-color;
+	} 	
+}
