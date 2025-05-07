@@ -226,6 +226,7 @@ a:hover{
 			padding: 0;     
 			overflow-x: scroll;
 			overflow-y: hidden;
+			
 			&::-webkit-scrollbar{  
 				height: 15px; 
 				background-color: transparent;
@@ -237,7 +238,13 @@ a:hover{
 				background-color: #F8BC00;
 				border-radius: 15px;
 				border: 5px solid $sys-secondary;
-			} 
+			}
+			@-moz-document url-prefix() {
+			margin-bottom: 10px;
+			scrollbar-width: thin; 
+			scrollbar-color: $sys-secondary transparent;
+			scrollbar-gutter: stable;
+			}
 			li{ 
 				flex: 1 1 auto;
 				position: relative;
@@ -278,7 +285,7 @@ a:hover{
 				}
                 &:hover, &:focus, &:active{
                     &:before{
-                    	background-color:#fdf7e4;  
+                    	background-color:#fdf7e4; 
                     }
                     > a{
 						background-color:#fdf7e4;
