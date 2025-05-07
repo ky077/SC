@@ -28,11 +28,17 @@ a{
 //template
 body{
 	min-height: 100%;
-	font-family: Arial, Helvetica, sans-serif, "Microsoft JhengHei";
+	font-family: Arial, Helvetica,
+				 'Microsoft JhengHei', 'Microsoft YaHei', 
+                 'PingFang TC', 'PingFang SC',  
+                 'Heiti TC', 'Heiti SC', 
+                 'LiHei Pro', 'STXihei', 
+                 sans-serif;
 	background-image:url(../images/bg.jpg);
 	background-repeat:no-repeat;
 	background-position:center top;
 	background-size:100% 100%;
+      
     
 }
 *{
