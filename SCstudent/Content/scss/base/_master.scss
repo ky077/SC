@@ -1,0 +1,175 @@
+$decoration: #FFD400;
+///* ************************************************* */
+html, body{
+    width: 100%;
+    height: 100%;
+	/*letter-spacing: .05em;*/
+    background-color: #F8E4CC;
+    font-size: 14px; 
+    @media screen and (min-width: 768px) {
+    font-size: 16px;    
+    }
+    @media screen and (min-width: 992px) {
+    font-size: 18px;    
+    } 
+    @media screen and (min-width: 1200px) {
+    font-size: 20px;    
+    }
+}
+body > form{
+    width:100%;
+    height:100%;    
+}
+
+
+///* ************************************************* */
+.page{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	.bg{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 0;
+        background-image: url("../images/bg.png");
+        background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100% 100%;
+	}
+	.header{
+		width: 100%;
+        position: relative;
+        z-index: 2;
+        .navbar{
+            padding-top: 0px;
+            padding-bottom: 0px;  
+            .container-fluid{
+                flex-direction: column;
+                @media screen and (min-width: 992px) {
+                    flex-direction: row;
+                }
+            }
+        }
+        .navbar-brand{
+            padding-top: 0px;
+            padding-bottom: 0px;  
+            margin-right: 0; 
+            //margin-right: var(--bs-navbar-brand-margin-end);
+        }
+        .navbar-toggler{
+            position: absolute;
+            top: calc(((3.2rem + (.5rem + 1.6rem) + (.5rem + .75rem) + .5rem*2) + .5rem - .75rem*2)/2);
+            right: .75rem;
+            transform: translateY(-50%);
+            border: none;
+            &:focus{
+                box-shadow: none;
+            }
+        }
+        .navbar-nav{
+            align-items: center;
+            flex-direction: row;
+        }
+        .navbar-toggler-icon{
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath id='Icon_awesome-user-alt' data-name='Icon awesome-user-alt' d='M12,13.5A6.75,6.75,0,1,0,5.25,6.75,6.752,6.752,0,0,0,12,13.5ZM18,15H15.417a8.16,8.16,0,0,1-6.834,0H6a6,6,0,0,0-6,6v.75A2.251,2.251,0,0,0,2.25,24h19.5A2.251,2.251,0,0,0,24,21.75V21A6,6,0,0,0,18,15Z' fill='%23F75870'/%3E %3C/svg%3E ");  
+            background-size: 1.2rem 1.2rem;
+        }
+        
+        .logo{ 
+            width: 100%; 
+            margin: .5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @media screen and (min-width: 992px) {
+            display: flex;
+            flex-direction: row;    
+            }
+            > span{
+                display: flex;   
+                flex-direction: column;
+                align-items: center;
+                @media screen and (min-width: 992px) {
+                margin-left: .5rem;
+                align-items: flex-start;   
+                }
+            }
+            .logo-cn{
+                max-width: 50%;
+                max-height: 3.2rem;
+            }
+            .logo-en{ 
+                max-width: 50%;
+                max-height: 1.6rem;
+                margin-top: .5rem; 
+            }
+            .logo-en-all{ 
+                max-width: 95%;
+                max-height: .75rem;
+                margin-top: .5rem;
+            }
+        } 
+        .header-navi{
+            @media screen and (min-width: 992px) and (max-width: 1199px) {
+            position: absolute;
+                top: .75rem;
+                right: .75rem;
+            }    
+        }
+        .user{
+            display: flex;
+            align-items: center;
+            color: $gray-800;
+            &::before{ 
+                content: "";
+                display: none;
+                width: 1rem;
+                height: 1rem;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath id='Icon_awesome-user-alt' data-name='Icon awesome-user-alt' d='M12,13.5A6.75,6.75,0,1,0,5.25,6.75,6.752,6.752,0,0,0,12,13.5ZM18,15H15.417a8.16,8.16,0,0,1-6.834,0H6a6,6,0,0,0-6,6v.75A2.251,2.251,0,0,0,2.25,24h19.5A2.251,2.251,0,0,0,24,21.75V21A6,6,0,0,0,18,15Z' fill='%233C3A3B'/%3E %3C/svg%3E ");
+                background-size: cover;
+                margin-right: .5rem;
+                @media screen and (min-width: 992px) {
+                display: inline-block;    
+                }
+            }
+            label{
+                font-weight: bold;
+                margin-left: .25rem;
+            }
+        }
+	}
+	.content{ 
+		width: 100%;
+        position: relative;
+        @media screen and (min-width: 576px) { 
+        padding-top: 1rem;     
+        padding-bottom: 2.5rem;    
+        }
+		.container{
+			background-color: rgba(255,255,255, 1.0);
+            padding: .75rem;
+            @media screen and (min-width: 576px) {
+            border-radius: .5rem;
+            }
+            @media screen and (min-width: 1600px) {
+            max-width: 1530px;
+            }
+			> .row{
+                margin: 0;
+                border: 34px solid transparent;
+                width: 100%;
+                border-image: url("../images/border-34.png") 34 34 round;
+                min-height: calc(100vh - (3.2rem + (.5rem + 1.6rem) + (.5rem + .75rem) + .5rem*2) + .5rem - .75rem*2 - (1rem + .5rem));
+                @media screen and (min-width: 576px) {
+                min-height: calc(100vh - (3.2rem + (.5rem + 1.6rem) + (.5rem + .75rem) + .5rem*2) + .25rem - .75rem*2 - 1rem - 2.5rem - (1rem + .5rem));    
+                }
+                @media screen and (min-width: 992px) {
+                min-height: calc(100vh - (3.2rem + .5rem*2) - .75rem*2 - 1rem - 2.5rem);    
+                }
+            }
+		}
+	}
+}

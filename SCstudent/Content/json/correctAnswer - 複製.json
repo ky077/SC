@@ -1,0 +1,105 @@
+{
+  "data": [
+	{
+      "no": 1,
+      "page": "listening-01",
+      "cAns": ["(B)"]
+    },
+    {
+      "no": 2,
+      "page": "listening-02",
+      "cAns": ["(A)"]
+    },
+    {
+      "no": 3,
+      "page": "listening-03",
+      "cAns": ["(A)"]
+    },
+    {
+      "no": 4,
+      "page": "listening-04",
+      "cAns": ["(B)"]
+    },
+    {
+      "no": 5,
+      "page": "listening-05",
+      "cAns": ["V"]
+    },
+    {
+      "no": 6,
+      "page": "listening-06",
+      "cAns": ["X"]
+    },
+    {
+      "no": 7,
+      "page": "listening-07",
+      "cAns": ["(A)", "(A)"]
+    },
+    {
+      "no": 8,
+      "page": "reading-01",
+      "cAns": ["(A)"]
+    },
+    {
+      "no": 9,
+      "page": "reading-02",
+      "cAns": ["(B)"]
+    },
+    {
+      "no": 10,
+      "page": "reading-03",
+      "cAns": ["(B)"]
+    },
+    {
+      "no": 11,
+      "page": "reading-04",
+      "cAns": ["(B)"]
+    },
+    {
+      "no": 12,
+      "page": "reading-05",
+      "cAns": ["V"]
+    },
+    {
+      "no": 13,
+      "page": "reading-06",
+      "cAns": ["X"]
+    },
+    {
+      "no": 14,
+      "page": "reading-07",
+      "cAns":  ["(A)", "(B)"]
+    },
+    {
+      "no": 15,
+      "page": "reading-08",
+      "cAns": ["(A)", "(B)"]
+    },
+    {
+      "no": 16,
+      "page": "reading-09",
+      "cAns": ["(A)", "(D)", "(C)"]
+    },
+    {
+      "no": 17,
+      "page": "reading-10",
+      "cAns": ["<ruby><rt>bèi</rt><rb>被</rb></ruby>", "<ruby><rt>péi</rt><rb>陪</rb></ruby>", "<ruby><rt>dāng</rt><rb>當</rb></ruby>", "<ruby><rt>wéi</rt><rb>為</rb></ruby>", "<ruby><rt>xīg</rt><rb>希</rb></ruby><ruby><rt>wàng</rt><rb>望</rb></ruby>"]
+    },
+    {
+      "no": 18,
+      "page": "reading-11",
+      "cAns": ["(E)", "(C)", "(D)", "(B)", "(A)"]
+    },
+    {
+      "no": 19,
+      "page": "reading-12",
+      "cAns": ["(D)", "(A)", "(B)", "(C)", "(E)"]
+    },
+    {
+      "no": 20,
+      "page": "reading-13",
+      "cAns": ["(C)", "(B)", "(E)", "(A)", "(D)"]
+    }
+
+  ]
+}

@@ -1,0 +1,107 @@
+.drag-draggable {
+    display: inline-block;
+    border: 1px solid $yellow;
+    line-height: 1;
+    cursor: move;
+    white-space: nowrap;
+    z-index: 2010;
+    &:hover, &:active, &:focus{
+        box-shadow: 2px 2px 5px rgba(0,0,0, .2);    
+    }
+}
+.drag-img{
+    background-color: #FFF;
+    margin-bottom: 0; 
+    max-width: 25vh !important;
+    max-height: 25vh !important;
+    > span{
+        position: absolute;
+        top: .5rem;
+        left: .5rem;
+        z-index: 2011;
+        width: auto;
+        height: auto;
+        text-shadow: 1px 1px 2px rgba(255,255,255, .5); 
+    }
+}
+.drag-text{
+    background-color: #FFF4E1;
+    padding: .25rem .5rem .25rem 2.5rem;
+    position: relative;
+    > span{
+        position: absolute;
+        top: 50%;
+        left: .5rem;
+        transform: translateY(-50%);
+    }
+    ruby{
+        margin-bottom: 0;        
+    }
+}
+
+.ui-draggable-dragging{
+    img{
+        max-width: 100%;
+        max-height: 100%; 
+    }
+}
+.drag-draggable.gray,
+.ui-draggable-disabled{
+    -webkit-filter:grayscale(1);
+    filter:grayscale(1);
+    opacity: .7;  
+    cursor: default !important;
+    &:hover, &:active, &:focus{
+        box-shadow: none;    
+    }
+}
+
+
+
+.drop-section{
+    background-color: $white;
+    border: 1px solid #ccc;
+    padding: .5rem;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0, .2);
+    position: relative;
+    &::before{
+        content: attr(data-placeholder);
+        display: block;
+        color: $gray-500;  
+        position: absolute;
+        width: 100%;
+    }
+}
+.drop-section.dropped{
+    &::before{
+        display: none;
+    }
+}
+.drop-img{
+    max-width: calc(25vh + .5rem*2) !important;
+    max-height: calc(25vh + .5rem*2) !important;
+    &::before{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .drag-img{
+        /*width: calc(100% - .5rem*2);
+        height: calc(100% - .5rem*2);*/
+		width: 100%;
+        height: 100%;
+    }
+}
+.drop-text{
+    min-height: calc(((1.7rem + .85rem*1.5 + .2rem) + .25rem*2) + .5rem*2);
+    &::before{
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: left;
+    }
+}
+
+
+
+

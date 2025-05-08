@@ -1,0 +1,64 @@
+.bootstrap-select{
+    width: auto;
+    min-width: 8.5rem;
+    &:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+        width: auto !important;
+        min-width: 8.5rem;
+    }
+    
+    .btn{
+        border: 1px solid $primary; 
+        background-color: $white;
+        min-height: calc((1.7rem + .85rem*1.5 + .2rem) + .25rem*2 + 1px*2);
+        overflow: hidden;
+        padding: .25rem .5rem .25rem .5rem;
+        border-radius: 0; 
+    }
+    .filter-option{
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: $body-color;
+    }
+    .dropdown-menu{
+        border-radius: 0;
+        box-shadow: 2px 2px 5px rgba(0,0,0, .25);
+        li{
+            text-align: center;
+            .dropdown-item.active, .dropdown-item:active {
+                color: $gray-800;
+                background-color: #FAE2A3; 
+            }
+        }
+    }
+    ruby{
+        margin-bottom: 0;
+    }
+
+    .dropdown-toggle:focus, 
+    >select.mobile-device:focus+.dropdown-toggle {
+        outline: 0px !important;
+    }
+    .dropdown-toggle::after {
+        color: #999;
+    }
+}
+
+//裡面
+.select-section{ 
+    display: inline-block; 
+    vertical-align: top !important;
+    margin-top: -.38rem;
+    position: relative;
+    > span{
+        position: absolute;
+        top: 50%;
+        left: .5rem;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+    .bootstrap-select{
+        .btn{
+            padding-left: 2.5rem;
+        }    
+    }
+}

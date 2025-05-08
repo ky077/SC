@@ -1,0 +1,258 @@
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active  {
+    -webkit-text-fill-color: $gray-700;
+    -webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,1) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.btn{
+    font-weight: bold;
+    letter-spacing:0.05em;
+    &:disabled,
+    &.disabled,
+    &disabled, &[disabled="disabled"]{
+        filter: opacity(.5);    
+    }
+}
+
+.btn-primary{
+    color: #fff !important;
+    text-shadow: 2px 2px 3px rgba(0,0,0, .25);
+}
+
+.btn-play{
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    &::before{ 
+        content: "";
+        display: inline-block;
+        width: 1.1rem;
+        height: 1.2rem;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20.999' height='24' viewBox='0 0 20.999 24'%3E %3Cpath id='Icon_awesome-play' data-name='Icon awesome-play' d='M19.893,10.064,3.394.31A2.237,2.237,0,0,0,0,2.246v19.5a2.248,2.248,0,0,0,3.394,1.936l16.5-9.75A2.248,2.248,0,0,0,19.893,10.064Z' transform='translate(0 -0.002)' fill='%23fff'/%3E %3C/svg%3E ");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        vertical-align: text-bottom;
+        -webkit-filter:drop-shadow(2px 2px 3px rgba(0,0,0, .25));
+        filter:drop-shadow(2px 2px 3px rgba(0,0,0, .25));
+        margin-right: .25rem;
+    }
+}
+.btn-play.playing{
+    position: relative;
+    &::after{ 
+        content: "";
+        display: block;
+        width: 1.7rem;
+        height: 2.65rem;
+        position: absolute;
+        top: 50%;
+        left: calc(100% + .5rem); 
+        transform: translateY(-50%);
+        background-image: url("../images/volume-3.svg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        animation: volume 3s infinite;
+    }
+    &.disabled, &[disabled], &[disabled="disabled"]{
+        opacity: 1.0;   
+        filter: opacity(1.0); 
+    }
+}
+@keyframes volume {
+    0%   { background-image: none; }
+    25%  { background-image: url("../images/volume-1.svg"); }
+    50%  { background-image: url("../images/volume-2.svg"); }
+    75%  { background-image: url("../images/volume-3.svg"); } 
+    100% { background-image: none; } 
+}
+
+.form-check {
+	margin-bottom: 1rem;
+    .form-check-input{
+        border: 2px solid $primary;
+        &:read-only, &[readonly]{
+           opacity: 1.0; 
+            ~ .form-check-label {
+                opacity: 1.0;       
+            } 
+        }
+    }
+    .form-check-input[type="radio"] {
+        background-color: #fff;
+    }
+    .form-check-input:checked[type="radio"] {
+        background-size: 130% 130%;
+    }
+    .form-check-label{
+        display: flex;
+        >span:nth-child(1){
+            margin-right:  .75rem;
+        }
+        >span, >* {
+            vertical-align: top;
+        }
+    }
+}
+.form-check{
+	.form-check-input{
+		&:hover{
+			 cursor: pointer;	
+		}
+		+ .form-check-label{
+			&:hover{
+				cursor: pointer;	
+			}	
+		}
+		
+		&.disabled, &[disabled], &[disabled="disabled"]{
+			cursor: default;	
+			+ .form-check-label{
+				&:hover{
+					cursor: default;	
+				}	
+			}
+		}	
+	}
+}
+.form-check {
+    .form-check-input:checked + .form-check-label{
+        color: #000;    
+    }
+}
+
+.img-size-square{
+    display: block;
+    max-width: 300px;
+    max-height: 300px; 
+    margin-bottom: 1rem;
+    background-color: $gray-500;
+    &::after{
+        content:"300x300";
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 3rem;
+        transform: translate(-50%, -50%);
+        color: #fff;
+    }
+    &:has(> img) {
+        background-color: transparent; 
+        &::after{
+            display: none;    
+        }
+    }
+}
+.img-size-rectangle{
+    display: block;
+    max-width: 616px;
+    max-height: 346px;
+    margin-bottom: 1rem;
+    background-color: $gray-500;
+    &::after{
+        content:"616x346";
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 5rem;
+        transform: translate(-50%, -50%);
+        color: #fff;
+    }
+    &:has(> img) {
+        background-color: transparent; 
+        &::after{
+            display: none;    
+        }
+    }
+    > img{
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+.tooltip-inner{
+    @media screen and (min-width: 992px) {
+        max-width: 300px;    
+    }
+}
+
+.sc-table{
+    margin-bottom: 0;
+    text-align: center;
+    *:not(.btn){
+        border-color: $decoration;
+    }
+    th, td{
+        vertical-align: middle;
+    }
+    >thead {
+        >tr{
+            th, td{
+                background-color: $gray-100;
+                font-weight: bold;
+            }
+        }
+    }
+    >tbody{
+        >tr{
+            &:hover{
+                background-color: rgba($decoration, .2);
+            }
+            .no{
+                label:not(:first-child){
+                    margin-left: .25rem;
+                }
+            }
+            &.correct{
+                .yAns{
+                    color: $green;
+                }
+            }
+            &.wrong{
+                .yAns{
+                    color: $red;
+                }
+            }
+            label{
+                &:hover{
+                    cursor: pointer;    
+                }        
+            }
+        }
+    }
+    ruby {
+        margin-bottom: 0;
+    }
+}
+
+.form-check-label.correctBg {
+	position: relative;
+	&::after{
+		content: "";
+		display: block;
+		position: absolute;
+		top: -.25rem;
+		left: -.25rem;
+		right: -.25rem;
+		bottom: -.25rem;
+		background-color: rgba($green, .15); 
+		mix-blend-mode: multiply;
+	}
+} 
+.dropdown-item.correctBg{
+	background-color: rgba($green, .15) !important;
+	mix-blend-mode: multiply;
+}
+ .drag-draggable.correctBg{
+	background-color: rgba($green, .15) !important;
+	border-color: $green !important;
+	mix-blend-mode: multiply;
+	img{
+		mix-blend-mode: multiply;    
+	}
+}
+
+
+
+

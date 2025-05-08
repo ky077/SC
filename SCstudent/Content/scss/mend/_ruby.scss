@@ -1,0 +1,53 @@
+ruby{ 
+    display: inline-flex;
+	align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    vertical-align: bottom;
+    rt{ 
+        display: block;
+        font-family: $font-family-sans-serif; 
+        font-size: .85rem;
+        font-weight: normal;
+        margin-bottom: 0.2rem;
+        color: $gray-600;
+        letter-spacing: .025em;
+    }
+    rb{ 
+        display: block;
+        font-size: 1.7rem;
+        font-weight: 600;
+        line-height: 1;
+        height: 1em*1;
+    }
+}
+html[lang="zh-Hans-TW"] ruby rb {
+    font-family: 'Noto Serif TC', 'Noto Serif SC', MingLiU, PMingLiU, serif;     
+}
+html[lang="zh-Hans-CN"] ruby rb {
+    font-family: 'Noto Serif SC', SimSun, NSimSun, serif; 
+}
+
+ruby.blank{ 
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2rem; 
+    rb{
+        min-width: 1rem; 
+        transform: scale(.7);  
+        font-family: $font-family-sans-serif !important; 
+        font-weight: normal;
+    }
+    &::after{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $gray-800;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -.25rem;
+    }
+}

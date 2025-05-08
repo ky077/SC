@@ -1,0 +1,52 @@
+.viewTopic-bg{
+	position: relative;
+	overflow: hidden;
+	&::before{
+		content: "";
+		display: block;
+		width: 200%;
+		height: 200%;
+		background-image: url("../images/logo-SC.svg");
+		background-repeat: repeat;
+		background-position: center center;
+		background-size: calc((100% - .75rem*2)*.5) auto;
+		filter: grayscale(1.0) opacity(.035);
+		position: absolute;
+		z-index: 0;
+		top: 50%;
+		left: 50%;
+		right: 0;
+		bottom: 0;
+		transform: translate(-50%, -50%) rotate(-30deg);
+	}
+	> div{
+		position: relative;
+		z-index: 1;
+		mix-blend-mode: multiply;
+	}
+}
+
+.viewTopic-btn{
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: auto;
+	.prev-btn{
+		width: 50%;
+		order: 2;
+		text-align: left;
+		@media screen and (min-width: 576px) { flex: 1; order: 1;}
+	}
+	.view-btn{
+		width: 100%;
+		order: 1;
+		text-align: center;
+		margin-bottom: .5rem;
+		@media screen and (min-width: 576px) { flex: 1; order: 2; margin-bottom: 0;}
+	}
+	.test-btn{
+		width: 50%;
+		order: 3;
+		text-align: right;
+		@media screen and (min-width: 576px) { flex: 1; order: 3;}
+	}
+}
