@@ -2,17 +2,18 @@
     font-family: BopomofoRuby;
     src: url(../fonts/BopomofoRuby1909-v1-Regular.ttf);
 }
-ruby{ 
-	display: inline-grid;
-	grid-template-areas: "pinyin ."
-											 "hanzi  zhuyin";
-	grid-template-columns: auto auto;
+
+ruby{
+  display: inline-flex;
 	align-items: center;
+	flex-direction: column;
 	text-align: center;
 	margin-bottom: 1.5rem;
 	vertical-align: bottom;
+	position: relative;
+	padding-right: .6rem; 
+	//margin-right: 0.2rem;
 	rt{ 
-		grid-area: pinyin;
 		display: block;
 		font-family: $font-family-sans-serif; 
 		font-size: .85rem;
@@ -20,10 +21,8 @@ ruby{
 		margin-bottom: 0.2rem;
 		color: $gray-600;
 		letter-spacing: .025em;
-		text-align: center;
 	}
-	rb{   
-		grid-area: hanzi;
+	rb{ 
 		display: block;
 		font-size: 1.7rem;
 		font-weight: 600;
@@ -31,44 +30,19 @@ ruby{
 		height: 1em*1;
 	}
 	rt.zy{  
-		grid-area: zhuyin;
-		display: block;
 		font-family: BopomofoRuby;
 		font-size: .55rem;
+		ruby-position: inter-character;
 		writing-mode: vertical-rl;
 		text-orientation: upright;
+		position: absolute;
+		right: 0;
+		bottom: 1.7rem*.5;
 		margin-bottom: 0;
+		margin-left: 0.2rem;
+		transform: translateY(50%);
 	}
 }
-ruby.ruby-only-py{
-	rt{
-		isplay: block;
-		font-size: 1.7rem;
-		font-family: 'Noto Serif TC';
-		color: $body-color;
-	}
-	rb{  
-		height: 0;
-	}
-	rt.zy{  
-		height: 0;
-	}
-}
-ruby.ruby-only-zy{
-	rt{  
-		display: none;
-	}
-	rb{  
-		display: none;
-	}
-	rt.zy{  
-		display: block;
-		font-size: .9rem;
-		color: $body-color;
-	}	
-}
-
-
 html[lang="zh-Hans-TW"] ruby rb {
     font-family: 'Noto Serif TC', 'Noto Serif SC', MingLiU, PMingLiU, serif;     
 }

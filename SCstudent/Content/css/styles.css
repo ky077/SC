@@ -80,9 +80,19 @@ height: calc(100% - .5rem*2);*/ width: 100%; height: 100%; }
 .drop-text { min-height: calc(((1.7rem + .85rem*1.5 + .2rem) + .25rem*2) + .5rem*2); }
 .drop-text::before { top: 50%; transform: translateY(-50%); text-align: left; }
 
-ruby { display: inline-flex; align-items: center; flex-direction: column; text-align: center; margin-bottom: 1.5rem; vertical-align: bottom; }
-ruby rt { display: block; font-family: "Noto Sans", "Noto Sans TC", "Microsoft YaHei", "Noto Sans SC", "Microsoft JhengHei", "PingFang TC", "PingFang SC", "Heiti TC", "Heiti SC", "LiHei Pro", "STXihei", sans-serif; font-size: .85rem; font-weight: normal; margin-bottom: 0.2rem; color: #767474; letter-spacing: .025em; }
-ruby rb { display: block; font-size: 1.7rem; font-weight: 600; line-height: 1; height: 1em; }
+@font-face { font-family: BopomofoRuby; src: url(../fonts/BopomofoRuby1909-v1-Regular.ttf); }
+ruby { display: inline-grid; grid-template-areas: "pinyin ." "hanzi  zhuyin"; grid-template-columns: auto auto; align-items: center; text-align: center; margin-bottom: 1.5rem; vertical-align: bottom; }
+ruby rt { grid-area: pinyin; display: block; font-family: "Noto Sans", "Noto Sans TC", "Microsoft YaHei", "Noto Sans SC", "Microsoft JhengHei", "PingFang TC", "PingFang SC", "Heiti TC", "Heiti SC", "LiHei Pro", "STXihei", sans-serif; font-size: .85rem; font-weight: normal; margin-bottom: 0.2rem; color: #767474; letter-spacing: .025em; text-align: center; }
+ruby rb { grid-area: hanzi; display: block; font-size: 1.7rem; font-weight: 600; line-height: 1; height: 1em; }
+ruby rt.zy { grid-area: zhuyin; display: block; font-family: BopomofoRuby; font-size: .55rem; writing-mode: vertical-rl; text-orientation: upright; margin-bottom: 0; }
+
+ruby.ruby-only-py rt { isplay: block; font-size: 1.7rem; font-family: 'Noto Serif TC'; color: #3C3A3B; }
+ruby.ruby-only-py rb { height: 0; }
+ruby.ruby-only-py rt.zy { height: 0; }
+
+ruby.ruby-only-zy rt { display: none; }
+ruby.ruby-only-zy rb { display: none; }
+ruby.ruby-only-zy rt.zy { display: block; font-size: .9rem; color: #3C3A3B; }
 
 html[lang="zh-Hans-TW"] ruby rb { font-family: 'Noto Serif TC', 'Noto Serif SC', MingLiU, PMingLiU, serif; }
 
