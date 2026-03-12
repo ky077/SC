@@ -150,6 +150,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .form-check .form-check-input.disabled + .form-check-label:hover, .form-check .form-check-input[disabled] + .form-check-label:hover, .form-check .form-check-input[disabled="disabled"] + .form-check-label:hover { cursor: default; }
 
 .form-check .form-check-input:checked + .form-check-label { color: #000; }
+.form-check .form-check-input:checked + .form-check-label ruby.ruby-only-py rt { color: #000; }
+.form-check .form-check-input:checked + .form-check-label ruby.ruby-only-zy rt.zy { display: block; font-size: .9rem; color: #000; }
 
 .img-size-square { display: block; max-width: 300px; max-height: 300px; margin-bottom: 1rem; background-color: #B6B4B4; }
 .img-size-square::after { content: "300x300"; display: flex; position: absolute; top: 50%; left: 50%; font-size: 3rem; transform: translate(-50%, -50%); color: #fff; }

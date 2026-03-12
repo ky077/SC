@@ -116,7 +116,19 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 .form-check {
     .form-check-input:checked + .form-check-label{
-        color: #000;    
+        color: #000;   
+			  ruby.ruby-only-py{
+					rt{
+						color:  #000;
+					}
+				}
+				ruby.ruby-only-zy{
+					rt.zy{  
+						display: block;
+						font-size: .9rem;
+						color:  #000;
+					}	
+				}
     }
 }
 
