@@ -42,16 +42,19 @@ ruby{
 }
 ruby.ruby-only-py{
 	rt{
-		isplay: block;
+		display: block;
 		font-size: 1.7rem;
-		font-family: 'Noto Serif TC';
+		line-height: 1;
+		height: 1em*1;
+		font-family: $font-family-sans-serif; 
+		font-weight:normal;
 		color: $body-color;
 	}
 	rb{  
-		height: 0;
+		display: none;
 	}
 	rt.zy{  
-		height: 0;
+		display: none;
 	}
 }
 ruby.ruby-only-zy{

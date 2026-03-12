@@ -86,9 +86,9 @@ ruby rt { grid-area: pinyin; display: block; font-family: "Noto Sans", "Noto San
 ruby rb { grid-area: hanzi; display: block; font-size: 1.7rem; font-weight: 600; line-height: 1; height: 1em; }
 ruby rt.zy { grid-area: zhuyin; display: block; font-family: BopomofoRuby; font-size: .55rem; writing-mode: vertical-rl; text-orientation: upright; margin-bottom: 0; }
 
-ruby.ruby-only-py rt { isplay: block; font-size: 1.7rem; font-family: 'Noto Serif TC'; color: #3C3A3B; }
-ruby.ruby-only-py rb { height: 0; }
-ruby.ruby-only-py rt.zy { height: 0; }
+ruby.ruby-only-py rt { display: block; font-size: 1.7rem; line-height: 1; height: 1em; font-family: "Noto Sans", "Noto Sans TC", "Microsoft YaHei", "Noto Sans SC", "Microsoft JhengHei", "PingFang TC", "PingFang SC", "Heiti TC", "Heiti SC", "LiHei Pro", "STXihei", sans-serif; font-weight: normal; color: #3C3A3B; }
+ruby.ruby-only-py rb { display: none; }
+ruby.ruby-only-py rt.zy { display: none; }
 
 ruby.ruby-only-zy rt { display: none; }
 ruby.ruby-only-zy rb { display: none; }
