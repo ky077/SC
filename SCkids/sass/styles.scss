@@ -258,7 +258,7 @@ a:hover{
 				text-align: center;          
 				padding: 0;
 				filter: drop-shadow(2px 0 3px rgba(0,0,0,.2));
-				$li-length: 6;
+				$li-length: 7;
 				@for $i from 1 through $li-length {
 				  &:nth-child(#{$i}) {
 					z-index: $li-length - $i;
@@ -1653,12 +1653,12 @@ $word-border-color: rgba(#9B010A, .45);
 
 .dialog-p{
 	display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex-wrap: nowrap;
+    //flex-direction: column;
 	margin-bottom: .5rem;
-    @media (min-width: 576px) {
-	flex-direction: row;	
-	}
+    //@media (min-width: 576px) {
+//	flex-direction: row;	
+//	}
 	.dialog-figure{
 		display: flex;
 		flex-direction: row;	
@@ -2244,4 +2244,4 @@ $word-border-color: rgba(#9B010A, .45);
  25% { transform: scale(5.0) rotate(  0deg); }
 100% { transform: scale(1.0) rotate(360deg); }
 }
-/*20250417 1143*/
+/*20260128 1029*/	

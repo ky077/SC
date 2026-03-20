@@ -627,12 +627,13 @@ a:hover { text-underline-offset: .25rem; }
 .content .navigation ul::-webkit-scrollbar-thumb { background-color: #F8BC00; border-radius: 15px; border: 5px solid #533C34; }
 @-moz-document url-prefix() { .content .navigation ul { margin-bottom: 10px; scrollbar-width: thin; scrollbar-color: #533C34 transparent; scrollbar-gutter: stable; } }
 .content .navigation ul li { flex: 1 1 auto; position: relative; width: auto; text-align: center; padding: 0; filter: drop-shadow(2px 0 3px rgba(0, 0, 0, 0.2)); }
-.content .navigation ul li:nth-child(1) { z-index: 5; }
-.content .navigation ul li:nth-child(2) { z-index: 4; }
-.content .navigation ul li:nth-child(3) { z-index: 3; }
-.content .navigation ul li:nth-child(4) { z-index: 2; }
-.content .navigation ul li:nth-child(5) { z-index: 1; }
-.content .navigation ul li:nth-child(6) { z-index: 0; }
+.content .navigation ul li:nth-child(1) { z-index: 6; }
+.content .navigation ul li:nth-child(2) { z-index: 5; }
+.content .navigation ul li:nth-child(3) { z-index: 4; }
+.content .navigation ul li:nth-child(4) { z-index: 3; }
+.content .navigation ul li:nth-child(5) { z-index: 2; }
+.content .navigation ul li:nth-child(6) { z-index: 1; }
+.content .navigation ul li:nth-child(7) { z-index: 0; }
 .content .navigation ul li:before { content: ""; display: block; width: 1.1rem; height: 100%; position: absolute; top: 0; left: -1rem; bottom: 0; background-color: #fff; }
 .content .navigation ul li > a { height: 3.2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #fff; padding: 0 .75rem; border-radius: 0 1rem 0 0; color: #F29600; text-decoration: none; font-size: 1rem; white-space: nowrap; }
 .content .navigation ul li:hover:before, .content .navigation ul li:focus:before, .content .navigation ul li:active:before { background-color: #fdf7e4; }
@@ -941,8 +942,7 @@ ruby.blank rt { text-indent: -9999px; }
 
 @keyframes record { 0% { opacity: 0; }
   100% { opacity: 1; } }
-.dialog-p { display: flex; flex-wrap: wrap; flex-direction: column; margin-bottom: .5rem; }
-@media (min-width: 576px) { .dialog-p { flex-direction: row; } }
+.dialog-p { display: flex; flex-wrap: nowrap; margin-bottom: .5rem; }
 .dialog-p .dialog-figure { display: flex; flex-direction: row; margin-right: .5rem; margin-bottom: .5rem; }
 .dialog-p .dialog-figure > img { width: 3.2rem; height: 3.2rem; border: .25rem solid #eea522; border-radius: .5rem; }
 .dialog-p .dialog-figure > img:not(:last-child) { margin-right: .5em; }
@@ -1067,4 +1067,4 @@ margin: 0 0 0 1rem;
 @keyframes rotateAn { 0% { transform: scale(1) rotate(0deg); }
   25% { transform: scale(5) rotate(0deg); }
   100% { transform: scale(1) rotate(360deg); } }
-/*20250417 1143*/
+/*20260128 1029*/
