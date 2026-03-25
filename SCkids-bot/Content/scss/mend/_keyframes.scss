@@ -4,11 +4,11 @@
 }
 
 @keyframes volume {
-    0%   { background-image: none; }
-    25%  { background-image: url("../images/volume-1.svg");}
-    50%  { background-image: url("../images/volume-2.svg");}
-    75%  { background-image: url("../images/volume-3.svg");} 
-    100% { background-image: none; }
+    0%   { background-image: url("../images/volume-0.svg"); }
+    25%  { background-image: url("../images/volume-1.svg"); }
+    50%  { background-image: url("../images/volume-2.svg"); }
+    75%  { background-image: url("../images/volume-3.svg"); } 
+    100% { background-image: url("../images/volume-0.svg"); }
 }
 
 @keyframes rec {
@@ -16,3 +16,17 @@
     50%  { box-shadow: 0 0 0 0.25rem rgba($primary, 0); }
     100% { box-shadow: 0 0 0 0.25rem rgba($primary, .5);}    
 }
+
+@keyframes boatWave {
+    0%   { transform: translate(0, 0) rotate(-1deg); }
+    100% { transform: translate(10px, -3px) rotate(1deg); }    
+}
+
+
+
+@keyframes onlineFade {
+		 0%  { opacity: 1; }
+		50% {  opacity: 0.25; }
+	 100% {  opacity: 1; }
+}
+

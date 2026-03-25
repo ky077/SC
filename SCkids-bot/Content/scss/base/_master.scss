@@ -22,11 +22,24 @@ html, body {
   }
 }
 body {
-  background: url("../images/bg.jpg");
-  background-image:url(../images/bg.jpg);
-	background-repeat:no-repeat;
-	background-position:center top;
-	background-size:100% 100%;
+  background-image: url("../images/bg-2.png"), url("../images/bg.png");
+	background-repeat: no-repeat;
+	background-position: left bottom, center top;
+  background-size: 25% auto, 100% 100%;
+	&::before{ 
+		content: "";
+		display: block;
+		width: 35%;
+		height: 35%*(1006/687);
+		position: absolute;
+		bottom: 18%;
+    right: 5%;
+		background-image: url("../images/login.png");//船
+		background-repeat: no-repeat;
+		background-position: center center;
+  	background-size: 100% auto;
+	}
+	
   &::-webkit-scrollbar {
     width: 10px;
     background-color: transparent;
@@ -50,6 +63,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
+		z-index: $zindex-modal;
     @media screen and (min-width: 1200px) {
       width: 10%;
     }
@@ -157,40 +171,14 @@ main {
   padding-top: 1rem;
   position: relative;
   color: $color;
-  &::before {
-    content: "";
-    display: block;
-    width: 55%;
-    height: 25%;
-    max-width: 100%;
-    border-radius: 0 0 $border-radius-xl*1.2 0;
-    border-bottom: $futuristic-border solid $color;
-    border-right: $futuristic-border solid $color;
-    position: absolute;
-    z-index: -1;
-    bottom: -.75rem;
-    right: -.75rem;
-  }
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 5;
-    bottom: -.75rem;
-    right: 3rem;
-    min-width: 145px;
-    min-height: 36px;
-    min-width: 145px;
-    min-height: 36px;
-    background-color: $color;
-    
-    transform-origin: bottom;
-    transform: skewX(-30deg);
-  }
   .futuristic-frame-border {
     height: 100%;
     max-height: 100%;
     background-color: rgba($white, .75);
+		background-image:  url("../images/bg-modal.jpg");
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 100% 100%;
     border: $futuristic-border solid $color;
     border-radius: $border-radius-xl;
     position: relative;
@@ -244,24 +232,74 @@ main {
       left: 0;
       right: 0;
       z-index: 9;
-      height: calc(1.5rem + 0.325rem);
+      height: calc(3.5rem + 0.325rem);
       display: flex;
       flex-direction: row;
       align-items: center;
       padding: 0 .75rem;
-      a {
-        color: shade-color($color, 5%);
-        line-height: 1;
-        > span {
-          display: none;
-          @media screen and (min-width: 992px) {
-            display: inline;
-          }
-        }
-        i {
-          font-size: 1.25rem;
-        }
-      }
+			background-color: $primary;
+			//border-radius: calc(1rem - (.325rem*.5)) calc(1rem - (.325rem*.5)) 0 0;
+			.avatar{
+				width: 3rem;
+				height: 3rem;
+				background-color: transparent;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex: 0 0 auto;
+				border-radius: 100%;
+				overflow: hidden;
+				margin-left: 0;
+				margin-right: .75rem;
+				@media screen and (min-width: 992px) {
+				width: 3.2rem;
+				height: 3.2rem;
+				}
+				.avatar-img{
+					display: block;
+					width: 100%;
+					height: 100%;
+					> img{
+						width: 100%;
+						height: 100%;
+					}	
+				}
+				.avatar-text{
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					height: 100%;
+					background-color: $white;
+					color: $primary;
+					font-size: 3rem*.5;
+					@media screen and (min-width: 992px) {
+					font-size: 3.75rem*.5;
+					}
+				}
+			}
+			.avatar-name{
+				display: flex;
+				flex-direction: column;
+				color: #fff;
+				font-weight: bold;
+				.online-alert{
+					font-size: .75rem;
+					font-weight: normal;
+					color: $gray-400;
+					&::before{
+						content: "";
+						display: inline-block;
+						width: .8em;
+						height: .8em;
+						background-color: #4ade80;
+						border-radius: 100%;
+						vertical-align: middle;
+						margin-right: .25rem;
+						animation: onlineFade 2s ease-in-out infinite;
+					}
+				}
+			}
     }
   }
 }

@@ -1,4 +1,4 @@
-.guide-modal{
+.start-modal{
 	--bs-modal-bg: var(--bs-primary);
 	--bs-modal-border-color: var(--bs-primary);
 	--bs-modal-border-width: .325rem;
@@ -7,8 +7,28 @@
 	--bs-modal-header-border-color: var(--bs-primary);
 	--bs-modal-footer-border-color: var(--bs-primary);
 	color: $primary !important;
-	
-	.modal-content{
+	background-image: url("../images/bg-2.png"), url("../images/bg.png");
+	background-repeat: no-repeat;
+	background-position: left bottom, center top;
+  background-size: 25% auto, 100% 100%;
+	&::before{  /*background-color: rgba(255,0,4,.3);*/
+		content: "";
+		display: block;
+		width: 35%;
+		height: 0;
+		padding-bottom: 35%*(687/1006);
+		position: absolute;
+		bottom: 2rem;
+    right: 2rem;
+		background-image: url("../images/login.png");//船
+		background-repeat: no-repeat;
+		background-position: center center;
+  	background-size: 100% auto;
+		clip-path: polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 65%, 53% 65%);
+		z-index: $zindex-modal + 1;
+		animation: boatWave 3s infinite alternate linear;
+	}
+	.modal-content{ 
 		border: 0.325rem solid $primary;
 		box-shadow: $box-shadow-lg;
 	}
@@ -54,28 +74,28 @@
 		}
 	}
 }
-.guide-btn-check{
-	+ .guide-btn{ 
+.start-btn-check{
+	+ .start-btn{ 
 		padding: 0;
 		text-align: center;
 		font-size: 15px;
 		white-space: nowrap;
 		position: relative;
-		.guide-btn-img{
+		.start-btn-img{
 			width: 100px;
 			height: 100px;
 			border-radius: 100%;
 			overflow: hidden;
 		}
-		.guide-btn-title{
+		.start-btn-name{
 			margin-top: 8px;
 		}
 	}
 }
-.guide-btn-check:hover{
-	+ .guide-btn{ 
+.start-btn-check:hover{
+	+ .start-btn{ 
 		cursor: pointer;
-		.guide-btn-img{
+		.start-btn-img{
 			transform: scale(1.1);
 			transition: transform .35s ease-in-out;
 			img{
@@ -84,9 +104,9 @@
 		}
 	}
 }
-.guide-btn-check:checked{
-	+ .guide-btn{ 
-		.guide-btn-img{
+.start-btn-check:checked{
+	+ .start-btn{ 
+		.start-btn-img{
 			filter: drop-shadow(0 .5rem 1rem rgba($black, .15));
 			transform: scale(1.1);
 			border: 4px solid $primary;
@@ -94,7 +114,7 @@
 				filter: brightness(1.15);	
 			}
 		}
-		.guide-btn-title{
+		.start-btn-name{
 			font-weight: bold;
 		}
 		&::after{

@@ -41,7 +41,7 @@ $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #d63384 !default;
 $red:     #dc3545 !default;
-$orange:  #ffa01b !default;//cg. #fd7e14 !default;
+$orange:  #db6010 !default;//cg. #fd7e14 !default; 
 $yellow:  #fcc800 !default;//cg. #ffc107 !default;
 $green:   #198754 !default;
 $teal:    #20c997 !default;
@@ -322,11 +322,11 @@ $browns: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $yellow !default;//cg. $blue !default;
-$secondary:     $brown !default;//cg. $gray-600 !default;
+$primary:       $brown !default;//cg. $blue !default;
+$secondary:     $yellow !default;//cg. $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
-$warning:       $yellow !default;
+$warning:       $orange !default;//cg. $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
@@ -907,7 +907,7 @@ $input-padding-y-lg:                    $input-btn-padding-y-lg !default;
 $input-padding-x-lg:                    $input-btn-padding-x-lg !default;
 $input-font-size-lg:                    $input-btn-font-size-lg !default;
 
-$input-bg:                              $body-bg !default;
+$input-bg:                              rgba($body-bg, .5) !default;//$body-bg !default;
 $input-disabled-color:                  null !default;
 $input-disabled-bg:                     $gray-200 !default;
 $input-disabled-border-color:           null !default;
@@ -951,7 +951,7 @@ $form-check-min-height:                   $font-size-base * $line-height-base !d
 $form-check-padding-start:                $form-check-input-width + .5em !default;
 $form-check-margin-bottom:                .125rem !default;
 $form-check-label-color:                  null !default;
-$form-check-label-cursor:                 null !default;
+$form-check-label-cursor:                 pointer !default;//cg. null !default;
 $form-check-transition:                   null !default;
 
 $form-check-input-active-filter:          brightness(90%) !default;

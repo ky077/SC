@@ -34,62 +34,62 @@
 </header>
 <main id="content">
   <!-- Modal#start -->
-  <div class="modal fade show guide-modal" tabindex="-1" style="display: block;" aria-modal="true" role="dialog">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+  <div class="modal fade show start-modal" tabindex="-1" style="display: block;" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="modal-title">歡迎來到AI對話港口</h2>
-          <h3 class="modal-subtitle">為啟航做準備，選擇一位夥伴，帶領您探索本課內容！</h3>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h3 class="modal-subtitle">選擇一位夥伴，帶您探索本課內容！</h3>
+          <button type="button" class="btn-close btn-close-white" aria-label="關閉，返回全方位兒童中文" title="關閉，返回全方位兒童中文" onclick="window.location='https://ky077.github.io/SC/SCkids/courseGame.html'"><!-- 要讓使用者感覺是返回上一頁--></button>
         </div>
-        <div class="modal-body">
-          <div class="mb-4">
-            <label for="" class="form-label fs-8 fw-bold"><i class="fa-solid fa-location-arrow me-1 fs-7"></i>如何稱呼您？</label>
+        <div class="modal-body px-lg-5">
+          <div class="mb-5">
+            <label for="" class="form-label fs-7 fw-bold"><i class="fa-solid fa-location-arrow me-1"></i>如何稱呼您？</label>
             <div class="ps-3">
               <input type="text" class="form-control rounded-pill" id="" placeholder="例如：小明">
               <div class="form-check mt-1 ms-3">
-                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                <input class="form-check-input" type="checkbox" value="" id="checkDefault" checked>
                 <label class="form-check-label fs-8" for="checkDefault">記住我的稱呼</label>
               </div>
             </div>
           </div>
-          <div class="mb-4">
-            <label class="form-label fs-8 fw-bold"><i class="fa-solid fa-location-arrow me-1 fs-7"></i>選擇一位夥伴</label>
+          <div class="mb-5">
+            <label class="form-label fs-7 fw-bold"><i class="fa-solid fa-location-arrow me-1"></i>選擇一位夥伴</label>
             <div class="ps-3">
               <div class="row justify-content-center row-cols-2 row-cols-lg-4">
                 <div class="col text-center">
-                  <input type="radio" class="btn-check guide-btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                  <label class="guide-btn" for="btnradio1">
-                  <img src="Content/images/bot/avatar_01.png" class="guide-btn-img" alt="狐狸偵查員頭像"/>
-                  <div class="guide-btn-title">狐狸偵查員</div>
+                  <input type="radio" class="btn-check start-btn-check" name="btnradio" id="btnradio1" autocomplete="off" value="1">
+                  <label class="start-btn" for="btnradio1">
+                  <div class="start-btn-img"><img src="Content/images/bot/avatar_01.png" class="img-fluid" alt="狐狸偵查員頭像"/></div>
+                  <div class="start-btn-name">狐狸偵查員</div>
                   </label>
                 </div>
                 <div class="col text-center">
-                  <input type="radio" class="btn-check guide-btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                  <label class="guide-btn" for="btnradio2">
-                  <img src="Content/images/bot/avater_02.png" class="guide-btn-img" alt="長頸鹿領航員頭像"/>
-                  <div class="guide-btn-title">長頸鹿領航員</div>
+                  <input type="radio" class="btn-check start-btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="2">
+                  <label class="start-btn" for="btnradio2">
+                  <div class="start-btn-img"><img src="Content/images/bot/avater_02.png" class="img-fluid" alt="長頸鹿領航員頭像"/></div>
+                  <div class="start-btn-name">長頸鹿領航員</div>
                   </label>
                 </div>
                 <div class="col text-center">
-                  <input type="radio" class="btn-check guide-btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                  <label class="guide-btn" for="btnradio3">
-                  <img src="Content/images/bot/avater_03.png" class="guide-btn-img" alt="兔子船長頭像"/>
-                  <div class="guide-btn-title">兔子船長</div>
+                  <input type="radio" class="btn-check start-btn-check" name="btnradio" id="btnradio3" autocomplete="off"  value="3">
+                  <label class="start-btn" for="btnradio3">
+                  <div class="start-btn-img"><img src="Content/images/bot/avater_03.png" class="img-fluid" alt="兔子船長頭像"/></div>
+                  <div class="start-btn-name">兔子船長</div>
                   </label>
                 </div>
                 <div class="col text-center">
-                  <input type="radio" class="btn-check guide-btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                  <label class="guide-btn" for="btnradio4">
-                  <img src="Content/images/bot/avater_04_guess.png" class="guide-btn-img" alt="神秘嚮導頭像"/>
-                  <div class="guide-btn-title">神秘嚮導</div>
+                  <input type="radio" class="btn-check start-btn-check" name="btnradio" id="btnradio4" autocomplete="off"  value="4">
+                  <label class="start-btn" for="btnradio4">
+                  <div class="start-btn-img"><img src="Content/images/bot/avater_04_guess.png" class="img-fluid" alt="神秘嚮導頭像"/></div>
+                  <div class="start-btn-name">神秘嚮導</div>
                   </label>
                 </div>
               </div>
             </div>
           </div>
           <div class="text-center">
-            <button type="button" class="btn btn-primary btn-lg rounded-pill m-2 px-4 fw-bold" id="start" ><i class="fa-solid fa-ship me-1"></i>開始 AI 冒險</button>
+            <button type="button" class="btn btn-secondary btn-lg rounded-pill m-2 px-4 fw-bold" id="start" ><i class="fa-solid fa-ship me-1"></i>開始 AI 對話</button>
           </div>
         </div>
       </div>
@@ -97,27 +97,31 @@
   </div>
   <div class="container-xl">
     <!-- futuristic-frame START -->
-    <div class="futuristic-frame chat wow animate__animated animate__zoomIn">
+    <div class="futuristic-frame chat">
       <div class="futuristic-frame-border">
         <div class="futuristic-frame-content px-0">
           <!-- -->
           <div class="futuristic-frame-tool">
+            <div class="avatar"><span class="avatar-img"><img src="Content/images/bot/avatar_01.png" alt="機器人頭像"></span></div>
+            <div class="avatar-name">
+              <label>狐狸偵查員</label>
+              <span class="online-alert">在線中</span></div>
           </div>
           <!-- -->
           <div class="chatInterface-bar">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="switchCheckChecked" checked>
-              <label class="form-check-label" for="switchCheckChecked">拼音</label>
+              <input class="form-check-input" type="checkbox" role="switch" id="switchCheckPinyin">
+              <label class="form-check-label fs-7" for="switchCheckPinyin">拼音</label>
             </div>
           </div>
           <!-- -->
           <div class="chatInterface-content">
             <div class="chatInterface-frame left">
               <div class="avatar">
-                <span class="avatar-img"><img src="Content/images/bot/avatar_01.png" alt="機器人頭像"></span></div>
+                <span class="avatar-img"><img src="Content/images/bot/avatar_01.png" class="img-fluid" alt="狐狸偵查員頭像"/></span></div>
               <div class="dialog">
                 <div class="dialog-text">
-                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
+                  <button type="button" class="btn btn-secondary btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/你好！今天過得怎麼樣？你吃什麼？.mp3')"><span class="visually-hidden">播放</span></button>
                   <div class="dialog-text-content">
                     <ruby>
                       <rb>你</rb>
@@ -188,40 +192,173 @@
               </div>
             </div>
             <div class="chatInterface-frame right">
-              <div class="avatar"><span class="avatar-text">陳</span></div>
+              <div class="avatar"><span class="avatar-text">小</span></div>
               <div class="dialog">
                 <div class="dialog-text">
-                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
-                  <div class="dialog-text-content">我吃麵包</div>
+                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/我吃麵包.mp3')"><span class="visually-hidden">播放</span></button>
+                  <div class="dialog-text-content">
+                    <ruby>
+                      <rb>我</rb>
+                      <rt>wǒ</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>吃</rb>
+                      <rt>chī</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>麵</rb>
+                      <rt>miàn</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>包</rb>
+                      <rt>bāo</rt>
+                    </ruby>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="chatInterface-frame left">
               <div class="avatar">
-                <span class="avatar-img"><img src="Content/images/bot/avatar_01.png" alt="機器人頭像"></span></div>
+                <span class="avatar-img"><img src="Content/images/bot/avatar_01.png" class="img-fluid" alt="狐狸偵查員頭像"/></span></div>
               <div class="dialog">
                 <div class="dialog-text">
-                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Do you live in a dorm, Janie_.mp3')"><span class="visually-hidden">播放</span></button>
-                  <div class="dialog-text-content">麵包好吃嗎？</div>
+                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/麵包好吃嗎.mp3')"><span class="visually-hidden">播放</span></button>
+                  <div class="dialog-text-content">
+                    <ruby>
+                      <rb>麵</rb>
+                      <rt>miàn</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>包</rb>
+                      <rt>bāo</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>好</rb>
+                      <rt>hǎo</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>吃</rb>
+                      <rt>chī</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>嗎</rb>
+                      <rt>ma</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>？</rb>
+                      <rt></rt>
+                    </ruby>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="chatInterface-frame right">
-              <div class="avatar"><span class="avatar-text">陳</span></div>
+              <div class="avatar"><span class="avatar-text">小</span></div>
               <div class="dialog">
                 <div class="dialog-text">
-                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
-                  <div class="dialog-text-content">好吃</div>
+                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/好吃.mp3')"><span class="visually-hidden">播放</span></button>
+                  <div class="dialog-text-content">
+                    <ruby>
+                      <rb>好</rb>
+                      <rt>hǎo</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>吃</rb>
+                      <rt>chī</rt>
+                    </ruby>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="chatInterface-frame left">
               <div class="avatar">
-                <span class="avatar-img"><img src="Content/images/bot/avatar_01.png" alt="機器人頭像"></span></div>
+                <span class="avatar-img"><img src="Content/images/bot/avatar_01.png" class="img-fluid" alt="狐狸偵查員頭像"/></span></div>
               <div class="dialog">
                 <div class="dialog-text">
-                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
-                  <div class="dialog-text-content">你喝什麼？</div>
+                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/你喝什麼.mp3')"><span class="visually-hidden">播放</span></button>
+                  <div class="dialog-text-content">
+                    <ruby>
+                      <rb>你</rb>
+                      <rt>nǐ</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>喝</rb>
+                      <rt>hē</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>什</rb>
+                      <rt>shén</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>麼</rb>
+                      <rt>me</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>？</rb>
+                      <rt></rt>
+                    </ruby>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chatInterface-frame right">
+              <div class="avatar"><span class="avatar-text">小</span></div>
+              <div class="dialog">
+                <div class="dialog-text">
+                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/好吃.mp3')"><span class="visually-hidden">播放</span></button>
+                  <div class="dialog-text-content">
+                    <ruby>
+                      <rb>我</rb>
+                      <rt>wǒ</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>喝</rb>
+                      <rt>hē</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>牛</rb>
+                      <rt>niú</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>奶</rb>
+                      <rt>nǎi</rt>
+                    </ruby>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chatInterface-frame left">
+              <div class="avatar">
+                <span class="avatar-img"><img src="Content/images/bot/avatar_01.png" class="img-fluid" alt="狐狸偵查員頭像"/></span></div>
+              <div class="dialog">
+                <div class="dialog-text">
+                  <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/你喝什麼.mp3')"><span class="visually-hidden">播放</span></button>
+                  <div class="dialog-text-content">
+                    <ruby>
+                      <rb>牛</rb>
+                      <rt>niú</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>奶</rb>
+                      <rt>nǎi</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>好</rb>
+                      <rt>hǎo</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>喝</rb>
+                      <rt>hē</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>嗎</rb>
+                      <rt>ma</rt>
+                    </ruby>
+                    <ruby>
+                      <rb>?</rb>
+                      <rt></rt>
+                    </ruby>
+                  </div>
                 </div>
               </div>
             </div>
@@ -251,220 +388,301 @@
 <!-- This web Javascript -->
 <script src="Content/js/main.js"></script>
 <script>
-//開始
-$("#start").click(function () { 
-  	$(".guide-modal").hide();
+$(document).ready(function () { 
+	// 選擇夥伴
+	$('.start-btn-check').on('change', function() {
+		if ($(this).is(':checked')) {
+			const $label = $(`label[for="${this.id}"]`);
+			const avatarImg = $label.find('.start-btn-img').html();
+			const avatarName = $label.find('.start-btn-name').text();
 
-	//chat("[Greetings]");
-});
-	
-//[結束對話]
-$('#END, #CHAT_END').click(function (e) { 
-	e.preventDefault();
-	
-	var _href= $(this).attr('href');
-	
-	confirmModalDOM(`<div class="text-center">要結束對話嗎? 滿10輪才能得到評語喔!</div>`);
-	
-	$('#OK').click(function () { 
-		window.location = _href;	
+			// 記錄目前夥伴頭像與名稱，供後續動態追加訊息使用
+			$('body').data('currentBotAvatar', avatarImg);
+			$('body').data('currentBotName', avatarName);
+
+			// 更新頁面上所有 .avatar .avatar-img
+			$('.avatar .avatar-img').html(avatarImg);
+
+			// 更新上方名稱
+			$('.futuristic-frame-tool .avatar-name label').text(avatarName);
+		}
 	});
-});
-	
-//翻譯	
-function TRANSLATE(button) { 
-    // 判斷目前的按鈕狀態
-    const currentState = $(button).attr('aria-expanded') === 'true';
-    // 選取當前的翻譯顯示區塊
-    const translateTarget = $(button).parents('.dialog').find('.dialog-translate');
 
-    if (!currentState) {
-        // 當前狀態為 false：顯示翻譯
-        $(button).attr('aria-expanded', 'true');
-        translateTarget.show();
-
-        // 更新按鈕的屬性（隱藏翻譯）
-        $(button).attr({
-            'aria-label': '關閉翻譯',
-            'title': '關閉翻譯'
-        });
-    } else {
-        // 當前狀態為 true：隱藏翻譯
-        $(button).attr('aria-expanded', 'false');
-        translateTarget.hide();
-
-        // 更新按鈕的屬性（顯示翻譯）
-        $(button).attr({
-            'aria-label': '開啟翻譯',
-            'title': '開啟翻譯'
-        });
-    }
-}
-	
-//[眼睛] 機器人/我說的話
-function SCREENTEXT(button) {
-    // 判斷目前的按鈕狀態
-    const currentState = $(button).attr('aria-expanded');	
-	// 選取當前的文字區塊
-	const content = $(button).parents('.dialog').find('.dialog-text-content');
-
-    if (currentState === 'true') { 
-		// 當前、預設狀態是true-有眼睛-有顯示機器人說的話，要隱藏機器人說的話
-		$(button).attr('aria-expanded', 'false'); 
-		content.css('color', 'transparent');
+	// [開始]
+	$('#start').click(function () { 
+		$(".start-modal").hide();
 		
-		if ($(button).parents('.chatInterface-frame').hasClass('left')) {
-			$(button).attr({
-				'aria-label': '隱藏機器人說的話',
-				'title': 	  '隱藏機器人說的話'
-			});
-		} else if ($(button).parents('.chatInterface-frame').hasClass('right')){
-			$(button).attr({
-				'aria-label': '隱藏我說的話',
-				'title': 	  '隱藏我說的話'
-			});
+		// demo：開始後自動播放目前對話句子
+		const $firstPlayBtn = $('.chatInterface-content .chatInterface-frame.left').last().find('.btn__playTitle').first();
+		if ($firstPlayBtn.length) {
+			PLAYTITLE($firstPlayBtn[0], 'Content/temp/牛奶好喝嗎.mp3');
 		}
-		
-    } else {  
-		// 當前狀態(關閉眼睛)，要顯示機器人說的話
-		$(button).attr('aria-expanded', 'true'); 
-		content.css('color', '');
-		
-		if ($(button).parents('.chatInterface-frame').hasClass('left')) {
-			$(button).attr({
-				'aria-label': '顯示機器人說的話',
-				'title': 	  '顯示機器人說的話'
-			});	
-		} else if ($(button).parents('.chatInterface-frame').hasClass('right')){
-			$(button).attr({
-				'aria-label': '顯示我說的話',
-				'title': 	  '顯示我說的話'
-			});	
-		}
-    }
-}
+	});	
 	
-//[對話] 可以這麼說
-function SUGGEST(button) {
-    // 判斷目前的按鈕狀態
-    const currentState = $(button).attr('aria-expanded');	
-	// 選取當前要控制的文字區塊
-	const content = $(button).parents('.dialog').find('.dialog-suggest');
+	// 頁面載入時先記錄預設夥伴頭像
+	$('body').data(
+		'currentBotAvatar',
+		$('.futuristic-frame-tool .avatar .avatar-img').html()
+	);
+	$('body').data(
+		'currentBotName',
+		$('.futuristic-frame-tool .avatar-name label').text()
+	);
 
-    if (currentState === 'true') { 
-		// 當前、預設狀態是true-有...顯示可以這麼說，要關閉可以這麼說的文字
-		$(button).attr('aria-expanded', 'false'); 
-		content.addClass('hideText');
-		
-		$(button).attr({
-			'aria-label': '關閉可以這麼說',
-			'title': 	  '關閉可以這麼說'
+	// 頁面載入時執行 拼音
+	toggleRt();
+	
+	// 頁面載入時執行 卷軸捲到底
+	scrollToBottom();
+	
+	// [拼音]
+	$('#switchCheckPinyin').on('change', function () {
+		toggleRt();
+	});
+
+	// [結束對話]
+	$('#END, #CHAT_END').click(function (e) { 
+		e.preventDefault();
+
+		var _href= $(this).attr('href');
+
+		confirmModalDOM(`<div class="text-center">要結束對話嗎? 滿10輪才能得到評語喔!</div>`);
+
+		$('#OK').click(function () { 
+			window.location = _href;	
 		});
-    } else {  
-		// 當前狀態(無...)，要顯示可以這麼說的文字
-		$(button).attr('aria-expanded', 'true'); 
-		content.removeClass('hideText');
-		
-        $(button).attr({
-			'aria-label': '開啟可以這麼說',
-			'title': 	  '開啟可以這麼說'
-		});
-    }
+	});
+});	
+	
+
+// 取得目前夥伴頭像
+function getCurrentBotAvatar() {
+	return $('body').data('currentBotAvatar') || 
+		'<img src="Content/images/bot/avatar_01.png" class="img-fluid" alt="狐狸偵查員頭像"/>';
+}
+
+// 拼音顯示切換
+function toggleRt(target) {
+	const $scope = target ? $(target) : $(document);
+
+	if ($('#switchCheckPinyin').is(':checked')) { 
+		$scope.find('.dialog').addClass('show-rt').removeClass('hide-rt');
+	} else {
+		$scope.find('.dialog').addClass('hide-rt').removeClass('show-rt');
+	}
+}
+
+// 卷軸捲到底
+function scrollToBottom() {
+	const $el = $('.futuristic-frame-content');
+
+	// 先直接到底（確保正確）
+	$el.scrollTop($el[0].scrollHeight);
+
+	// 再做動畫（視覺效果）
+	$el.stop().animate({
+		scrollTop: $el[0].scrollHeight
+	}, 300);
 }	
+
 	
-//模擬分析loading
-function chat_analyze() {
-    // 顯示 loading 畫面
-    $('body').prepend(`
-        <div id="spinner" class="spinner show">
-			<div class="spinner-border" role="status">
-			  <span class="visually-hidden-focusable">Loading...</span>
+var chatAnalyzeCount = 0;				
+// 模擬分析loading	
+function chat_analyze() {	
+	chatAnalyzeCount++;
+
+	// 第一次 / 第二次以上 的右側文字
+	const isFirstRound = chatAnalyzeCount === 1;
+
+	const rightMessageHtml = isFirstRound ? `
+		<ruby>
+			<rb>不</rb>
+			<rt>bù</rt>
+		</ruby>
+		<ruby>
+			<rb>好</rb>
+			<rt>hǎo</rt>
+		</ruby>
+		<ruby>
+			<rb>喝</rb>
+			<rt>hē</rt>
+		</ruby>
+	` : `
+		<ruby>
+			<rb>我</rb>
+			<rt>wǒ</rt>
+		</ruby>
+		<ruby>
+			<rb>喜</rb>
+			<rt>xǐ</rt>
+		</ruby>
+		<ruby>
+			<rb>歡</rb>
+			<rt>huān</rt>
+		</ruby>
+		<ruby>
+			<rb>吃</rb>
+			<rt>chī</rt>
+		</ruby>
+		<ruby>
+			<rb>水</rb>
+			<rt>shuǐ</rt>
+		</ruby>
+		<ruby>
+			<rb>果</rb>
+			<rt>guǒ</rt>
+		</ruby>
+	`;
+
+	const rightAudio = isFirstRound
+		? 'Content/temp/不好喝.mp3'
+		: 'Content/temp/我喜歡吃水果.mp3';
+
+	$('body').prepend(`
+		<div id="spinner" class="spinner show">
+			<div class="spinner-border text-secondary" role="status">
+				<span class="visually-hidden-focusable">Loading...</span>
 			</div>
 		</div>
-    `);
+	`);
 
-    // 模擬 loading 結束（例如 1 秒後）
-    setTimeout(function () {
-        // 移除 loading 畫面
-        $('#spinner').remove();
+	setTimeout(function () {
+		$('#spinner').remove();
 
-        // 追加內容
-        $('.chatInterface-content').append(`
-            <div class="chatInterface-frame right">
-                <div class="avatar"><span class="avatar-text">陳</span></div>
-                <div class="dialog">
-                    <div class="dialog-text">
-                        <button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Hi, what’s your name_.mp3')"><span class="visually-hidden">播放</span></button>
-                        <div class="dialog-text-content">我喝牛奶</div>
-                    </div>  
-                </div>
-            </div>
-        `);
-
-        // 捲軸捲動至最底部
-        $('.futuristic-frame-content').animate({
-			scrollTop: $('.futuristic-frame-content')[0].scrollHeight
-		}, 500); 
-		
-		chat_robot();
-    }, 1000); // 模擬 loading 時間：1 秒
-}
-
-var count = 0;		
-function chat_robot() {	
-	var content = `<div class="chatInterface-frame left">
-									<div class="avatar"> <span class="avatar-img"><img src="Content/images/bot/avatar_01.png" alt="機器人頭像"></span></div>
-									<div class="dialog">
-										<div class="dialog-text">
-											<button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/Do you live in a dorm, Janie_.mp3')"><span class="visually-hidden">播放</span></button>
-											<div class="dialog-text-content">牛奶好喝嗎?</div>
-										</div>
-									</div>
-								</div>`;
-	
-	count ++ ;
-	if( count == 1){
-	    // 顯示 loading 畫面
-		$('body').prepend(`
-			<div id="spinner" class="spinner show">
-				<div class="spinner-border" role="status">
-				  <span class="visually-hidden-focusable">Loading...</span>
+		const $newMessage = $(`
+			<div class="chatInterface-frame right">
+				<div class="avatar"><span class="avatar-text">小</span></div>
+				<div class="dialog">
+					<div class="dialog-text">
+						<button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, '${rightAudio}')">
+							<span class="visually-hidden">播放</span>
+						</button>
+						<div class="dialog-text-content">
+							${rightMessageHtml}
+						</div>
+					</div>
 				</div>
 			</div>
-		`);  
-		
-		// 模擬 loading 結束（例如 1 秒後）
+		`);
+
+		$('.chatInterface-content').append($newMessage);
+
+		toggleRt($newMessage);
+		scrollToBottom();
+
+		chat_robot(chatAnalyzeCount);
+	}, 1000);
+}
+
+function chat_robot(step) {	
+	const currentBotAvatar = getCurrentBotAvatar();
+	const isFirstRound = step === 1;
+	const leftAudio = isFirstRound
+		? 'Content/temp/你喜歡吃什麼.mp3'
+		: 'Content/temp/很好！可以說「我喜歡吃水果」。繼續加油，練習更多句子！.mp3';
+
+	const $content = isFirstRound ? $(`
+		<div class="chatInterface-frame left">
+			<div class="avatar">
+				<span class="avatar-img">${currentBotAvatar}</span>
+			</div>
+			<div class="dialog">
+				<div class="dialog-text">
+					<button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/你喜歡吃什麼.mp3')">
+						<span class="visually-hidden">播放</span>
+					</button>
+					<div class="dialog-text-content">
+						<ruby>
+							<rb>你</rb>
+							<rt>nǐ</rt>
+						</ruby>
+						<ruby>
+							<rb>喜</rb>
+							<rt>xǐ</rt>
+						</ruby>
+						<ruby>
+							<rb>歡</rb>
+							<rt>huān</rt>
+						</ruby>
+						<ruby>
+							<rb>吃</rb>
+							<rt>chī</rt>
+						</ruby>
+						<ruby>
+							<rb>什</rb>
+							<rt>shén</rt>
+						</ruby>
+						<ruby>
+							<rb>麼</rb>
+							<rt>me</rt>
+						</ruby>
+						<ruby>
+							<rb>？</rb>
+							<rt></rt>
+						</ruby>
+					</div>
+				</div>
+			</div>
+		</div>
+	`) : $(`
+		<div class="chatInterface-frame left">
+			<div class="avatar">
+				<span class="avatar-img">${currentBotAvatar}</span>
+			</div>
+			<div class="dialog">
+				<div class="dialog-text">
+					<button type="button" class="btn btn-link btn__playTitle" title="播放">
+						<span class="visually-hidden">播放</span>
+					</button>
+					<div class="dialog-text-content">
+						評語：很好！可以說「我喜歡吃水果」。繼續加油，練習更多句子！
+					</div>
+				</div>
+			</div>
+		</div>
+	`);
+
+	if (isFirstRound) {
+		$('body').prepend(`
+			<div id="spinner" class="spinner show">
+				<div class="spinner-border text-secondary" role="status">
+					<span class="visually-hidden-focusable">Loading...</span>
+				</div>
+			</div>
+		`);
+
 		setTimeout(function () {
-			// 移除 loading 畫面
 			$('#spinner').remove();
+			$('.chatInterface-content').append($content);
+			toggleRt($content);
+			scrollToBottom();
 
-			// 追加內容
-			$('.chatInterface-content').append(content);
+			// 自動播放 chat_robot 這句音檔
+			if (leftAudio) {
+				const $playBtn = $content.find('.btn__playTitle').first();
+				if ($playBtn.length) {
+					PLAYTITLE($playBtn[0], leftAudio);
+				}
+			}
+		}, 1000);
 
-			// 捲軸捲動至最底部
-			$('.futuristic-frame-content').animate({
-				scrollTop: $('.futuristic-frame-content')[0].scrollHeight
-			}, 500); 
-
-		}, 1000); // 模擬 loading 時間：1 秒
-
-	} else{
-		// 顯示 loading 畫面
+	} else {
 		loadingBotDOM(5000, '評語產生中，請稍後');	
-		
-		// 模擬 loading 結束（例如 1 秒後）
+
 		setTimeout(function () {
-			// 移除 loading 畫面
 			$('#spinner').remove();
+			$('.chatInterface-content').append($content);
+			toggleRt($content);
+			scrollToBottom();
 
-			// 追加內容
-			$('.chatInterface-content').append(content);
-
-			// 捲軸捲動至最底部
-			$('.futuristic-frame-content').animate({
-				scrollTop: $('.futuristic-frame-content')[0].scrollHeight
-			}, 500); 
-		}, 5000); // 模擬 loading 時間：1 秒
+			// 第二次之後若有音檔也可在這裡播放
+			if (leftAudio) {
+				const $playBtn = $content.find('.btn__playTitle').first();
+				if ($playBtn.length) {
+					PLAYTITLE($playBtn[0], leftAudio);
+				}
+			}
+		}, 5000);
 	}
 }
 </script>

@@ -1,46 +1,40 @@
 //播放題目
-.btn__playTitle{  
-    background-color: transparent;
-    border: none;
-    font-size: 1rem;
-    padding: 0 !important;
-    position: relative;
-    &::before{
-        content: "\f028";
-		display: inline-block;
-        font-family: "Font Awesome 6 Free"; 
-	    font-weight: 900;
-        width: 1.3em;
-		height: 1.3em;
-		line-height: 1.3em;
-        vertical-align: middle;
-        overflow: hidden;
-        text-align: left;
-        margin-top: -.125em;
-        margin-right: .25rem;
-        border-radius: 0;
-		font-size: 1.25rem;
-    }
+.btn__playTitle{ 
+	width: 2rem;
+	height: 2rem;
+	border: none;
+	padding: 0 !important;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	background-color: shade-color( mix($red, $secondary, 23%), 2% ) !important;
+	margin-top: .25em;
+	margin-right: .5rem;
+	&::before{  
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-image: url("../images/volume-3.svg");
+		background-size: 80% auto;
+		background-repeat: no-repeat;
+		background-position: center center;
+
+	}
+	&::after{
+			display: none !important;
+		}
 }
+.btn__playTitle:hover{	
+	&::after{
+		display: none !important;
+	}
+ }
 .btn__playTitle.current{
     &::before{ 
-        width: .7em;
-        margin-right: calc(.25rem + .2em + .2em + .2em);    
+			animation: volume 3s infinite;
     }
-    &::after{ 
-        content: "";
-        display: inline-block;
-        width: .6em;
-        height: 1.3em;
-        position: absolute;
-        top: 50%;
-        left: .7em;
-        margin-top: -.7em;
-        background-image: url("../../images/volume-3.svg");
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        animation: volume 3s infinite;
-    }
+
 	&.disabled, &:disabled, &[disabled], &[disabled="disabled"]{
 		filter: opacity(1);
 		opacity: 1.0;
@@ -48,8 +42,76 @@
 	}
 }
 
-//錄製音檔、播放錄音、下一句 樣式
-.btn__record, .btn__playRec, 
+//錄製音檔、播放錄音 樣式
+.btn__record, .btn__playRec {
+	border-radius: 100%;
+	display: inline-flex;
+	align-items: center; 
+	justify-content: center;
+	box-shadow: 0 0 0.2rem lighten($primary, 15%);
+	background-color: $primary;
+  border-color: transparent;
+	> i{
+			color: $white;
+	}
+	
+	&.btn-lg{
+		width: calc(2em + 1rem + 1rem - 2px);
+    height: calc(2em + 1rem + 1rem - 2px);	
+		> i{
+      font-size: 1.5rem;
+    }
+	}
+	&.btn-sm{
+		width: calc(1em + 1rem + 1rem - 2px);
+    height: calc(1em + 1rem + 1rem - 2px);	
+		> i{
+    	font-size: 1rem;
+    }
+	}
+    
+	&::after{ 
+		border-radius:  100%;
+	}
+  &:hover, &:active,
+  &.hover, &.active{
+		> i{
+			color: #fff !important;
+		}  
+		&::after{
+			transform: scale(1.5, 1.5) !important;
+		}
+	}
+	&:disabled,
+	&.disabled,
+	&disabled, &[disabled="disabled"]{
+			background-color: #fff !important;
+			border-color: transparent !important;   
+	}
+	
+	&.btn-empty{
+		--bs-btn-border-color: transparent;
+		box-shadow: none !important; 
+   	background-color: transparent !important; 
+    border-color: transparent !important; 
+		pointer-events: none;
+		> i{
+			color: transparent !important; 
+		}
+	}
+}
+.btn__record.current, .btn__playRec.current{
+  animation: rec 2s infinite;
+  box-shadow: 0 0 0 0.25rem rgba($primary, .5);
+	background-color: $primary;
+	> i{
+        color: #fff;
+    }
+	&::after{ 
+		display: none;
+	}
+}
+//下一步、離開/關閉 樣式
 .btn__next, .btn-next,
 .btn__end, .btn-end{
     border-radius: 100%;
@@ -170,3 +232,4 @@
 }
 
 
+<!---->
