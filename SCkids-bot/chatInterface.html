@@ -365,9 +365,10 @@
           </div>
           <!-- -->
           <div class="chatInterface-footer">
-            <div class="btn btn-primary btn-sm btn__end btn-empty"></div>
+            <!--<div class="btn btn-primary btn-sm btn__end btn-empty"></div>-->
+						<a href="#" type="button" class="btn btn-primary btn-sm btn__end" title="填寫問卷" id="SURVEY"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></a>
             <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
-            <a href="chatEnd.html" type="button" class="btn btn-primary btn-sm btn__end" title="結束對話" id="CHAT_END"><i class="fa-solid fa-xmark" aria-hidden="true"></i></a>
+            <a href="https://ky077.github.io/SC/SCkids/courseGame.html" type="button" class="btn btn-primary btn-sm btn__end" title="結束對話" id="CHAT_END"><i class="fa-solid fa-xmark" aria-hidden="true"></i></a>
           </div>
           <!-- -->
         </div>
@@ -446,7 +447,7 @@ $(document).ready(function () {
 
 		var _href= $(this).attr('href');
 
-		confirmModalDOM(`<div class="text-center">要結束對話嗎? 滿10輪才能得到評語喔!</div>`);
+		confirmModalDOM(`<div class="text-center">要結束對話嗎? </div>`);
 
 		$('#OK').click(function () { 
 			window.location = _href;	
