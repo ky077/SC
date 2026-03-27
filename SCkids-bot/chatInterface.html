@@ -38,15 +38,15 @@
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title">歡迎來到AI對話港口</h2>
+          <h2 class="modal-title">歡迎來到AI對話</h2>
           <h3 class="modal-subtitle">選擇一位夥伴，帶您探索本課內容！</h3>
           <button type="button" class="btn-close btn-close-white" aria-label="關閉，返回全方位兒童中文" title="關閉，返回全方位兒童中文" onclick="window.location='https://ky077.github.io/SC/SCkids/courseGame.html'"><!-- 要讓使用者感覺是返回上一頁--></button>
         </div>
         <div class="modal-body px-lg-5">
           <div class="mb-5">
-            <label for="" class="form-label fs-7 fw-bold"><i class="fa-solid fa-location-arrow me-1"></i>如何稱呼您？</label>
+            <label for="inputUser" class="form-label fs-7 fw-bold"><i class="fa-solid fa-location-arrow me-1"></i>如何稱呼您？</label>
             <div class="ps-3">
-              <input type="text" class="form-control rounded-pill" id="" placeholder="例如：小明">
+              <input type="text" class="form-control rounded-pill" id="inputUser" placeholder="例如：小明">
               <div class="form-check mt-1 ms-3">
                 <input class="form-check-input" type="checkbox" value="" id="checkDefault" checked>
                 <label class="form-check-label fs-8" for="checkDefault">記住我的稱呼</label>
@@ -67,21 +67,21 @@
                 <div class="col text-center">
                   <input type="radio" class="btn-check start-btn-check" name="btnradio" id="btnradio2" autocomplete="off" value="2">
                   <label class="start-btn" for="btnradio2">
-                  <div class="start-btn-img"><img src="Content/images/bot/avater_02.png" class="img-fluid" alt="長頸鹿領航員頭像"/></div>
+                  <div class="start-btn-img"><img src="Content/images/bot/avatar_02.png" class="img-fluid" alt="長頸鹿領航員頭像"/></div>
                   <div class="start-btn-name">長頸鹿領航員</div>
                   </label>
                 </div>
                 <div class="col text-center">
                   <input type="radio" class="btn-check start-btn-check" name="btnradio" id="btnradio3" autocomplete="off"  value="3">
                   <label class="start-btn" for="btnradio3">
-                  <div class="start-btn-img"><img src="Content/images/bot/avater_03.png" class="img-fluid" alt="兔子船長頭像"/></div>
+                  <div class="start-btn-img"><img src="Content/images/bot/avatar_03.png" class="img-fluid" alt="兔子船長頭像"/></div>
                   <div class="start-btn-name">兔子船長</div>
                   </label>
                 </div>
                 <div class="col text-center">
                   <input type="radio" class="btn-check start-btn-check" name="btnradio" id="btnradio4" autocomplete="off"  value="4">
                   <label class="start-btn" for="btnradio4">
-                  <div class="start-btn-img"><img src="Content/images/bot/avater_04_guess.png" class="img-fluid" alt="神秘嚮導頭像"/></div>
+                  <div class="start-btn-img"><img src="Content/images/bot/avatar_04_guess.png" class="img-fluid" alt="神秘嚮導頭像"/></div>
                   <div class="start-btn-name">神秘嚮導</div>
                   </label>
                 </div>
@@ -89,7 +89,7 @@
             </div>
           </div>
           <div class="text-center">
-            <button type="button" class="btn btn-secondary btn-lg rounded-pill m-2 px-4 fw-bold" id="start" ><i class="fa-solid fa-ship me-1"></i>開始 AI 對話</button>
+            <button type="button" class="btn btn-secondary btn-lg rounded-pill m-2 px-4 fw-bold" id="start" disabled><i class="fa-solid fa-ship me-1"></i>開始 AI 對話</button>
           </div>
         </div>
       </div>
@@ -121,7 +121,7 @@
                 <span class="avatar-img"><img src="Content/images/bot/avatar_01.png" class="img-fluid" alt="狐狸偵查員頭像"/></span></div>
               <div class="dialog">
                 <div class="dialog-text">
-                  <button type="button" class="btn btn-secondary btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/你好！今天過得怎麼樣？你吃什麼？.mp3')"><span class="visually-hidden">播放</span></button>
+                  <button type="button" class="btn btn-secondary btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/你好_今天過得怎麼樣_你吃什麼_.mp3')"><span class="visually-hidden">播放</span></button>
                   <div class="dialog-text-content">
                     <ruby>
                       <rb>你</rb>
@@ -365,8 +365,7 @@
           </div>
           <!-- -->
           <div class="chatInterface-footer">
-            <!--<div class="btn btn-primary btn-sm btn__end btn-empty"></div>-->
-						<a href="#" type="button" class="btn btn-primary btn-sm btn__end" title="填寫問卷" id="SURVEY"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></a>
+            <div class="btn btn-primary btn-sm btn__end btn-empty"></div>
             <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
             <a href="https://ky077.github.io/SC/SCkids/courseGame.html" type="button" class="btn btn-primary btn-sm btn__end" title="結束對話" id="CHAT_END"><i class="fa-solid fa-xmark" aria-hidden="true"></i></a>
           </div>
@@ -389,20 +388,33 @@
 <!-- This web Javascript -->
 <script src="Content/js/main.js"></script>
 <script>
-$(document).ready(function () { 
+$(document).ready(function () {
+
+	// 輸入名字
+	$('#inputUser').on('input', function () {
+		checkStartEnable();
+	});
+
 	// 選擇夥伴
-	$('.start-btn-check').on('change', function() {
+	$('.start-btn-check').on('change', function () {
+		checkStartEnable();
+
 		if ($(this).is(':checked')) {
 			const $label = $(`label[for="${this.id}"]`);
-			const avatarImg = $label.find('.start-btn-img').html();
+			let avatarImg = $label.find('.start-btn-img').html();
 			const avatarName = $label.find('.start-btn-name').text();
 
-			// 記錄目前夥伴頭像與名稱，供後續動態追加訊息使用
+			// 若是神秘嚮導（_guess）→ 換正式圖
+			if (avatarImg.includes('_guess')) {
+				avatarImg = avatarImg.replace(/_guess/g, '');
+			}
+
+			// 記錄目前夥伴頭像與名稱
 			$('body').data('currentBotAvatar', avatarImg);
 			$('body').data('currentBotName', avatarName);
 
-			// 更新頁面上所有 .avatar .avatar-img
-			$('.avatar .avatar-img').html(avatarImg);
+			// 更新頁面上所有 bot 頭像
+			$('.chatInterface-frame.left .avatar .avatar-img, .futuristic-frame-tool .avatar .avatar-img').html(avatarImg);
 
 			// 更新上方名稱
 			$('.futuristic-frame-tool .avatar-name label').text(avatarName);
@@ -410,16 +422,26 @@ $(document).ready(function () {
 	});
 
 	// [開始]
-	$('#start').click(function () { 
+	$('#start').click(function () {
+		if ($(this).prop('disabled')) return;
+
 		$(".start-modal").hide();
-		
+
+		// 將目前輸入的名字首字同步到既有右側頭像
+		updateUserAvatarText();
+
 		// demo：開始後自動播放目前對話句子
 		const $firstPlayBtn = $('.chatInterface-content .chatInterface-frame.left').last().find('.btn__playTitle').first();
 		if ($firstPlayBtn.length) {
+			$('.btn__record').prop('disabled', true);
 			PLAYTITLE($firstPlayBtn[0], 'Content/temp/牛奶好喝嗎.mp3');
+			
+			setTimeout(function () {
+					$('.btn__record').prop('disabled', false);
+			}, 2500);
 		}
-	});	
-	
+	});
+
 	// 頁面載入時先記錄預設夥伴頭像
 	$('body').data(
 		'currentBotAvatar',
@@ -430,109 +452,115 @@ $(document).ready(function () {
 		$('.futuristic-frame-tool .avatar-name label').text()
 	);
 
-	// 頁面載入時執行 拼音
+	// 頁面載入初始化
+	checkStartEnable();
+	updateUserAvatarText();
 	toggleRt();
-	
-	// 頁面載入時執行 卷軸捲到底
 	scrollToBottom();
-	
+
 	// [拼音]
 	$('#switchCheckPinyin').on('change', function () {
 		toggleRt();
 	});
 
 	// [結束對話]
-	$('#END, #CHAT_END').click(function (e) { 
+	$('#END, #CHAT_END').click(function (e) {
 		e.preventDefault();
 
-		var _href= $(this).attr('href');
+		const _href = $(this).attr('href');
 
 		confirmModalDOM(`<div class="text-center">要結束對話嗎? </div>`);
 
-		$('#OK').click(function () { 
-			window.location = _href;	
+		$('#OK').click(function () {
+			window.location = _href;
 		});
 	});
-});	
-	
+});
+
+
+// start 按鈕是否可用
+function checkStartEnable() {
+	const hasName = $('#inputUser').val().trim().length > 0;
+	const hasPartner = $('[name="btnradio"]:checked').length > 0;
+
+	$('#start').prop('disabled', !(hasName && hasPartner));
+}
+
+
+// 取得稱呼第一個字
+function getUserInitial() {
+	const name = $('#inputUser').val().trim();
+	if (!name) return '';
+
+	const firstChar = name.charAt(0);
+
+	// 英文轉大寫
+	if (/^[a-zA-Z]$/.test(firstChar)) {
+		return firstChar.toUpperCase();
+	}
+
+	return firstChar;
+}
+
+
+// 更新既有右側使用者頭像文字
+function updateUserAvatarText() {
+	const userInitial = getUserInitial();
+	$('.chatInterface-frame.right .avatar-text').text(userInitial);
+}
+
 
 // 取得目前夥伴頭像
 function getCurrentBotAvatar() {
-	return $('body').data('currentBotAvatar') || 
+	return $('body').data('currentBotAvatar') ||
 		'<img src="Content/images/bot/avatar_01.png" class="img-fluid" alt="狐狸偵查員頭像"/>';
 }
+
 
 // 拼音顯示切換
 function toggleRt(target) {
 	const $scope = target ? $(target) : $(document);
 
-	if ($('#switchCheckPinyin').is(':checked')) { 
+	if ($('#switchCheckPinyin').is(':checked')) {
 		$scope.find('.dialog').addClass('show-rt').removeClass('hide-rt');
 	} else {
 		$scope.find('.dialog').addClass('hide-rt').removeClass('show-rt');
 	}
 }
 
+
 // 卷軸捲到底
 function scrollToBottom() {
 	const $el = $('.futuristic-frame-content');
+	if (!$el.length) return;
 
-	// 先直接到底（確保正確）
 	$el.scrollTop($el[0].scrollHeight);
-
-	// 再做動畫（視覺效果）
 	$el.stop().animate({
 		scrollTop: $el[0].scrollHeight
 	}, 300);
-}	
+}
 
-	
-var chatAnalyzeCount = 0;				
-// 模擬分析loading	
-function chat_analyze() {	
+
+var chatAnalyzeCount = 0;
+
+// 模擬分析 loading
+function chat_analyze() {
 	chatAnalyzeCount++;
 
-	// 第一次 / 第二次以上 的右側文字
 	const isFirstRound = chatAnalyzeCount === 1;
+	const userInitial = getUserInitial();
 
 	const rightMessageHtml = isFirstRound ? `
-		<ruby>
-			<rb>不</rb>
-			<rt>bù</rt>
-		</ruby>
-		<ruby>
-			<rb>好</rb>
-			<rt>hǎo</rt>
-		</ruby>
-		<ruby>
-			<rb>喝</rb>
-			<rt>hē</rt>
-		</ruby>
+		<ruby><rb>不</rb><rt>bù</rt></ruby>
+		<ruby><rb>好</rb><rt>hǎo</rt></ruby>
+		<ruby><rb>喝</rb><rt>hē</rt></ruby>
 	` : `
-		<ruby>
-			<rb>我</rb>
-			<rt>wǒ</rt>
-		</ruby>
-		<ruby>
-			<rb>喜</rb>
-			<rt>xǐ</rt>
-		</ruby>
-		<ruby>
-			<rb>歡</rb>
-			<rt>huān</rt>
-		</ruby>
-		<ruby>
-			<rb>吃</rb>
-			<rt>chī</rt>
-		</ruby>
-		<ruby>
-			<rb>水</rb>
-			<rt>shuǐ</rt>
-		</ruby>
-		<ruby>
-			<rb>果</rb>
-			<rt>guǒ</rt>
-		</ruby>
+		<ruby><rb>我</rb><rt>wǒ</rt></ruby>
+		<ruby><rb>喜</rb><rt>xǐ</rt></ruby>
+		<ruby><rb>歡</rb><rt>huān</rt></ruby>
+		<ruby><rb>吃</rb><rt>chī</rt></ruby>
+		<ruby><rb>水</rb><rt>shuǐ</rt></ruby>
+		<ruby><rb>果</rb><rt>guǒ</rt></ruby>
 	`;
 
 	const rightAudio = isFirstRound
@@ -552,7 +580,7 @@ function chat_analyze() {
 
 		const $newMessage = $(`
 			<div class="chatInterface-frame right">
-				<div class="avatar"><span class="avatar-text">小</span></div>
+				<div class="avatar"><span class="avatar-text">${userInitial}</span></div>
 				<div class="dialog">
 					<div class="dialog-text">
 						<button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, '${rightAudio}')">
@@ -574,13 +602,13 @@ function chat_analyze() {
 		chat_robot(chatAnalyzeCount);
 	}, 1000);
 }
-
-function chat_robot(step) {	
+function chat_robot(step) {
 	const currentBotAvatar = getCurrentBotAvatar();
 	const isFirstRound = step === 1;
+
 	const leftAudio = isFirstRound
 		? 'Content/temp/你喜歡吃什麼.mp3'
-		: 'Content/temp/很好！可以說「我喜歡吃水果」。繼續加油，練習更多句子！.mp3';
+		: 'Content/temp/評語.mp3';
 
 	const $content = isFirstRound ? $(`
 		<div class="chatInterface-frame left">
@@ -593,34 +621,13 @@ function chat_robot(step) {
 						<span class="visually-hidden">播放</span>
 					</button>
 					<div class="dialog-text-content">
-						<ruby>
-							<rb>你</rb>
-							<rt>nǐ</rt>
-						</ruby>
-						<ruby>
-							<rb>喜</rb>
-							<rt>xǐ</rt>
-						</ruby>
-						<ruby>
-							<rb>歡</rb>
-							<rt>huān</rt>
-						</ruby>
-						<ruby>
-							<rb>吃</rb>
-							<rt>chī</rt>
-						</ruby>
-						<ruby>
-							<rb>什</rb>
-							<rt>shén</rt>
-						</ruby>
-						<ruby>
-							<rb>麼</rb>
-							<rt>me</rt>
-						</ruby>
-						<ruby>
-							<rb>？</rb>
-							<rt></rt>
-						</ruby>
+						<ruby><rb>你</rb><rt>nǐ</rt></ruby>
+						<ruby><rb>喜</rb><rt>xǐ</rt></ruby>
+						<ruby><rb>歡</rb><rt>huān</rt></ruby>
+						<ruby><rb>吃</rb><rt>chī</rt></ruby>
+						<ruby><rb>什</rb><rt>shén</rt></ruby>
+						<ruby><rb>麼</rb><rt>me</rt></ruby>
+						<ruby><rb>？</rb><rt></rt></ruby>
 					</div>
 				</div>
 			</div>
@@ -632,7 +639,7 @@ function chat_robot(step) {
 			</div>
 			<div class="dialog">
 				<div class="dialog-text">
-					<button type="button" class="btn btn-link btn__playTitle" title="播放">
+					<button type="button" class="btn btn-link btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/評語.mp3')">
 						<span class="visually-hidden">播放</span>
 					</button>
 					<div class="dialog-text-content">
@@ -658,34 +665,42 @@ function chat_robot(step) {
 			toggleRt($content);
 			scrollToBottom();
 
-			// 自動播放 chat_robot 這句音檔
 			if (leftAudio) {
 				const $playBtn = $content.find('.btn__playTitle').first();
 				if ($playBtn.length) {
+					$('.btn__record').prop('disabled', true);
 					PLAYTITLE($playBtn[0], leftAudio);
+					
+					setTimeout(function () {
+						if (chatAnalyzeCount < 2) {
+							$('.btn__record').prop('disabled', false);
+						}
+					}, 2500);
 				}
 			}
 		}, 1000);
 
 	} else {
-		loadingBotDOM(5000, '評語產生中，請稍後');	
+		loadingBotDOM(5000, '評語產生中，請稍後');
 
 		setTimeout(function () {
 			$('#spinner').remove();
 			$('.chatInterface-content').append($content);
 			toggleRt($content);
 			scrollToBottom();
+			$('.btn__record').prop('disabled', true);
 
-			// 第二次之後若有音檔也可在這裡播放
 			if (leftAudio) {
 				const $playBtn = $content.find('.btn__playTitle').first();
 				if ($playBtn.length) {
-					PLAYTITLE($playBtn[0], leftAudio);
+					playWithRecordLock($playBtn[0], leftAudio);
 				}
 			}
 		}, 5000);
 	}
 }
+	
+	
 </script>
 </body>
 </html>

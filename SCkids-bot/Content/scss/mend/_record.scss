@@ -81,14 +81,7 @@
 		&::after{
 			transform: scale(1.5, 1.5) !important;
 		}
-	}
-	&:disabled,
-	&.disabled,
-	&disabled, &[disabled="disabled"]{
-			background-color: #fff !important;
-			border-color: transparent !important;   
-	}
-	
+	}	
 	&.btn-empty{
 		--bs-btn-border-color: transparent;
 		box-shadow: none !important; 

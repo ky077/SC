@@ -17,12 +17,16 @@
     100% { box-shadow: 0 0 0 0.25rem rgba($primary, .5);}    
 }
 
-@keyframes boatWave {
-    0%   { transform: translate(0, 0) rotate(-1deg); }
-    100% { transform: translate(10px, -3px) rotate(1deg); }    
+
+@keyframes startGlow {
+  	0% { transform: scale(1.00);}
+	100% { transform: scale(1.05);}
 }
 
-
+@keyframes boatWave {
+    0%   { transform: translate(0, 0) rotate(-2deg); }
+    100% { transform: translate(30px, -10px) rotate(2deg); }    
+}
 
 @keyframes onlineFade {
 		 0%  { opacity: 1; }

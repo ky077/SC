@@ -409,7 +409,7 @@ function loadingBotDOM(ms, text) {
     <div class="modal-content bg-transparent border-0">
       <div class="modal-body text-center">
         <div class="spinner-bot" role="status">
-          <img src="Content/images/boat-an.png" class="img-fluid" alt=""/>
+          <img src="Content/images/bg-boat-an.png" class="img-fluid" alt=""/>
 		  </div>
           <div class="spinner-text">` + text + `</div>  
       </div>

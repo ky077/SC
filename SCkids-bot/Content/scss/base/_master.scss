@@ -22,10 +22,10 @@ html, body {
   }
 }
 body {
-  background-image: url("../images/bg-2.png"), url("../images/bg.png");
+  background-image: url("../images/bg-seagull.png"), url("../images/bg-pier.png"), url("../images/bg.png");
 	background-repeat: no-repeat;
-	background-position: left bottom, center top;
-  background-size: 25% auto, 100% 100%;
+	background-position: right 2.5% top 5%, left bottom, center top;
+  background-size: 25% auto, 28% auto, 100% 100%;
 	&::before{ 
 		content: "";
 		display: block;
@@ -34,7 +34,7 @@ body {
 		position: absolute;
 		bottom: 18%;
     right: 5%;
-		background-image: url("../images/login.png");//船
+		background-image: url("../images/bg-boat.png");//船
 		background-repeat: no-repeat;
 		background-position: center center;
   	background-size: 100% auto;
