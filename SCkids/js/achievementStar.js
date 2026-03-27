@@ -158,6 +158,11 @@ function navSlide() {
 	}, 800);
 }	
 
+//AI對話星星
 if (new URLSearchParams(window.location.search).get('ai') === '1') {
-	navStar();
+	console.log('done ai');
+	
+	//星星旋轉 
+	rotateStar($('.navBot'));
 }
+
