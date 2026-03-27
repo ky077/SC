@@ -159,19 +159,19 @@ function navSlide() {
 }	
 
 
-(function ($) {
+$(function ($) {
 	//AI對話星星
 	if (new URLSearchParams(window.location.search).get('ai') === '1') {
-		console.log('done ai');
+		console.log('done ai 1');
 
-		 disableAll(); // 禁用所有互動
+		 //disableAll(); // 禁用所有互動
 
 		$('.navigation .navBot').addClass("done rotate");
 
-		setTimeout(function () { console.log('1s');
+		/*setTimeout(function () { console.log('1s');
 			$('.navigation .navBot').removeClass("rotate");
 			enableAll();
-		}, 1000);
+		}, 1000);*/
 	}
 })(jQuery);	
 
