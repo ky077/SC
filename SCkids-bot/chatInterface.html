@@ -694,7 +694,7 @@ function chat_robot(step) {
 			if (leftAudio) {
 				const $playBtn = $content.find('.btn__playTitle').first();
 				if ($playBtn.length) {
-					playWithRecordLock($playBtn[0], leftAudio);
+					PLAYTITLE($playBtn[0], leftAudio);
 				}
 			}
 		}, 5000);
