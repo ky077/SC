@@ -157,3 +157,7 @@ function navSlide() {
 	  scrollLeft: targetScrollLeft
 	}, 800);
 }	
+
+if (new URLSearchParams(window.location.search).get('done') === '1') {
+	navStar();
+}
