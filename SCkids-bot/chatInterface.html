@@ -367,7 +367,7 @@
           <div class="chatInterface-footer">
             <div class="btn btn-primary btn-sm btn__end btn-empty"></div>
             <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
-            <a href="https://ky077.github.io/SC/SCkids/courseGame.html" type="button" class="btn btn-primary btn-sm btn__end" title="結束對話" id="CHAT_END"><i class="fa-solid fa-xmark" aria-hidden="true"></i></a>
+            <a href="javascript:void(0);" type="button" class="btn btn-primary btn-sm btn__end" title="結束對話" id="CHAT_END"><i class="fa-solid fa-xmark" aria-hidden="true"></i></a>
           </div>
           <!-- -->
         </div>
@@ -468,12 +468,33 @@ $(document).ready(function () {
 	$('#END, #CHAT_END').click(function (e) {
 		e.preventDefault();
 
-		const _href = $(this).attr('href');
-
 		confirmModalDOM(`<div class="text-center">要結束對話嗎? </div>`);
 
-		$('#OK').click(function () {
-			window.location = _href;
+		$('#OK').off('click').on('click', function () {
+
+			const prevUrl = document.referrer;
+
+			// 若沒有上一頁（極少，但要防）
+			if (!prevUrl) {
+				window.history.back();
+				return;
+			}
+
+			// 是否完成對話（有評語）
+			const isDone = chatAnalyzeCount >= 2;
+
+			let targetUrl = prevUrl;
+
+			if (isDone) {
+				// 加上 done=1
+				if (targetUrl.includes('?')) {
+					targetUrl += '&done=1';
+				} else {
+					targetUrl += '?done=1';
+				}
+			}
+
+			window.location = targetUrl;
 		});
 	});
 });
