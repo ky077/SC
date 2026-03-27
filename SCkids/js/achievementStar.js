@@ -1,5 +1,5 @@
 //星星旋轉
-function rotateStar(el) {
+function rotateStar(el) { console.log('rotateStar');
   if (!el.hasClass('done')) {
     disableAll(); // 禁用所有互動
 
@@ -162,7 +162,13 @@ function navSlide() {
 if (new URLSearchParams(window.location.search).get('ai') === '1') {
 	console.log('done ai');
 	
-	//星星旋轉 
-	rotateStar($('.navBot'));
+	 disableAll(); // 禁用所有互動
+	
+	$('.navBot').addClass("done rotate");
+
+	setTimeout(function () {
+		$('.navBot').removeClass("rotate");
+		enableAll();
+	}, 1000);
 }
 
