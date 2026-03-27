@@ -159,17 +159,17 @@ function navSlide() {
 }	
 
 
+//
 $(window).on('load', function () {
 	if (new URLSearchParams(window.location.search).get('ai') === '1') {
-		console.log('done ai 1');
-
-		const $el = $('.navigation .navBot');
+		rotateStar($('.navigation .navBot'));
+		/*const $el = $('.navigation .navBot');
 
 		if ($el.length) {
 			$el.addClass("done rotate");
 		} else {
 			console.warn('navBot not found');
-		}
+		}*/
 	}
 });
 
