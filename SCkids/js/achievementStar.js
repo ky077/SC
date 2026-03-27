@@ -159,19 +159,17 @@ function navSlide() {
 }	
 
 
-$(function ($) {
-	//AI對話星星
+$(window).on('load', function () {
 	if (new URLSearchParams(window.location.search).get('ai') === '1') {
 		console.log('done ai 1');
 
-		 //disableAll(); // 禁用所有互動
+		const $el = $('.navigation .navBot');
 
-		$('.navigation .navBot').addClass("done rotate");
-
-		/*setTimeout(function () { console.log('1s');
-			$('.navigation .navBot').removeClass("rotate");
-			enableAll();
-		}, 1000);*/
+		if ($el.length) {
+			$el.addClass("done rotate");
+		} else {
+			console.warn('navBot not found');
+		}
 	}
-})(jQuery);	
+});
 
