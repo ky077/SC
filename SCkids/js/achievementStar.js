@@ -159,17 +159,10 @@ function navSlide() {
 }	
 
 
-//
+//AI對話完成星星 [demo]
 $(window).on('load', function () {
 	if (new URLSearchParams(window.location.search).get('ai') === '1') {
 		rotateStar($('.navigation .navBot'));
-		/*const $el = $('.navigation .navBot');
-
-		if ($el.length) {
-			$el.addClass("done rotate");
-		} else {
-			console.warn('navBot not found');
-		}*/
 	}
 });
 
