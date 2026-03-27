@@ -164,10 +164,10 @@ if (new URLSearchParams(window.location.search).get('ai') === '1') {
 	
 	 disableAll(); // 禁用所有互動
 	
-	$('.navBot').addClass("done rotate");
+	$('.navigation .navBot').addClass("done rotate");
 
-	setTimeout(function () {
-		$('.navBot').removeClass("rotate");
+	setTimeout(function () { console.log('1s');
+		$('.navigation .navBot').removeClass("rotate");
 		enableAll();
 	}, 1000);
 }
