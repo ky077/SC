@@ -158,6 +158,6 @@ function navSlide() {
 	}, 800);
 }	
 
-if (new URLSearchParams(window.location.search).get('done') === '1') {
+if (new URLSearchParams(window.location.search).get('ai') === '1') {
 	navStar();
 }
