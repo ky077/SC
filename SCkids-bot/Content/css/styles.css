@@ -407,13 +407,16 @@ ruby.blank rt { text-indent: -9999px; }
 
 @media screen and (min-width: 768px) { .zindex-modal { z-index: 1056; } }
 
-.start-modal { --bs-modal-bg: var(--bs-primary); --bs-modal-border-color: var(--bs-primary); --bs-modal-border-width: .325rem; --bs-modal-border-radius: 1rem; --bs-modal-inner-border-radius: calc(1rem - 1px); --bs-modal-header-border-color: var(--bs-primary); --bs-modal-footer-border-color: var(--bs-primary); color: #533C34 !important; background-image: url("../images/bg-seagull-an.png"), url("../images/bg-pier-an.png"), url("../images/bg.png"); background-repeat: no-repeat; background-position: right 2.5% top 5%, left bottom, center top; background-size: 25% auto, 28% auto, 100% 100%; }
+.start-modal { --bs-modal-bg: var(--bs-primary); --bs-modal-border-color: var(--bs-primary); --bs-modal-border-width: .325rem; --bs-modal-border-radius: 1rem; --bs-modal-inner-border-radius: calc(1rem - 1px); --bs-modal-header-border-color: var(--bs-primary); --bs-modal-footer-border-color: var(--bs-primary); color: #533C34 !important; background-image: url("../images/bg-seagull-anL.png"), url("../images/bg-pier-an.png"), url("../images/bg.png"); background-repeat: no-repeat; background-position: left 6% top 10%, left bottom, center top; background-size: 15% auto, 28% auto, 100% 100%; }
 .start-modal::before { content: ""; display: block; width: 35%; height: 0; padding-bottom: 23.9015904573%; position: absolute; bottom: 5%; right: 5%; background-image: url("../images/bg-boat.png"); background-repeat: no-repeat; background-position: center center; background-size: 100% auto; clip-path: polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 65%, 53% 65%); transform-origin: 50% 70%; will-change: transform; animation: boatWave 3s infinite alternate linear; }
 @media screen and (min-width: 768px) { .start-modal::before { z-index: 1056; } }
 .start-modal .modal-content { border: 0.325rem solid #533C34; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); }
 .start-modal .modal-header { flex-direction: column; justify-content: flex-start; }
 .start-modal .modal-header .btn-close { position: absolute; top: .75rem; right: .75rem; }
 .start-modal .modal-body { background-image: url("../images/bg-modal.jpg"); background-repeat: repeat-x; background-position: center center; background-size: cover; }
+.start-modal .modal-body::-webkit-scrollbar { width: 10px; background-color: transparent; }
+.start-modal .modal-body::-webkit-scrollbar-track { background-color: transparent; }
+.start-modal .modal-body::-webkit-scrollbar-thumb { background-color: #533C34; border-radius: 10px; }
 .start-modal .modal-title { color: #fff; font-size: 2rem; font-weight: bolder; text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); }
 .start-modal .modal-subtitle { font-size: 0.875rem; color: rgba(255, 255, 255, 0.75); margin-top: .325rem; }
 .start-modal .form-control, .start-modal .form-check-input { border-color: #988a85; }

@@ -12,10 +12,10 @@
 	--bs-modal-header-border-color: var(--bs-primary);
 	--bs-modal-footer-border-color: var(--bs-primary);
 	color: $primary !important;
-	background-image: url("../images/bg-seagull-an.png"), url("../images/bg-pier-an.png"), url("../images/bg.png");
+	background-image: url("../images/bg-seagull-anL.png"), url("../images/bg-pier-an.png"), url("../images/bg.png");
 	background-repeat: no-repeat;
-	background-position: right 2.5% top 5%, left bottom, center top;
-  background-size: 25% auto, 28% auto, 100% 100%;
+	background-position: left 6% top 10%, left bottom, center top;
+  background-size: 15% auto, 28% auto, 100% 100%;
 	&::before{ 
 		content: "";
 		display: block;
@@ -55,6 +55,17 @@
 		background-repeat: repeat-x;
 		background-position: center center;
 		background-size: cover;
+		&::-webkit-scrollbar {
+			width: 10px;
+			background-color: transparent;
+		}
+		&::-webkit-scrollbar-track {
+			background-color: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: $primary;
+			border-radius: 10px;
+		}
 	}
 	
 	.modal-title{
