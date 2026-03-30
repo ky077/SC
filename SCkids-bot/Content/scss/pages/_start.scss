@@ -1,5 +1,7 @@
 .zindex-modal{
-	z-index: $zindex-modal + 1;
+	@media screen and (min-width: 768px) {
+	z-index: $zindex-modal + 1;	
+	}
 }
 .start-modal{
 	--bs-modal-bg: var(--bs-primary);
@@ -28,10 +30,12 @@
 		background-position: center center;
   	background-size: 100% auto;
 		clip-path: polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 65%, 53% 65%);
-		z-index: $zindex-modal + 1;
 		transform-origin: 50% 70%;
 		will-change: transform;
 		animation: boatWave 3s infinite alternate linear;
+		@media screen and (min-width: 768px) {
+		z-index: $zindex-modal + 1;	
+		}
 	}
 	.modal-content{ 
 		border: 0.325rem solid $primary;
