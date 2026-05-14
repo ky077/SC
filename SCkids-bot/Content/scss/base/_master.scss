@@ -202,12 +202,12 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    height: calc(100% - (1.5rem + #{$futuristic-border}));
-    max-height: calc(100% - (1.5rem + #{$futuristic-border}));
+    height: calc(100% - (3.5rem + #{$futuristic-border}));
+    max-height: calc(100% - (3.5rem + #{$futuristic-border}));
     overflow-X: hidden;
     overflow-y: scroll;
     padding: 3rem 1.5rem;
-    margin-top: calc(1.5rem + #{$futuristic-border});
+    margin-top: calc(3.5rem + #{$futuristic-border});
     @media screen and (min-width: 576px) and (max-width: 991px) {
       padding: 3rem 6rem;
     }
@@ -231,7 +231,7 @@ main {
       left: 0;
       right: 0;
       z-index: 9;
-      height: calc(3.5rem + 0.325rem);
+      height: calc(3.5rem + #{$futuristic-border});
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -297,6 +297,19 @@ main {
 						margin-right: .25rem;
 						animation: onlineFade 2s ease-in-out infinite;
 					}
+				}
+			}
+			.tool-title{
+				color: $white;
+				font-size: $h4-font-size;
+				font-weight: 600;
+				text-align: center;
+				width: 100%;
+				>small{
+					display: block;
+					font-size: $font-size-sm;
+					font-weight: 400;
+					color: $primary-200;
 				}
 			}
     }

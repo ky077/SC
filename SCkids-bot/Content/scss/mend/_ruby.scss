@@ -3,16 +3,16 @@ ruby{
     flex-direction: column-reverse;
     align-items: center;
     vertical-align: text-bottom;
-		font-family: "DFKai-SB", KaiU, BiauKai, SimSun, NSimSun, "Times New Roman", serif; 
+		font-family: "DFKai-SB", KaiU, BiauKai, "Noto Serif TC", "Noto Serif SC", SimSun, NSimSun, "Times New Roman", serif; 
     line-height: 1;
     rb{ 
         line-height: 1;
 		min-width: 1em;
     }
     rt{
-        line-height: 1.4;
-        font-weight: normal !important;
-		font-family: "Times New Roman", serif !important;
+      line-height: 1.4;
+      font-weight: normal !important;
+			font-family: "Times New Roman", serif !important;
     }
 }
 ruby.top {   flex-direction: column-reverse;}

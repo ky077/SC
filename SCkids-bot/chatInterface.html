@@ -10,7 +10,14 @@
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?
+						family=Noto+Sans:ital,wght@0,100..900;1,100..900&
+						family=Noto+Sans+TC:wght@100..900&
+						family=Noto+Sans+SC:wght@100..900&
+						family=Noto+Sans+JP:wght@100..900&
+						family=Noto+Serif+TC:wght@500;600;700&
+						family=Noto+Serif+SC:wght@500;600;700&
+						display=swap" rel="stylesheet">
 
 <!-- Icon Font Stylesheet -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
@@ -368,6 +375,7 @@
             <div class="btn btn-primary btn-sm btn__end btn-empty"></div>
             <button type="button" class="btn btn-primary btn-lg btn__record" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
             <a href="javascript:void(0);" type="button" class="btn btn-primary btn-sm btn__end" title="結束對話" id="CHAT_END"><i class="fa-solid fa-xmark" aria-hidden="true"></i></a>
+						<a href="survey.html" role="button" class="btn btn-primary btn-lg btn__survey" title="下一頁" style="display: none;"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           </div>
           <!-- -->
         </div>
@@ -710,7 +718,10 @@ function chat_robot(step) {
 			$('.chatInterface-content').append($content);
 			toggleRt($content);
 			scrollToBottom();
-			$('.btn__record').prop('disabled', true);
+			//$('.btn__record').prop('disabled', true);
+			$('.chatInterface-footer .btn__survey').show()
+																						 .siblings('.btn').remove();
+			
 
 			if (leftAudio) {
 				const $playBtn = $content.find('.btn__playTitle').first();

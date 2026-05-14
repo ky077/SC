@@ -1,10 +1,11 @@
 html body{
-	 font-family: Arial, Helvetica,
-							 'Microsoft JhengHei', 'Microsoft YaHei', 
-							 'PingFang TC', 			 'PingFang SC',  
+	font-family: 'Noto+Sans', 
+							 'Noto+Sans+TC', 			 'Noto+Sans+SC',
+							 'Microsoft JhengHei', 'Microsoft YaHei',
+							 'PingFang TC', 			 'PingFang SC',
 							 'Heiti TC', 					 'Heiti SC', 
 							 'LiHei Pro',					 'STXihei', 
-							 sans-serif;
+							 sans-serif; 
 }
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active  {
