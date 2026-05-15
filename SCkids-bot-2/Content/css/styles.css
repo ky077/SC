@@ -486,7 +486,7 @@ button [class*="lang-"]:not(:first-child), .btn [class*="lang-"]:not(:first-chil
 .survey-quiz .quiz-topic [class*="lang-"] { display: block; }
 .survey-quiz .form-select { border-width: 2px; border-color: #533C34; border-radius: 0.5rem; padding: 0.5rem 1rem; }
 .survey-quiz .quiz-qa-group { position: relative; }
-.survey-quiz .quiz-qa-group [contenteditable="true"], .survey-quiz .quiz-qa-group .form-control { min-height: 200px; }
+.survey-quiz .quiz-qa-group [contenteditable="true"], .survey-quiz .quiz-qa-group .form-control { min-height: 200px; padding-bottom: calc((1em + 1rem + 1rem - 2px) + .5rem*2); }
 .survey-quiz .quiz-qa-group .quiz-qa-group-tool { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: .5rem 0; margin: 0 1rem; border-top: 1px solid rgba(83, 60, 52, 0.25); font-size: 0.875rem; }
 .survey-quiz .quiz-qa-group .quiz-qa-group-tool .recording { color: #dc3545; animation: onlineFade 2s ease-in-out infinite; }
 .survey-quiz .quiz-qa-group .quiz-qa-group-tool .recorded { display: inline-flex; align-items: center; color: #198754; flex: 1; }
