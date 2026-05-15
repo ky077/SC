@@ -461,7 +461,7 @@ ruby.blank rt { text-indent: -9999px; }
 
 .lang-jp { color: #988a85; font-size: 0.875rem; font-weight: 300; font-family: "Noto Sans JP"; }
 
-button [class*="lang-"]:not(:first-child), .btn [class*="lang-"]:not(:first-child) { margin-left: .5rem; }
+button [class*="lang-"]:not(:first-child), .btn [class*="lang-"]:not(:first-child) { margin-left: .25rem; }
 
 .tool-title .lang-main { color: #fff; font-size: 1.5rem; }
 
