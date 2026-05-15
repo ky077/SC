@@ -73,7 +73,7 @@ button, .btn{
 		margin-top: map-get($spacers, 2);
 	}
 }
-.survey-questions{}
+//.survey-questions{}
 .survey-actions{
 	display: flex;
 	justify-content: space-between;
@@ -204,8 +204,10 @@ button, .btn{
 			}
 			[class*="lang-"]{
 				display: block;
+				margin-left: 0;
 				@media screen and (min-width: 992px) {
 					display: inline-block;
+					margin-left: .25rem;
 				}
 			}
 			.lang-en, .lang-jp{
@@ -235,9 +237,6 @@ button, .btn{
 				right: $input-btn-padding-x-lg;
 				transform: translateY(-50%);
 			}
-		}
-		.btn-check + .btn:hover{
-			//background-color: $secondary-300;	
 		}
 	}
 }
