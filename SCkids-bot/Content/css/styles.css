@@ -480,8 +480,8 @@ button [class*="lang-"]:not(:first-child), .btn [class*="lang-"]:not(:first-chil
 .survey-actions { display: flex; justify-content: space-between; }
 .survey-actions .btn [class*="lang-"] { color: #533C34 !important; font-size: 1.25rem !important; font-weight: 700 !important; }
 .survey-actions .btn-outline-primary:hover [class*="lang-"] { color: #fff !important; }
-.survey-actions :not(.btn__submit) [class*="lang"] { display: none; }
-@media screen and (min-width: 576px) { .survey-actions :not(.btn__submit) [class*="lang"] { display: inline; } }
+.survey-actions .btn:not(.btn__submit) [class*="lang"] { display: none; }
+@media screen and (min-width: 576px) { .survey-actions .btn:not(.btn__submit) [class*="lang"] { display: inline; } }
 
 .survey-end { background-image: url("../images/clapping.png"); background-repeat: no-repeat; background-position: bottom center; background-size: 100% auto; }
 

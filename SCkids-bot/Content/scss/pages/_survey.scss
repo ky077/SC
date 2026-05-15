@@ -91,7 +91,7 @@ button, .btn{
 			}
 		}
 	}
-	:not(.btn__submit){
+	.btn:not(.btn__submit){
 		[class*="lang"]{
 			display: none;
 			@media screen and (min-width: 576px) {
