@@ -312,10 +312,13 @@ main {
 				}
 			}
 			.tool-bar{
-				min-width: 50%;
 				margin-left: auto;
 				display: flex;
 				align-items: center;
+				width: auto;
+				@media screen and (min-width: 768px) {
+				min-width: 50%;	
+				}
 				.progress-count{ 
 					color: $secondary;
 					flex: 1;
