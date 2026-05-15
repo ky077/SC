@@ -511,9 +511,14 @@
     "en": "Task completed!\nThank you for your feedback.\nIt makes learning more fun",
     "jp": "課題完了！\nフィードバックありがとうございます！\nおかげで学習がもっと楽しくなりました！"
   },
-	 "backButton": {
+	"backButton": {
     "zh": "返回",
     "en": "Back",
     "jp": "戻る"
-  }
+  },
+	"requiredAlert": {
+  "zh": "請先完成這一題再繼續喔！",
+  "en": "Please finish this question before continuing.",
+  "jp": "この質問に答えてから進んでください。"
+}
 }

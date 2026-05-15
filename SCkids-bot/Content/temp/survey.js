@@ -311,16 +311,36 @@ $(function () {
     return true;
   }
 
-  function showRequiredAlert() {
-    if (typeof alertModalDOM === 'function') {
-      alertModalDOM('<div class="text-center">請先完成這一題再繼續喔！</div>');
-    } else {
-      alert('請先完成這一題再繼續喔！');
-    }
-  }
+	function showRequiredAlert() {
+		var message = getRequiredAlertMessage();
+
+		if (typeof alertModalDOM === 'function') {
+			alertModalDOM('<div class="text-center">' + textToHtml(message) + '</div>');
+		} else {
+			alert(message);
+		}
+	}
+
+	function getRequiredAlertMessage() {
+		var defaultMessage = '請先完成這一題再繼續喔！';
+
+		if (!surveyData || !surveyData.requiredAlert) {
+			return defaultMessage;
+		}
+
+		if (currentLang === 'en' && surveyData.requiredAlert.en) {
+			return surveyData.requiredAlert.zh + ' ' + surveyData.requiredAlert.en;
+		}
+
+		if (currentLang === 'jp' && surveyData.requiredAlert.jp) {
+			return surveyData.requiredAlert.zh + ' ' + surveyData.requiredAlert.jp;
+		}
+
+		return surveyData.requiredAlert.zh || defaultMessage;
+	}
 
   // 修正 3：
-  // 點選錄製按鈕後，會先執行 inline onclick="REC(null, true)"
+  // 點選錄製按鈕後，會先執行 inline onclick="REC()"
   // REC() 會切換 .btn__record 的 active 狀態
   // 所以這裡要依照 active 判斷目前是錄製中或已停止
   function bindRecordButton() {
