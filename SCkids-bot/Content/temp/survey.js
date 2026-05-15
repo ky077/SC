@@ -231,7 +231,7 @@ $(function () {
       html += '    </div>';
 
       // 保留 main.js 的 REC()，不可更改
-      html += '    <button type="button" class="btn btn-primary btn-sm btn__record ms-auto" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>';
+      html += '    <button type="button" class="btn btn-primary btn-sm btn__record ms-auto" onclick="REC(null, false)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>';
       html += '  </div>';
       html += '</div>';
     }
