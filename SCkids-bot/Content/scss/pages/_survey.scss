@@ -17,6 +17,8 @@
 }
 
 .tool-title{
+	width: 100%;
+	text-align: center; //全題填寫方式
 	.lang-main{
 		color: $white;
 		font-size: $h4-font-size;
@@ -47,24 +49,47 @@
 }
 }
 
-.survey-guide{
+.survey-guide, .survey-end{
 	background-color: $white;
 	border: 4px dashed $secondary;
 	border-radius: $border-radius-2xl;
 	padding: map-get($spacers, 5);
+	min-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	[class*="lang-"]{
 		margin-bottom: map-get($spacers, 4);
-	}
-	.lang-main{
-		.text-hello{
-			display: inline-block;
-			font-size: $font-size-lg;
-			margin-bottom: 1rem;
-		}
 	}
 	.survey-scroll-btn{
 		margin-top: map-get($spacers, 2);
 	}
+}
+.survey-questions{}
+.survey-actions{
+	display: flex;
+	justify-content: space-between;
+	.btn{
+		[class*="lang-"]{
+			color: $primary !important;	
+			font-size: $font-size-lg !important;
+			font-weight: 700 !important;
+		}	
+	}
+	.btn-outline-primary{
+		&:hover{
+			[class*="lang-"]{
+				color: $white !important;		
+			}
+		}
+	}
+}
+.survey-end{
+	background-image: url("../images/clapping.png");
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: 100% auto;
 }
 
 .survey-quiz{
@@ -96,17 +121,42 @@
 		padding: $input-btn-padding-y-lg $input-btn-padding-x-lg;
 	}
 	//問答題
-	.quiz-qa-group{
-			position: relative;
-			[contenteditable="true"], .form-control{
-				 min-height: 150px;
+	.quiz-qa-group{ 
+		position: relative;
+		[contenteditable="true"], .form-control{
+			 min-height: 200px;
+		}
+		.quiz-qa-group-tool{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: .5rem 0;
+			margin: 0 1rem;
+			border-top: 1px solid rgba($primary, .25);
+			font-size: $font-size-sm;
+			.recording{
+				color: $danger;
+				animation: onlineFade 2s ease-in-out infinite;
 			}
-			.btn{
-				position: absolute;
-				bottom: .5rem;
-				right: .5rem;
+			.recorded{
+				display: inline-flex;
+				align-items: center;
+				color: $success;
+				flex: 1;
+				.btn__playTitle.btn-success {
+					background-color: #198754 !important;
+				}
+				.btn__delete{
+					margin-left: auto;
+					margin-right: .75rem;
+				}
 			}
 		}
+	}
 	.form-control{
 		border-width: 2px;
 		border-color: $primary;
@@ -140,13 +190,14 @@
 				display: block;
 				@media screen and (min-width: 992px) {
 					display: inline-block;
-					margin-left: .5rem;
+					&:not(:first-child){
+						margin-left: .5rem;	
+					}
 				}
 			}
 			.lang-en, .lang-jp{
 				color: $primary-400;
 				font-weight: 400;
-				
 			}
 			&:hover{
 				transform: scale(1.05);	
@@ -172,13 +223,21 @@
 				transform: translateY(-50%);
 			}
 		}
+		.btn-check + .btn:hover{
+			//background-color: $secondary-300;	
+		}
 	}
 }
 
-.survey-send-btn{
-	[class*="lang-"]{
-		color: $primary !important;	
-		font-size: $font-size-lg !important;
-		font-weight: 700 !important;
+
+
+.survey-end{
+	.btn-outline-primary{
+		&:hover{
+			[class*="lang-"]{
+				color: $white !important;		
+			}
+		}
 	}
 }
+

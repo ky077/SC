@@ -104,11 +104,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 	}
 }
 
-[class*="Interface-bar"]{  
+[class*="Interface-bar"]{ 
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	width: auto;
+	width: calc(50% + 3rem);
 	height: calc(3.5rem + 0.325rem);
 	position: absolute;
 	top: 0;
@@ -117,6 +117,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 	padding-left: 1rem;
 	padding-right: 1rem;
 	color: $white;
+	//拼音
 	.form-switch{
 		background-color: $primary-700;
 		border-radius: 2em;

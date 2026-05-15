@@ -56,24 +56,25 @@
           <!-- -->
           <div class="text-center">
             <div class="survey-guide">
-              <div class="lang-main"><span class="text-hello">小朋友你好！</span><br>
+              <div class="lang-main">小朋友你好！<br>
                 剛才的 AI 對話有趣嗎？<br>
                 請幫我們一個小忙，告訴我們你的想法，<br>
                 讓我們一起把中文學習變得更好玩！</div>
-              <div class="lang-en"><span class="text-hello">Hi there!</span> Did you enjoy talking with the AI just now?<br>
+              <div class="lang-en">Hi there! Did you enjoy talking with the AI just now?<br>
                 Please help us by sharing your thoughts <br>
                 so we can make learning Chinese more fun!</div>
-              <div class="lang-jp"><span class="text-hello">こんにちは！</span> AIとのおしゃべりは楽しかった？<br>
+              <div class="lang-jp">こんにちは！ AIとのおしゃべりは楽しかった？<br>
                 みんなが思ったことを教えてくれると、<br>
                 もっと楽しく ちゅうごくご をべんきょうできるようになるよ！</div>
-              <button type="button" class="survey-scroll-btn">
-              <span class="lang-main">向下滾動開始填寫 ↓ </span>
+              <button type="button" class="survey-scroll-btn" id="Start">
+              <span class="lang-main">向下滾動開始填寫</span>
               <span class="lang-en">Scroll down to start</span>
               <span class="lang-jp">下にスクロールして入力を開始してください</span>
+              <i class="fa-solid fa-arrow-down"></i>
               </button>
             </div>
             <!-- -->
-            <div id="surveyQuestions">
+            <div class="survey-Questions" id="surveyQuestions">
               <div class="survey-quiz">
                 <div class="quiz-num">Q1</div>
                 <div class="quiz-topic">
@@ -162,18 +163,45 @@
                 <div class="quiz-answer">
                   <div class="quiz-qa-group">
                     <div contenteditable="true" class="form-control" id="Q12-textarea" placeholder=""></div>
-                    <button type="button" class="btn btn-primary btn-sm btn__record" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
+                    <div class="quiz-qa-group-tool">
+                      <div class="recording" style="display: none;">錄製中</div>
+                      <div class="recorded" style="display: none;">
+                        <button type="button" class="btn btn-success btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/播放錄製完成.mp3')"><span class="visually-hidden">播放</span></button>
+                        <span>錄製完成</span>
+                        <button type="button" class="btn btn-link btn__delete" title="刪除" onClick=""><i class="fa-regular fa-trash-can"></i></button>
+                      </div>
+                      <button type="button" class="btn btn-primary btn-sm btn__record ms-auto" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <!-- -->
-            <button type="button" class="btn btn-secondary btn-lg rounded-pill px-5 survey-send-btn">
-            <span class="lang-main">送出問卷</span>
-            <span class="lang-en">Send questionnaire</span>
-            <span class="lang-jp">アンケートを送信する</span>
-            <i class="fa-regular fa-paper-plane"></i>
-            </button>
+            <div class="survey-actions">
+              <button type="button" class="btn btn-secondary btn-lg rounded-pill px-5 mx-auto" id="Submit" disabled>
+              <span class="lang-main">送出問卷</span>
+              <span class="lang-en">Send questionnaire</span>
+              <span class="lang-jp">アンケートを送信する</span>
+              <i class="fa-regular fa-paper-plane"></i>
+              </button>
+            </div>
+            <!-- -->
+            <div class="survey-end">
+              <div class="lang-main">完成任務！<br>
+                謝謝你的回饋，讓學習更有趣！</div>
+              <div class="lang-en">Task completed!<br>
+                Thank you for your feedback.<br>
+                It makes learning more fun!</div>
+              <div class="lang-jp">課題完了！<br>
+                フィードバックありがとうございます！<br>
+                おかげで学習がもっと楽しくなりました！</div>
+              <a href="javascript:history.go(-2);" role="button" class="btn btn-outline-primary rounded-pill" id="Back">
+              <span class="lang-main">返回</span>
+              <span class="lang-en">Back</span>
+              <span class="lang-jp">戻る</span>
+              <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
           <!-- -->
         </div>
@@ -191,7 +219,7 @@
 <script src="Content/widgets/WOW-master/dist/wow.min.js"></script>
 
 <!-- This web Javascript -->
-<script src="Content/js/main.js"></script> 
+<script src="Content/js/main.js"></script>
 <script src="Content/temp/survey.js"></script>
 </body>
 </html>

@@ -231,5 +231,11 @@
 	}
 }
 
-
-<!---->
+//刪除
+.btn__delete{
+	//border: 0;
+//	background-color: transparent !important;
+	&::after{
+		display: none !important;
+	}
+}

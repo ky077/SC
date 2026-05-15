@@ -9,8 +9,8 @@
     "en": "Hi there! Did you enjoy talking with the AI just now?\nPlease help us by sharing your thoughts\nso we can make learning Chinese more fun!",
     "jp": "こんにちは！ AIとのおしゃべりは楽しかった？\nみんなが思ったことを教えてくれると、\nもっと楽しく ちゅうごくご をべんきょうできるようになるよ！"
   },
-  "scrollButton": {
-    "zh": "向下滾動開始填寫 ↓",
+  "startButton": {
+    "zh": "向下滾動開始填寫",
     "en": "Scroll down to start",
     "jp": "下にスクロールして入力を開始してください"
   },
@@ -505,5 +505,15 @@
     "zh": "送出問卷",
     "en": "Send questionnaire",
     "jp": "アンケートを送信する"
+  },
+	"end": {
+    "zh": "完成任務！\n謝謝你的回饋，讓學習更有趣！",
+    "en": "Task completed!\nThank you for your feedback.\nIt makes learning more fun",
+    "jp": "課題完了！\nフィードバックありがとうございます！\nおかげで学習がもっと楽しくなりました！"
+  },
+	 "backButton": {
+    "zh": "返回",
+    "en": "Back",
+    "jp": "戻る"
   }
 }
