@@ -32,25 +32,25 @@
       "options": [{
           "value": "3",
           "label": {
-            "zh": "3",
-            "en": "3",
-            "jp": "3"
+            "zh": "3歲",
+            "en": "3 years old",
+            "jp": "3歳"
           }
         },
         {
           "value": "4",
           "label": {
-            "zh": "4",
-            "en": "4",
-            "jp": "4"
+            "zh": "4歲",
+            "en": "4 years old",
+            "jp": "4歳"
           }
         },
         {
           "value": "5",
           "label": {
-            "zh": "5",
-            "en": "5",
-            "jp": "5"
+            "zh": "5歲",
+            "en": "5 years old",
+            "jp": "5歳"
           }
         }
       ]

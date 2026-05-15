@@ -330,7 +330,6 @@ main {
 					border-radius: .5rem;
 					margin-left: .5rem;
 					margin-right: .5rem;
-					padding: 1px;
 					display: none;
 					@media screen and (min-width: 768px) {
 						display: block;
@@ -339,6 +338,8 @@ main {
 						background-color: $secondary;
 						height: .5rem;
 						border-radius: .5rem;
+						border: 1px solid $white;
+						transition: width 0.6s ease-in-out;
 					}
 				}	
 			}
