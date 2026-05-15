@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Smart Chinese Kids">
+<title>Smart Chinese Kids</title>
+<link rel="shortcut icon" type="image/x-icon" href="./Content/images/favicon.ico">
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?
+						family=Noto+Sans:ital,wght@0,100..900;1,100..900&
+						family=Noto+Sans+TC:wght@100..900&
+						family=Noto+Sans+SC:wght@100..900&
+						family=Noto+Sans+JP:wght@100..900&
+						family=Noto+Serif+TC:wght@500;600;700&
+						family=Noto+Serif+SC:wght@500;600;700&
+						display=swap" rel="stylesheet">
+
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link rel="stylesheet" href="Content/widgets/animate.css-main/animate.min.css">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link rel="stylesheet" type="text/css" href="Content/css/bootstrap.css">
+
+<!-- This web Core Stylesheet -->
+<link rel="stylesheet" type="text/css" href="Content/css/styles.css">
+</head>
+
+<body>
+<header>
+  <a href="#content" title="跳到主要內容" tabindex="1" class="visually-hidden-focusable sr-only-goContent">跳到主要內容</a>
+  <h1 class="header-logo zindex-modal">
+    <a href="javascript:void(0);" onclick="window.history.back();"><img src="Content/images/logo-tra.svg" alt="Smart Chinese Kids"><span class="visually-hidden">Smart Chinese Kids 全方位兒童中文</span></a>
+  </h1>
+</header>
+<main id="content">
+  <div class="container-xl">
+    <!-- futuristic-frame START -->
+    <div class="futuristic-frame chat wow animate__animated animate__zoomIn">
+      <div class="futuristic-frame-border">
+        <div class="futuristic-frame-content">
+          <!-- -->
+          <div class="futuristic-frame-tool">
+            <h2 class="tool-title">
+              <div class="lang-main">學習回饋問卷</div>
+              <small class="lang-en">Learning feedback questionnaire</small>
+              <small class="lang-jp">学習感想アンケート</small>
+            </h2>
+            <div class="tool-bar">
+              <div class="progress-count"><span>0</span>/<span>12</span></div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 10%;"></div>
+              </div>
+            </div>
+          </div>
+          <!-- -->
+          <div class="text-center">
+            <div class="survey-guide">
+              <div class="lang-main">小朋友你好！<br>
+                剛才的 AI 對話有趣嗎？<br>
+                請幫我們一個小忙，告訴我們你的想法，<br>
+                讓我們一起把中文學習變得更好玩！</div>
+              <div class="lang-en">Hi there! Did you enjoy talking with the AI just now?<br>
+                Please help us by sharing your thoughts <br>
+                so we can make learning Chinese more fun!</div>
+              <div class="lang-jp">こんにちは！ AIとのおしゃべりは楽しかった？<br>
+                みんなが思ったことを教えてくれると、<br>
+                もっと楽しく ちゅうごくご をべんきょうできるようになるよ！</div>
+              <button type="button" class="survey-scroll-btn" id="Start">
+              <span class="lang-main">開始填寫</span>
+              <span class="lang-en">Start</span>
+              <span class="lang-jp">始める</span>
+              <i class="fa-solid fa-arrow-down ms-1"></i>
+              </button>
+            </div>
+            <!-- -->
+            <div class="survey-Questions" id="surveyQuestions">
+              <div class="survey-quiz">
+                <div class="quiz-num">Q1</div>
+                <div class="quiz-topic">
+                  <div class="lang-main">你現在幾歲呢？</div>
+                  <div class="lang-en">How old are you?</div>
+                  <div class="lang-jp">何さいですか？</div>
+                </div>
+                <div class="quiz-answer">
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="survey-quiz">
+                <div class="quiz-num">Q2</div>
+                <div class="quiz-topic">
+                  <span class="lang-main">你學習中文多久了？</span>
+                  <span class="lang-en">How long have you been learning Chinese?</span>
+                  <span class="lang-jp">ちゅうごくご を どれくらい べんきょう していますか？</span>
+                </div>
+                <div class="quiz-answer">
+                  <div class="btn-group-vertical" role="group">
+                    <input type="radio" class="btn-check" name="btnradio" id="Q2-1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="Q2-1">
+                      <span class="lang-main">0-3個月</span>
+                      <span class="lang-en">0-3 months</span>
+                      <span class="lang-jp">0～3か月</span></label>
+                    <input type="radio" class="btn-check" name="btnradio" id="Q2-2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="Q2-2"><span class="lang-main">3-6個月</span>
+                      <span class="lang-en">3-6 months</span>
+                      <span class="lang-jp">3～6か月</span></label>
+                    <input type="radio" class="btn-check" name="btnradio" id="Q2-3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="Q2-3"><span class="lang-main">6個月到1年</span>
+                      <span class="lang-en">6 months to 1 year</span>
+                      <span class="lang-jp">6か月～1年</span></label>
+                    <input type="radio" class="btn-check" name="btnradio" id="Q2-4" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="Q2-4">
+                      <span class="lang-main">1年以上</span>
+                      <span class="lang-en">More than 1 year</span>
+                      <span class="lang-jp">1年より長い</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="survey-quiz">
+                <div class="quiz-num">Q3</div>
+                <div class="quiz-topic">
+                  <div class="lang-main">除了「全方位兒童中文」平台之外，你平常還用什麼方式學中文？(多選)</div>
+                  <div class="lang-en">Besides this platform, how else do you learn Chinese? (Select all that apply)</div>
+                  <div class="lang-jp">このアプリじゃないところで、どうやって ちゅうごくご を べんきょう していますか？（なんこでもえらべます）</div>
+                </div>
+                <div class="quiz-answer">
+                  <div class="btn-group-vertical" role="group">
+                    <input type="checkbox" class="btn-check" id="Q3-1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="Q3-1">
+                      <span class="lang-main">在學校上中文課 </span>
+                      <span class="lang-en">I take Chinese classes at school</span>
+                      <span class="lang-jp">がっこう で ちゅうごくご をならっている</span></label>
+                    <input type="checkbox" class="btn-check" id="Q3-2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="Q3-2">
+                      <span class="lang-main">看中文卡通或影片</span>
+                      <span class="lang-en">I watch Chinese cartoons or videos</span>
+                      <span class="lang-jp">ちゅうごくご の アニメ や どうが を見る</span></label>
+                    <input type="checkbox" class="btn-check" id="Q3-3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="Q3-3">
+                      <span class="lang-main">跟家人說中文</span>
+                      <span class="lang-en">I speak Chinese with my family</span>
+                      <span class="lang-jp">かぞく と ちゅうごくご ではなす</span></label>
+                    <input type="checkbox" class="btn-check" id="Q3-4" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="Q3-4">
+                      <span class="lang-main">看中文書或繪本</span>
+                      <span class="lang-en">I read Chinese books or picture books</span>
+                      <span class="lang-jp">ちゅうごくご の本や絵本を読む</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="survey-quiz">
+                <div class="quiz-num">Q12</div>
+                <div class="quiz-topic">
+                  <div class="lang-main">心得與建議：你有沒有什麼想讓 AI 對話練習變得更好的建議？或是有什麼想跟我們分享的嗎？ (非必填)</div>
+                  <div class="lang-en">Thoughts &#38; Suggestions: Is there anything that can make the AI practice better? Or anything you’d like to share with us? (Optional)</div>
+                  <div class="lang-jp">かんそう（書いても書かなくてもいいよ）：AIとおしゃべりをもっとよくするには、どうしたらいいと思う？ つたえたいこともあれば、教えてね！</div>
+                </div>
+                <div class="quiz-answer">
+                  <div class="quiz-qa-group">
+                    <div contenteditable="true" class="form-control" id="Q12-textarea" placeholder=""></div>
+                    <div class="quiz-qa-group-tool">
+                      <div class="recording">錄製中</div>
+                      <div class="recorded">
+                        <button type="button" class="btn btn-success btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/播放錄製完成.mp3')"><span class="visually-hidden">播放</span></button>
+                        <span>錄製完成</span>
+                        <button type="button" class="btn btn-link btn__delete" title="刪除" onClick=""><i class="fa-regular fa-trash-can"></i></button>
+                      </div>
+                      <button type="button" class="btn btn-primary btn-sm btn__record ms-auto" onclick="REC(null, false)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- -->
+            <div class="survey-actions">
+              <button type="button" class="btn btn-outline-primary rounded-pill px-5 me-auto" id="Previous">
+              <i class="fa-solid fa-chevron-left me-1"></i>
+              <span class="lang-main">上一題</span>
+              <span class="lang-en">Previous</span>
+              <span class="lang-jp">前へ</span>
+              </button>
+              <button type="button" class="btn btn-secondary rounded-pill px-5 ms-auto" id="Next">
+              <span class="lang-main">下一題</span>
+              <span class="lang-en">Next</span>
+              <span class="lang-jp">次へ</span>
+              <i class="fa-solid fa-chevron-right ms-1"></i>
+              </button>
+              <button type="button" class="btn btn-secondary rounded-pill px-5 ms-auto btn__submit" id="Submit">
+              <span class="lang-main">送出問卷</span>
+              <span class="lang-en">Send questionnaire</span>
+              <span class="lang-jp">アンケートを送信する</span>
+              <i class="fa-regular fa-paper-plane ms-1"></i>
+              </button>
+            </div>
+            <!-- -->
+            <div class="survey-end">
+              <div class="lang-main">完成任務！<br>
+                謝謝你的回饋，讓學習更有趣！</div>
+              <div class="lang-en">Task completed!<br>
+                Thank you for your feedback.<br>
+                It makes learning more fun!</div>
+              <div class="lang-jp">課題完了！<br>
+                フィードバックありがとうございます！<br>
+                おかげで学習がもっと楽しくなりました！</div>
+              <button type="button" class="btn btn-outline-primary rounded-pill" id="Back">
+              <span class="lang-main">返回</span>
+              <span class="lang-en">Back</span>
+              <span class="lang-jp">戻る</span>
+              <i class="fa-solid fa-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+          <!-- -->
+        </div>
+      </div>
+    </div>
+    <!-- futuristic-frame END -->
+  </div>
+</main>
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<!-- ------- ------- ------- ------- ------- ------- ------- -->
+<!-- JavaScript Libraries -->
+<script src="Content/js/jquery-3.6.0.min.js"></script>
+<script src="Content/js/bootstrap.bundle.min.js"></script>
+<script src="Content/widgets/WOW-master/dist/wow.min.js"></script>
+
+<!-- This web Javascript -->
+<script src="Content/js/main.js"></script>
+<script src="Content/temp/survey.js"></script>
+</body>
+</html>

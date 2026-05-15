@@ -1,0 +1,256 @@
+.lang-main{ 
+	color: $primary;
+	font-size: $font-size-base;
+	font-weight: 700;
+}
+.lang-en{
+	color: $primary-300;
+	font-size: $font-size-sm;
+	font-weight: 300;
+	font-family: "Noto Sans";
+}
+.lang-jp{
+	color: $primary-300;
+	font-size: $font-size-sm;
+	font-weight: 300;
+	font-family: "Noto Sans JP";
+}
+
+button, .btn{
+	[class*="lang-"]:not(:first-child){
+		margin-left: .25rem;	
+	}	
+}
+
+.tool-title{
+	.lang-main{
+		color: $white;
+		font-size: $h3-font-size;
+		@media screen and (min-width: 576px) {
+		font-size: $h4-font-size;	
+		}
+	}
+}
+
+.survey-scroll-btn{
+	border: 0;
+	background-color: tint-color($warning, 80%);
+	border-radius: $border-radius-pill;
+	color: shade-color($danger, 20%) !important;
+	font-size: $font-size-sm !important;
+	padding: $input-btn-padding-y 2rem;
+	animation: bounce 1s infinite;
+	[class*="lang-"]{
+		color: shade-color($danger, 20%) !important;
+		font-size: $font-size-sm !important;
+	}
+}
+@keyframes bounce {
+0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+}
+50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+}
+
+.survey-guide, .survey-end{
+	background-color: $white;
+	border: 4px dashed $secondary;
+	border-radius: $border-radius-2xl;
+	padding: map-get($spacers, 5);
+	min-height: 50vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	[class*="lang-"]{
+		margin-bottom: map-get($spacers, 4);
+	}
+	.survey-scroll-btn{
+		margin-top: map-get($spacers, 2);
+	}
+}
+.survey-questions{}
+.survey-actions{
+	display: flex;
+	justify-content: space-between;
+	.btn{
+		[class*="lang-"]{
+			color: $primary !important;	
+			font-size: $font-size-lg !important;
+			font-weight: 700 !important;
+		}	
+	}
+	.btn-outline-primary{
+		&:hover{
+			[class*="lang-"]{
+				color: $white !important;		
+			}
+		}
+	}
+	.btn:not(.btn__submit){
+		[class*="lang-"]{
+			display: none !important;
+			@media screen and (min-width: 576px) {
+			display: inline !important;	
+			}
+		}
+	}
+}
+.survey-end{
+	background-image: url("../images/clapping.png");
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: 100% auto;
+}
+
+.survey-quiz{
+	background-color: rgba($white, .75);
+	border-radius: $border-radius-2xl;
+	margin: map-get($spacers, 5) 0;
+	padding: map-get($spacers, 5);
+	text-align: left;
+	.quiz-num{
+		background-color: $primary;
+		border-radius: $border-radius-pill;
+		color: $white;
+		display: inline-block;
+		padding: 0 .75rem;
+		font-size: $font-size-sm;
+		margin-bottom: .5rem;
+	}
+	.quiz-topic{
+		margin-bottom: .75rem;
+		[class*="lang-"]{
+			display: block;
+		}
+	}
+	//下拉
+	.form-select{
+		border-width: 2px;
+		border-color: $primary;
+		border-radius: $border-radius-lg;
+		padding: $input-btn-padding-y-lg $input-btn-padding-x-lg;
+	}
+	//問答題
+	.quiz-qa-group{ 
+		position: relative;
+		[contenteditable="true"], .form-control{
+			min-height: 200px;
+			padding-bottom: calc((1em + 1rem + 1rem - 2px) + .5rem*2);
+		}
+		.quiz-qa-group-tool{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: .5rem 0;
+			margin: 0 1rem;
+			border-top: 1px solid rgba($primary, .25);
+			font-size: $font-size-sm;
+			.recording{
+				color: $danger;
+				animation: onlineFade 2s ease-in-out infinite;
+			}
+			.recorded{
+				display: inline-flex;
+				align-items: center;
+				color: $success;
+				flex: 1;
+				.btn__playTitle.btn-success {
+					background-color: #198754 !important;
+				}
+				.btn__delete{
+					margin-left: auto;
+					margin-right: .75rem;
+				}
+			}
+		}
+	}
+	.form-control{
+		border-width: 2px;
+		border-color: $primary;
+		border-radius: $border-radius-lg;
+		padding: $input-btn-padding-y-lg $input-btn-padding-x-lg;
+	}
+	//選單選、多選
+	.btn-group-vertical{
+		display: flex;
+		justify-content: flex-start;
+		gap: map-get($spacers, 3);
+		.btn{
+			border: 2px solid $primary;
+			border-radius: $border-radius-lg !important;
+			padding: $input-btn-padding-y-lg $input-btn-padding-x-lg;
+			text-align: left;
+			&::after{
+				content: "";
+				display: block;
+				width: calc(100% + 4px);
+				height: calc(100% + 4px);
+				position: absolute;
+				top: -2px;
+				left: -2px;
+				right: -2px;
+				bottom: -2px;
+				border: 1px solid $primary;
+				border-radius: $border-radius-lg !important;
+			}
+			[class*="lang-"]{
+				display: block;
+				@media screen and (min-width: 992px) {
+					display: inline-block;
+				}
+			}
+			.lang-en, .lang-jp{
+				color: $primary-400;
+				font-weight: 400;
+			}
+			&:hover{
+				transform: scale(1.05);	
+				&::after{
+					border: 1px solid transparent;
+					transform: scale(1.05, 1.5);
+					transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+				}
+			 }
+		}
+		.btn-check:checked + .btn {
+			background-color: $secondary-300;
+			padding-right: calc(#{$input-btn-padding-x-lg}*2 + #{$font-size-base});
+			&::before{
+				content: "\f00c";
+				font-family: "Font Awesome 6 Free"; 
+				font-weight: 900;
+				font-size: $font-size-base;
+				color: $primary;
+				position: absolute;
+				top: 50%;
+				right: $input-btn-padding-x-lg;
+				transform: translateY(-50%);
+			}
+		}
+		.btn-check + .btn:hover{
+			//background-color: $secondary-300;	
+		}
+	}
+}
+
+
+
+.survey-end{
+	.btn-outline-primary{
+		&:hover{
+			[class*="lang-"]{
+				color: $white !important;		
+			}
+		}
+	}
+}
+
