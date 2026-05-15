@@ -1,0 +1,519 @@
+{
+  "surveyTitle": {
+    "zh": "學習回饋問卷",
+    "en": "Learning feedback questionnaire",
+    "jp": "学習感想アンケート"
+  },
+  "guide": {
+    "zh": "小朋友你好！\n剛才的 AI 對話有趣嗎？\n請幫我們一個小忙，告訴我們你的想法，\n讓我們一起把中文學習變得更好玩！",
+    "en": "Hi there! Did you enjoy talking with the AI just now?\nPlease help us by sharing your thoughts\nso we can make learning Chinese more fun!",
+    "jp": "こんにちは！ AIとのおしゃべりは楽しかった？\nみんなが思ったことを教えてくれると、\nもっと楽しく ちゅうごくご をべんきょうできるようになるよ！"
+  },
+  "startButton": {
+    "zh": "開始填寫",
+    "en": "Start",
+    "jp": "始める"
+  },
+  "questions": [
+		{
+      "id": "Q1",
+      "type": "select",
+      "required": true,
+      "title": {
+        "zh": "你現在幾歲呢？",
+        "en": "How old are you?",
+        "jp": "何さいですか？"
+      },
+      "placeholder": {
+        "zh": "請選擇年齡",
+        "en": "Please select your age",
+        "jp": "年齢を選んでください"
+      },
+      "options": [{
+          "value": "3",
+          "label": {
+            "zh": "3",
+            "en": "3",
+            "jp": "3"
+          }
+        },
+        {
+          "value": "4",
+          "label": {
+            "zh": "4",
+            "en": "4",
+            "jp": "4"
+          }
+        },
+        {
+          "value": "5",
+          "label": {
+            "zh": "5",
+            "en": "5",
+            "jp": "5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q2",
+      "type": "radio",
+      "required": true,
+      "title": {
+        "zh": "你學習中文多久了？",
+        "en": "How long have you been learning Chinese?",
+        "jp": "ちゅうごくご を どれくらい べんきょう していますか？"
+      },
+      "options": [{
+          "value": "0-3",
+          "label": {
+            "zh": "0-3個月",
+            "en": "0-3 months",
+            "jp": "0～3か月"
+          }
+        },
+        {
+          "value": "3-6",
+          "label": {
+            "zh": "3-6個月",
+            "en": "3-6 months",
+            "jp": "3～6か月"
+          }
+        },
+        {
+          "value": "6-1",
+          "label": {
+            "zh": "6個月到1年",
+            "en": "6 months to 1 year",
+            "jp": "6か月～1年"
+          }
+        },
+        {
+          "value": "1",
+          "label": {
+            "zh": "1年以上",
+            "en": "More than 1 year",
+            "jp": "1年より長い"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q3",
+      "type": "checkbox",
+      "required": true,
+      "title": {
+        "zh": "除了「全方位兒童中文」平台之外，你平常還用什麼方式學中文？(多選)",
+        "en": "Besides this platform, how else do you learn Chinese?(Select all that apply)",
+        "jp": "このアプリじゃないところで、どうやって ちゅうごくご を べんきょう していますか？(なんこでもえらべます)"
+      },
+      "options": [{
+          "value": "school_chinese_class",
+          "label": {
+            "zh": "在學校上中文課",
+            "en": "I take Chinese classes at school",
+            "jp": "がっこう で ちゅうごくご をならっている"
+          }
+        },
+        {
+          "value": "watch_chinese_cartoons_or_videos",
+          "label": {
+            "zh": "看中文卡通或影片",
+            "en": "I watch Chinese cartoons or videos",
+            "jp": "ちゅうごくご の アニメ や どうが を見る"
+          }
+        },
+        {
+          "value": "speak_chinese_with_family",
+          "label": {
+            "zh": "跟家人說中文",
+            "en": "I speak Chinese with my family",
+            "jp": "かぞく と ちゅうごくご ではなす"
+          }
+        },
+        {
+          "value": "read_chinese_books_or_picture_books",
+          "label": {
+            "zh": "看中文書或繪本",
+            "en": "I read Chinese books or picture books",
+            "jp": "ちゅうごくご の本や絵本を読む"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q4",
+      "type": "radio",
+      "required": true,
+      "title": {
+        "zh": "你通常在哪裡學習說中文？",
+        "en": "Where do you usually practice speaking Chinese?",
+        "jp": "いつもどこで ちゅうごくご を はなす れんしゅう をしていますか？"
+      },
+      "options": [{
+          "value": "School",
+          "label": {
+            "zh": "學校",
+            "en": "School",
+            "jp": "がっこう"
+          }
+        },
+        {
+          "value": "Home",
+          "label": {
+            "zh": "家裡",
+            "en": "Home",
+            "jp": "家"
+          }
+        },
+        {
+          "value": "camp",
+          "label": {
+            "zh": "華語夏令營",
+            "en": "Chinese summer camp",
+            "jp": "ちゅうごくご サマーキャンプ"
+          }
+        },
+        {
+          "value": "Other",
+          "label": {
+            "zh": "其它",
+            "en": "Other",
+            "jp": "ほか"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q5",
+      "type": "radio",
+      "required": true,
+      "title": {
+        "zh": "你覺得跟 AI 說話好玩嗎？",
+        "en": "Was it fun talking with the AI?",
+        "jp": "AIとはなしすのは楽しかったですか？"
+      },
+      "options": [{
+          "value": "Super_fun",
+          "label": {
+            "zh": "超好玩，我好喜歡！",
+            "en": "Super fun, I love it!",
+            "jp": "とても楽しくて大好き！"
+          }
+        },
+        {
+          "value": "Pretty_good",
+          "label": {
+            "zh": "還不錯",
+            "en": "Pretty good",
+            "jp": "けっこうよかった"
+          }
+        },
+        {
+          "value": "Okay",
+          "label": {
+            "zh": "普通",
+            "en": "Okay",
+            "jp": "ふつう"
+          }
+        },
+        {
+          "value": "A_little_boring",
+          "label": {
+            "zh": "有一點點無聊，我不喜歡",
+            "en": "A little boring, I don’t like it",
+            "jp": "ちょっとつまらなかった"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q6",
+      "type": "radio",
+      "required": true,
+      "title": {
+        "zh": "AI 說的話，你聽得懂嗎？",
+        "en": "Did you understand what the AI said?",
+        "jp": "AIの はなし は わかりましたか？"
+      },
+      "options": [{
+          "value": "I_understood_everything",
+          "label": {
+            "zh": "每一句都聽得懂",
+            "en": "I understood everything",
+            "jp": "ぜんぶ わかった"
+          }
+        },
+        {
+          "value": "I_understood _most_of_it",
+          "label": {
+            "zh": "大部分都懂，有一點難",
+            "en": "I understood most of it, but some parts were hard",
+            "jp": "だいたい わかった けど少しむずかしかった"
+          }
+        },
+        {
+          "value": "I_didn’t_understand_many_parts",
+          "label": {
+            "zh": "很多地方聽不懂",
+            "en": "I didn’t understand many parts",
+            "jp": "あまり わからなかった"
+          }
+        },
+        {
+          "value": "I_didn’t_understand_anything",
+          "label": {
+            "zh": "全部都聽不懂",
+            "en": "I didn’t understand anything",
+            "jp": "ぜんぜん わからなかった"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q7",
+      "type": "checkbox",
+      "required": true,
+      "title": {
+        "zh": "聊天的時候，你不知道怎麼回答，AI 幫了你嗎？(多選)",
+        "en": "When you didn’t know how to answer, did the AI help you? (Select all that apply)",
+        "jp": "こたえが わからないとき、AIは たすけてくれましたか？（なんこでもえらべます）"
+      },
+      "options": [{
+          "value": "ai_taught_how_to_say_in_chinese",
+          "label": {
+            "zh": "AI 教我怎麼用中文說我想說的話",
+            "en": "The AI showed me how to say what I wanted in Chinese",
+            "jp": "ちゅうごくごの言い方を教えてくれた"
+          }
+        },
+        {
+          "value": "ai_explained_unknown_words",
+          "label": {
+            "zh": "AI 告訴我我不知道的詞語的意思",
+            "en": "The AI explained words I didn’t know",
+            "jp": "わからない ことば の いみ を教えてくれた"
+          }
+        },
+        {
+          "value": "ai_rephrased_or_gave_choices",
+          "label": {
+            "zh": "我聽不懂的問題，AI 會換一個問法或給幾個選項",
+            "en": "The AI asked in a different way or gave choices when I didn’t understand",
+            "jp": "わからないとき、ちがう聞き方やほかの答えを出してくれた"
+          }
+        },
+        {
+          "value": "ai_did_not_help",
+          "label": {
+            "zh": "AI 沒有幫助我",
+            "en": "The AI did not help me",
+            "jp": "たすけてくれなかった"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q8",
+      "type": "checkbox",
+      "required": true,
+      "title": {
+        "zh": "跟 AI 練習說話之後，你覺得有哪些能力變得更好？(多選)",
+        "en": "After practicing with the AI, which skills improved? (Select all that apply)",
+        "jp": "AIとれんしゅうしたあと、どんな力がよくなりましたか？（なんこでもえらべます）"
+      },
+      "options": [{
+          "value": "more_confident_speaking_chinese",
+          "label": {
+            "zh": "比較敢開口說中文了",
+            "en": "I feel more confident speaking Chinese",
+            "jp": "ちゅうごくご を はなしすのが こわくなくなった"
+          }
+        },
+        {
+          "value": "understand_more_words",
+          "label": {
+            "zh": "聽懂更多詞語了",
+            "en": "I understand more words",
+            "jp": "わかる ことば がふえた"
+          }
+        },
+        {
+          "value": "pronunciation_is_better",
+          "label": {
+            "zh": "發音變得更準了",
+            "en": "My pronunciation is better",
+            "jp": "はつおん がよくなった"
+          }
+        },
+        {
+          "value": "know_how_to_respond_better",
+          "label": {
+            "zh": "知道怎麼接話了",
+            "en": "I know how to respond better",
+            "jp": "はなし をつづけられるようになった"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q9",
+      "type": "radio",
+      "required": true,
+      "title": {
+        "zh": "你覺得你的中文進步了嗎？",
+        "en": "Do you think your Chinese has improved?",
+        "jp": "ちゅうごくごは、じょうずになったと思う？"
+      },
+      "options": [{
+          "value": "improved_a_lot",
+          "label": {
+            "zh": "進步很多",
+            "en": "Improved a lot",
+            "jp": "とても じょうずになった"
+          }
+        },
+        {
+          "value": "improved_a_little",
+          "label": {
+            "zh": "有一點點進步",
+            "en": "Improved a little",
+            "jp": "すこし じょうずになった"
+          }
+        },
+        {
+          "value": "about_the_same",
+          "label": {
+            "zh": "跟以前差不多",
+            "en": "About the same",
+            "jp": "あまり かわっていない"
+          }
+        },
+        {
+          "value": "maybe_worse",
+          "label": {
+            "zh": "好像退步了",
+            "en": "Maybe worse",
+            "jp": "すこし へたになったかも"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q10",
+      "type": "checkbox",
+      "required": true,
+      "title": {
+        "zh": "你還想加強哪些厲害的技能？(多選)",
+        "en": "What skills do you want to improve next? (Select all that apply)",
+        "jp": "これから、どんなことができるようになりたいですか？（なんこでもえらべます）"
+      },
+      "options": [{
+          "value": "speak_more_fluently",
+          "label": {
+            "zh": "說得更流利",
+            "en": "Speak more fluently",
+            "jp": "もっと すらすら はなしたい"
+          }
+        },
+        {
+          "value": "speak_faster",
+          "label": {
+            "zh": "不要說得太慢",
+            "en": "Speak faster",
+            "jp": "もっと はやく はなしたい"
+          }
+        },
+        {
+          "value": "clearer_pronunciation",
+          "label": {
+            "zh": "發音更清楚",
+            "en": "Have clearer pronunciation",
+            "jp": "はつおん を もっとはっきり言いたい"
+          }
+        },
+        {
+          "value": "fewer_or_shorter_pauses",
+          "label": {
+            "zh": "不要有太多或太長的停頓",
+            "en": "Have fewer or shorter pauses",
+            "jp": "はなしすとき、あまり止まらないようにしたい"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q11",
+      "type": "radio",
+      "required": true,
+      "title": {
+        "zh": "你以後還想繼續跟 AI 聊天練習中文嗎？",
+        "en": "Do you want to keep practicing Chinese with AI in the future?",
+        "jp": "これからもAIと ちゅうごくご の れんしゅう をしたい？"
+      },
+      "options": [{
+          "value": "every_day",
+          "label": {
+            "zh": "每天都想",
+            "en": "Every day!",
+            "jp": "まいにちやりたい！"
+          }
+        },
+        {
+          "value": "whenever_i_have_time",
+          "label": {
+            "zh": "只要有空就想",
+            "en": "Whenever I have time",
+            "jp": "じかんがあったらやりたい"
+          }
+        },
+        {
+          "value": "maybe_if_nothing_else_to_do",
+          "label": {
+            "zh": "沒有別的事的話會考慮",
+            "en": "Maybe, if I have nothing else to do",
+            "jp": "ひまなときなら、やりたい"
+          }
+        },
+        {
+          "value": "no",
+          "label": {
+            "zh": "不想",
+            "en": "No",
+            "jp": "したくない"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Q12",
+      "type": "textarea",
+      "required": false,
+      "title": {
+        "zh": "心得與建議：你有沒有什麼想讓 AI 對話練習變得更好的建議？或是有什麼想跟我們分享的嗎？(非必填)",
+        "en": "Thoughts & Suggestions: Is there anything that can make the AI practice better? Or anything you’d like to share with us? (Optional)",
+        "jp": "かんそう：AIとおしゃべりをもっとよくするには、どうしたらいいと思う？ つたえたいこともあれば、教えてね！(書いても書かなくてもいいよ)"
+      },
+      "input": {
+        "htmlId": "Q12-textarea",
+        "contentEditable": true,
+        "allowVoiceRecord": true
+      }
+    }
+  ],
+  "submitButton": {
+    "zh": "送出問卷",
+    "en": "Send questionnaire",
+    "jp": "アンケートを送信する"
+  },
+	"end": {
+    "zh": "完成任務！\n謝謝你的回饋，讓學習更有趣！",
+    "en": "Task completed!\nThank you for your feedback.\nIt makes learning more fun",
+    "jp": "課題完了！\nフィードバックありがとうございます！\nおかげで学習がもっと楽しくなりました！"
+  },
+	 "backButton": {
+    "zh": "返回",
+    "en": "Back",
+    "jp": "戻る"
+  }
+}
