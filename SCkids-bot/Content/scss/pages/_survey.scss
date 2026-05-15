@@ -18,13 +18,11 @@
 
 button, .btn{
 	[class*="lang-"]:not(:first-child){
-		margin-left: .5rem;	
+		margin-left: .25rem;	
 	}	
 }
 
 .tool-title{
-	width: 100%;
-	text-align: center; //全題填寫方式
 	.lang-main{
 		color: $white;
 		font-size: $h4-font-size;
@@ -130,7 +128,8 @@ button, .btn{
 	.quiz-qa-group{ 
 		position: relative;
 		[contenteditable="true"], .form-control{
-			 min-height: 200px;
+			min-height: 200px;
+			padding-bottom: calc((1em + 1rem + 1rem - 2px) + .5rem*2);
 		}
 		.quiz-qa-group-tool{
 			position: absolute;

@@ -1,306 +1,359 @@
 $(function () {
-  const SURVEY_JSON_PATHS = ['Content/temp/survey.json', 'survey.json'];
-  const $questions = $('#surveyQuestions');
-  const $guide = $('.survey-guide');
-  const $actions = $('.survey-actions');
-  const $end = $('.survey-end');
-  const $submit = $('#Submit');
+  var surveyData = null;
+  var currentIndex = 0;
+  var totalQuestions = 0;
 
-  let surveyData = null;
-  const currentLang = getCurrentLang();
+  var $guide = $('.survey-guide');
+  var $questions = $('.survey-Questions');
+  var $actions = $('.survey-actions');
+  var $end = $('.survey-end');
 
-  initSurvey();
+  var $previous = $('#Previous');
+  var $next = $('#Next');
+  var $submit = $('#Submit');
 
-  function initSurvey() {
+  init();
+
+  function init() {
+    applyLanguageByQuery();
+
+    $guide.show();
+    $questions.hide();
+    $actions.hide();
     $end.hide();
-    $submit.prop('disabled', true);
-    loadSurveyJson(0);
-    bindSurveyEvents();
-  }
 
-  function loadSurveyJson(index) {
-    $.getJSON(SURVEY_JSON_PATHS[index])
+    $('.quiz-qa-group-tool .recording').hide();
+    $('.quiz-qa-group-tool .recorded').hide();
+
+    $.getJSON('Content/temp/survey.json')
       .done(function (data) {
         surveyData = data;
-        renderSurvey(data);
-        applyLangVisibility();
-        validateSurvey();
+        totalQuestions = surveyData.questions.length;
+
+        renderSurvey(surveyData);
+        bindEvents();
+        updateProgress();
       })
       .fail(function () {
-        if (index + 1 < SURVEY_JSON_PATHS.length) {
-          loadSurveyJson(index + 1);
-        } else {
-          console.error('survey.json 載入失敗');
-        }
+        console.error('survey.json 載入失敗，請確認路徑 Content/temp/survey.json 是否正確。');
       });
   }
 
-  function bindSurveyEvents() {
-    $(document).on('click', '#Start', function (e) {
-      e.preventDefault();
-      scrollToQuiz(getQuizById('Q1'));
+  function bindEvents() {
+    $('#Start').off('click').on('click', function () {
+      currentIndex = 0;
+
+      $guide.hide();
+      $end.hide();
+      $questions.show();
+      $actions.show();
+
+      showQuestion(currentIndex);
+
+      $('html, body').animate({
+        scrollTop: $questions.offset().top - 80
+      }, 500);
     });
 
-    $questions.on('change input keyup blur', 'select, input, [contenteditable="true"]', function () {
-      validateSurvey();
-    });
-
-    // 單選題完成後自動滑動到下一題；例如 Q2 -> Q3、Q4 -> Q5。
-    $questions.on('change', 'input[type="radio"]', function () {
-      autoScrollToNextQuiz($(this));
-    });
-
-    // 下拉題完成後自動滑動到下一題；例如 Q1 -> Q2。
-    $questions.on('change', 'select', function () {
-      if ($(this).val()) {
-        autoScrollToNextQuiz($(this));
+    $previous.off('click').on('click', function () {
+      if (currentIndex > 0) {
+        currentIndex--;
+        showQuestion(currentIndex);
       }
     });
 
-    // 多選題 checkbox 不自動滑動，讓使用者自行往下一題。
+    $next.off('click').on('click', function () {
+      if (!validateCurrentQuestion()) {
+        showRequiredAlert();
+        return;
+      }
 
-    $questions.on('click', '.btn__record', function () {
-      const $tool = $(this).closest('.quiz-qa-group-tool');
-      window.setTimeout(function () {
-        if ($tool.find('.btn__record').hasClass('active')) {
-          $tool.find('.recorded').hide();
-          $tool.find('.recording').show();
-        }
-      }, 0);
+      if (currentIndex < totalQuestions - 1) {
+        currentIndex++;
+        showQuestion(currentIndex);
+      }
     });
 
-    $questions.on('click', '.btn__delete', function () {
-      const $tool = $(this).closest('.quiz-qa-group-tool');
-      $tool.find('.recorded, .recording').hide();
-    });
+    $submit.off('click').on('click', function () {
+      if (!validateCurrentQuestion()) {
+        showRequiredAlert();
+        return;
+      }
 
-    $submit.on('click', function () {
-      if ($(this).prop('disabled')) return;
       $guide.hide();
       $questions.hide();
       $actions.hide();
       $end.show();
-      $('html, body').animate({ scrollTop: $end.offset().top - 80 }, 500);
+
+      $('html, body').animate({
+        scrollTop: $end.offset().top - 80
+      }, 500);
     });
 
-    $(document).on('click', '#Back', function (e) {
-      e.preventDefault();
-      history.go(-2);
+    $('#Back').off('click').on('click', function () {
+      window.history.go(-2);
     });
+
+    bindRecordButton();
   }
-
-  window.chat_analyze = function () {
-    const $tool = $('.quiz-qa-group-tool');
-    $tool.find('.recording').hide();
-    $tool.find('.recorded').show();
-  };
 
   function renderSurvey(data) {
-    renderTitle(data.surveyTitle);
-    renderGuide(data.guide, data.startButton);
-    renderQuestions(data.questions || []);
-    renderSubmitButton(data.submitButton);
-    renderEnd(data.end, data.backButton);
+    renderTitle(data);
+    renderGuide(data);
+    renderQuestions(data.questions);
+    renderButtons(data);
+
+    totalQuestions = data.questions.length;
+    $('.progress-count span').eq(1).text(totalQuestions);
+
+    applyLanguageByQuery();
   }
 
-  function renderTitle(title) {
-    if (!title) return;
-    $('.tool-title').html(
-      '<div class="lang-main">' + escapeHtml(title.zh) + '</div>' +
-      '<small class="lang-en">' + escapeHtml(title.en) + '</small>' +
-      '<small class="lang-jp">' + escapeHtml(title.jp) + '</small>'
-    );
+  function renderTitle(data) {
+    if (!data.surveyTitle) return;
+
+    $('.tool-title .lang-main').html(textToHtml(data.surveyTitle.zh));
+    $('.tool-title .lang-en').html(textToHtml(data.surveyTitle.en));
+    $('.tool-title .lang-jp').html(textToHtml(data.surveyTitle.jp));
   }
 
-  function renderGuide(guide, startButton) {
-    if (!guide) return;
-    $guide.html(
-      langBlock(guide, 'div', true) +
-      '<button type="button" class="survey-scroll-btn" id="Start">' +
-        langBlock(startButton, 'span') +
-        '<i class="fa-solid fa-arrow-down"></i>' +
-      '</button>'
-    );
+  function renderGuide(data) {
+    if (!data.guide) return;
+
+    $guide.find('.lang-main').first().html(textToHtml(data.guide.zh));
+    $guide.find('.lang-en').first().html(textToHtml(data.guide.en));
+    $guide.find('.lang-jp').first().html(textToHtml(data.guide.jp));
+
+    if (data.startButton) {
+      $('#Start .lang-main').text(data.startButton.zh);
+      $('#Start .lang-en').text(data.startButton.en);
+      $('#Start .lang-jp').text(data.startButton.jp);
+    }
+
+    if (data.end) {
+      $end.find('.lang-main').first().html(textToHtml(data.end.zh));
+      $end.find('.lang-en').first().html(textToHtml(data.end.en));
+      $end.find('.lang-jp').first().html(textToHtml(data.end.jp));
+    }
+
+    if (data.backButton) {
+      $('#Back .lang-main').text(data.backButton.zh);
+      $('#Back .lang-en').text(data.backButton.en);
+      $('#Back .lang-jp').text(data.backButton.jp);
+    }
+  }
+
+  function renderButtons(data) {
+    if (data.submitButton) {
+      $('#Submit .lang-main').text(data.submitButton.zh);
+      $('#Submit .lang-en').text(data.submitButton.en);
+      $('#Submit .lang-jp').text(data.submitButton.jp);
+    }
   }
 
   function renderQuestions(questions) {
-    $questions.empty();
-    $.each(questions, function (_, question) {
-      $questions.append(renderQuestion(question));
-    });
-  }
+    var html = '';
 
-  function renderQuestion(question) {
-    const requiredAttr = question.required ? ' data-required="true"' : ' data-required="false"';
-    return '' +
-      '<div class="survey-quiz" id="' + safeAttr(question.id) + '" data-question-id="' + safeAttr(question.id) + '" data-type="' + safeAttr(question.type) + '"' + requiredAttr + '>' +
-        '<div class="quiz-num">' + escapeHtml(question.id) + '</div>' +
-        '<div class="quiz-topic">' + langBlock(question.title, 'div') + '</div>' +
-        '<div class="quiz-answer">' + renderAnswer(question) + '</div>' +
-      '</div>';
+    $.each(questions, function (index, question) {
+      html += '<div class="survey-quiz" data-question-index="' + index + '" data-question-id="' + escapeHtml(question.id) + '" data-type="' + escapeHtml(question.type) + '" data-required="' + question.required + '">';
+      html += '  <div class="quiz-num">' + escapeHtml(question.id) + '</div>';
+      html += '  <div class="quiz-topic">';
+      html += '    <div class="lang-main">' + textToHtml(question.title.zh) + '</div>';
+      html += '    <div class="lang-en">' + textToHtml(question.title.en) + '</div>';
+      html += '    <div class="lang-jp">' + textToHtml(question.title.jp) + '</div>';
+      html += '  </div>';
+      html += '  <div class="quiz-answer">';
+      html += renderAnswer(question);
+      html += '  </div>';
+      html += '</div>';
+    });
+
+    $questions.html(html);
+
+    $('.quiz-qa-group-tool .recording').hide();
+    $('.quiz-qa-group-tool .recorded').hide();
   }
 
   function renderAnswer(question) {
-    switch (question.type) {
-      case 'select':
-        return renderSelect(question);
-      case 'radio':
-        return renderChoice(question, 'radio');
-      case 'checkbox':
-        return renderChoice(question, 'checkbox');
-      case 'textarea':
-        return renderTextarea(question);
-      default:
-        return '';
+    var html = '';
+
+    if (question.type === 'select') {
+      html += '<select class="form-select" name="' + escapeHtml(question.id) + '" aria-label="' + escapeHtml(question.id) + '">';
+      html += '  <option value="" selected>';
+      html += '    <span class="lang-main">' + escapeHtml(question.placeholder.zh) + '</span>';
+      html += '  </option>';
+
+      $.each(question.options, function (_, option) {
+        html += '<option value="' + escapeHtml(option.value) + '">';
+        html += escapeHtml(option.label.zh);
+        html += '</option>';
+      });
+
+      html += '</select>';
+    }
+
+    if (question.type === 'radio' || question.type === 'checkbox') {
+      html += '<div class="btn-group-vertical" role="group">';
+
+      $.each(question.options, function (optionIndex, option) {
+        var inputId = question.id + '-' + (optionIndex + 1);
+        var inputName = question.id;
+        var inputType = question.type;
+
+        html += '<input type="' + inputType + '" class="btn-check" name="' + escapeHtml(inputName) + '" id="' + escapeHtml(inputId) + '" value="' + escapeHtml(option.value) + '" autocomplete="off">';
+        html += '<label class="btn btn-outline-primary" for="' + escapeHtml(inputId) + '">';
+        html += '  <span class="lang-main">' + escapeHtml(option.label.zh) + '</span>';
+        html += '  <span class="lang-en">' + escapeHtml(option.label.en) + '</span>';
+        html += '  <span class="lang-jp">' + escapeHtml(option.label.jp) + '</span>';
+        html += '</label>';
+      });
+
+      html += '</div>';
+    }
+
+    if (question.type === 'textarea') {
+      var textareaId = question.input && question.input.htmlId ? question.input.htmlId : question.id + '-textarea';
+
+      html += '<div class="quiz-qa-group">';
+      html += '  <div contenteditable="true" class="form-control" id="' + escapeHtml(textareaId) + '" data-name="' + escapeHtml(question.id) + '" placeholder=""></div>';
+      html += '  <div class="quiz-qa-group-tool">';
+      html += '    <div class="recording">錄製中</div>';
+      html += '    <div class="recorded">';
+      html += '      <button type="button" class="btn btn-success btn__playTitle" title="播放" onClick="PLAYTITLE(this, \'Content/temp/播放錄製完成.mp3\')"><span class="visually-hidden">播放</span></button>';
+      html += '      <span>錄製完成</span>';
+      html += '      <button type="button" class="btn btn-link btn__delete" title="刪除"><i class="fa-regular fa-trash-can"></i></button>';
+      html += '    </div>';
+      html += '    <button type="button" class="btn btn-primary btn-sm btn__record" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>';
+      html += '  </div>';
+      html += '</div>';
+    }
+
+    return html;
+  }
+
+  function showQuestion(index) {
+    $('.survey-quiz').hide();
+    $('.survey-quiz').eq(index).show();
+
+    updateActionButtons();
+    updateProgress();
+
+    $('html, body').animate({
+      scrollTop: $questions.offset().top - 80
+    }, 400);
+  }
+
+  function updateActionButtons() {
+    $previous.hide();
+    $next.hide();
+    $submit.hide();
+
+    if (currentIndex > 0) {
+      $previous.show();
+    }
+
+    if (currentIndex < totalQuestions - 1) {
+      $next.show();
+    } else {
+      $submit.show();
     }
   }
 
-  function renderSelect(question) {
-    let html = '<select class="form-select" name="' + safeAttr(question.id) + '" aria-label="' + safeAttr(getLangText(question.title, question.id)) + '">';
-    html += '<option value="" selected>' + escapeHtml(getLangText(question.placeholder, '請選擇')) + '</option>';
-    $.each(question.options || [], function (_, option) {
-      html += '<option value="' + safeAttr(option.value) + '">' + escapeHtml(getLangText(option.label, option.value)) + '</option>';
-    });
-    html += '</select>';
-    return html;
+  function updateProgress() {
+    var current = currentIndex + 1;
+    var percent = totalQuestions > 0 ? (current / totalQuestions) * 100 : 0;
+
+    $('.progress-count span').eq(0).text(current);
+    $('.progress-count span').eq(1).text(totalQuestions);
+    $('.progress-bar-fill').css('width', percent + '%');
   }
 
-  function renderChoice(question, type) {
-    let html = '<div class="btn-group-vertical" role="group">';
-    $.each(question.options || [], function (index, option) {
-      const inputId = question.id + '-' + (index + 1);
-      html +=
-        '<input type="' + type + '" class="btn-check" name="' + safeAttr(question.id) + '" id="' + safeAttr(inputId) + '" value="' + safeAttr(option.value) + '" autocomplete="off">' +
-        '<label class="btn btn-outline-primary" for="' + safeAttr(inputId) + '">' + langBlock(option.label, 'span') + '</label>';
-    });
-    html += '</div>';
-    return html;
-  }
+  function validateCurrentQuestion() {
+    var $current = $('.survey-quiz').eq(currentIndex);
+    var required = String($current.data('required')) === 'true';
+    var type = $current.data('type');
 
-  function renderTextarea(question) {
-    const htmlId = question.input && question.input.htmlId ? question.input.htmlId : question.id + '-textarea';
-    return '' +
-      '<div class="quiz-qa-group">' +
-        '<div contenteditable="true" class="form-control" id="' + safeAttr(htmlId) + '" role="textbox" aria-label="' + safeAttr(getLangText(question.title, question.id)) + '"></div>' +
-        '<div class="quiz-qa-group-tool">' +
-          '<div class="recording" style="display: none;">錄製中</div>' +
-          '<div class="recorded" style="display: none;">' +
-            '<button type="button" class="btn btn-success btn__playTitle" title="播放" onClick="PLAYTITLE(this, \'Content/temp/播放錄製完成.mp3\')"><span class="visually-hidden">播放</span></button>' +
-            '<span>錄製完成</span>' +
-            '<button type="button" class="btn btn-link btn__delete" title="刪除"><i class="fa-regular fa-trash-can"></i></button>' +
-          '</div>' +
-          '<button type="button" class="btn btn-primary btn-sm btn__record ms-auto" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>' +
-        '</div>' +
-      '</div>';
-  }
+    if (!required) {
+      return true;
+    }
 
-  function renderSubmitButton(submitButton) {
-    if (!submitButton) return;
-    $submit.html(langBlock(submitButton, 'span') + '<i class="fa-regular fa-paper-plane"></i>');
-  }
-
-  function renderEnd(end, backButton) {
-    if (!end) return;
-    $end.html(
-      langBlock(end, 'div', true) +
-      '<a href="javascript:history.go(-2);" role="button" class="btn btn-outline-primary rounded-pill" id="Back">' +
-        langBlock(backButton, 'span') +
-        '<i class="fa-solid fa-arrow-right"></i>' +
-      '</a>'
-    ).hide();
-  }
-
-  function validateSurvey() {
-    let isValid = true;
-    $questions.find('.survey-quiz[data-required="true"]').each(function () {
-      if (!isQuestionAnswered($(this))) {
-        isValid = false;
-        return false;
-      }
-    });
-    $submit.prop('disabled', !isValid);
-  }
-
-  function isQuestionAnswered($quiz) {
-    const type = $quiz.data('type');
     if (type === 'select') {
-      return !!$quiz.find('select').val();
+      return $.trim($current.find('select').val()) !== '';
     }
+
     if (type === 'radio') {
-      return $quiz.find('input[type="radio"]:checked').length > 0;
+      return $current.find('input[type="radio"]:checked').length > 0;
     }
+
     if (type === 'checkbox') {
-      return $quiz.find('input[type="checkbox"]:checked').length > 0;
+      return $current.find('input[type="checkbox"]:checked').length > 0;
     }
+
     if (type === 'textarea') {
-      return $.trim($quiz.find('[contenteditable="true"]').text()).length > 0;
+      return $.trim($current.find('[contenteditable="true"]').text()) !== '';
     }
+
     return true;
   }
 
-  function getQuizById(id) {
-    return $questions.find('.survey-quiz[data-question-id="' + id + '"], #' + id).first();
-  }
-
-  function autoScrollToNextQuiz($field) {
-    const $quiz = $field.closest('.survey-quiz');
-    const $nextQuiz = $quiz.next('.survey-quiz');
-    scrollToQuiz($nextQuiz);
-  }
-
-  function scrollToQuiz($target) {
-    if (!$target || !$target.length) return;
-    $('html, body').stop(true).animate({ scrollTop: $target.offset().top - 80 }, 500);
-  }
-
-  function langBlock(data, tag, useBreaks) {
-    data = data || {};
-    return '' +
-      '<' + tag + ' class="lang-main">' + formatLangText(data.zh, useBreaks) + '</' + tag + '>' +
-      '<' + tag + ' class="lang-en">' + formatLangText(data.en, useBreaks) + '</' + tag + '>' +
-      '<' + tag + ' class="lang-jp">' + formatLangText(data.jp, useBreaks) + '</' + tag + '>';
-  }
-
-
-
-  function getCurrentLang() {
-    const params = new URLSearchParams(window.location.search);
-    const lang = (params.get('lang') || '').toLowerCase();
-    return lang === 'en' || lang === 'jp' ? lang : 'zh';
-  }
-
-  function applyLangVisibility() {
-    if (currentLang === 'en') {
-      $('.lang-en').show();
-      $('.lang-jp').remove();
-    } else if (currentLang === 'jp') {
-      $('.lang-jp').show();
-      $('.lang-en').remove();
+  function showRequiredAlert() {
+    if (typeof alertModalDOM === 'function') {
+      alertModalDOM('<div class="text-center">請先完成這一題再繼續喔！</div>');
+    } else {
+      alert('請先完成這一題再繼續喔！');
     }
   }
 
-  function getLangText(data, fallback) {
-    data = data || {};
-    if (currentLang === 'en' && data.en) return data.en;
-    if (currentLang === 'jp' && data.jp) return data.jp;
-    return data.zh || fallback || '';
+  function bindRecordButton() {
+    $(document).off('click.surveyRecord', '.btn__record').on('click.surveyRecord', '.btn__record', function () {
+      var $tool = $(this).closest('.quiz-qa-group-tool');
+
+      if (!$(this).hasClass('active')) {
+        $tool.find('.recording').show();
+        $tool.find('.recorded').hide();
+      } else {
+        $tool.find('.recording').hide();
+        $tool.find('.recorded').show();
+      }
+    });
+
+    $(document).off('click.surveyDeleteRecord', '.btn__delete').on('click.surveyDeleteRecord', '.btn__delete', function () {
+      var $tool = $(this).closest('.quiz-qa-group-tool');
+
+      $tool.find('.recording').hide();
+      $tool.find('.recorded').hide();
+    });
   }
 
-  function formatLangText(text, useBreaks) {
-    const escaped = escapeHtml(text || '');
-    return useBreaks ? escaped.replace(/\n/g, '<br>') : escaped;
+  function applyLanguageByQuery() {
+    var params = new URLSearchParams(window.location.search);
+    var lang = params.get('lang');
+
+    if (lang === 'en') {
+      $('.lang-en').show();
+      $('.lang-jp').remove();
+    } else if (lang === 'jp') {
+      $('.lang-jp').show();
+      $('.lang-en').remove();
+    } else {
+      $('.lang-en').remove();
+      $('.lang-jp').remove();
+    }
   }
 
-  function escapeHtml(value) {
-    return String(value == null ? '' : value)
+  function textToHtml(text) {
+    if (!text) return '';
+    return escapeHtml(text).replace(/\n/g, '<br>');
+  }
+
+  function escapeHtml(text) {
+    if (text === undefined || text === null) return '';
+
+    return String(text)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
-  }
-
-  function safeAttr(value) {
-    return escapeHtml(value);
   }
 });

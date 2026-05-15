@@ -52,6 +52,12 @@
               <small class="lang-en">Learning feedback questionnaire</small>
               <small class="lang-jp">学習感想アンケート</small>
             </h2>
+            <div class="tool-bar">
+              <div class="progress-count"><span>1</span>/<span>12</span></div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill" style="width: 10%;"></div>
+              </div>
+            </div>
           </div>
           <!-- -->
           <div class="text-center">
@@ -67,10 +73,10 @@
                 みんなが思ったことを教えてくれると、<br>
                 もっと楽しく ちゅうごくご をべんきょうできるようになるよ！</div>
               <button type="button" class="survey-scroll-btn" id="Start">
-              <span class="lang-main">向下滾動開始填寫</span>
-              <span class="lang-en">Scroll down to start</span>
-              <span class="lang-jp">下にスクロールして入力を開始してください</span>
-              <i class="fa-solid fa-arrow-down"></i>
+              <span class="lang-main">開始填寫</span>
+              <span class="lang-en">Start</span>
+              <span class="lang-jp">始める</span>
+              <i class="fa-solid fa-arrow-down ms-1"></i>
               </button>
             </div>
             <!-- -->
@@ -164,8 +170,8 @@
                   <div class="quiz-qa-group">
                     <div contenteditable="true" class="form-control" id="Q12-textarea" placeholder=""></div>
                     <div class="quiz-qa-group-tool">
-                      <div class="recording" style="display: none;">錄製中</div>
-                      <div class="recorded" style="display: none;">
+                      <div class="recording">錄製中</div>
+                      <div class="recorded">
                         <button type="button" class="btn btn-success btn__playTitle" title="播放" onClick="PLAYTITLE(this, 'Content/temp/播放錄製完成.mp3')"><span class="visually-hidden">播放</span></button>
                         <span>錄製完成</span>
                         <button type="button" class="btn btn-link btn__delete" title="刪除" onClick=""><i class="fa-regular fa-trash-can"></i></button>
@@ -178,11 +184,23 @@
             </div>
             <!-- -->
             <div class="survey-actions">
-              <button type="button" class="btn btn-secondary btn-lg rounded-pill px-5 mx-auto" id="Submit" disabled>
+              <button type="button" class="btn btn-outline-primary btn-lg rounded-pill px-5 me-auto" id="Previous">
+              <i class="fa-solid fa-chevron-left me-1"></i>
+              <span class="lang-main">上一題</span>
+              <span class="lang-en">Previous</span>
+              <span class="lang-jp">前へ</span>
+              </button>
+              <button type="button" class="btn btn-secondary btn-lg rounded-pill px-5 ms-auto" id="Next">
+              <span class="lang-main">下一題</span>
+              <span class="lang-en">Next</span>
+              <span class="lang-jp">次へ</span>
+              <i class="fa-solid fa-chevron-right ms-1"></i>
+              </button>
+              <button type="button" class="btn btn-secondary btn-lg rounded-pill px-5 ms-auto" id="Submit">
               <span class="lang-main">送出問卷</span>
               <span class="lang-en">Send questionnaire</span>
               <span class="lang-jp">アンケートを送信する</span>
-              <i class="fa-regular fa-paper-plane"></i>
+              <i class="fa-regular fa-paper-plane ms-1"></i>
               </button>
             </div>
             <!-- -->
@@ -195,12 +213,12 @@
               <div class="lang-jp">課題完了！<br>
                 フィードバックありがとうございます！<br>
                 おかげで学習がもっと楽しくなりました！</div>
-              <a href="javascript:history.go(-2);" role="button" class="btn btn-outline-primary rounded-pill" id="Back">
+              <button type="button" class="btn btn-outline-primary rounded-pill" id="Back">
               <span class="lang-main">返回</span>
               <span class="lang-en">Back</span>
               <span class="lang-jp">戻る</span>
-              <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              <i class="fa-solid fa-arrow-right ms-1"></i>
+              </button>
             </div>
           </div>
           <!-- -->
