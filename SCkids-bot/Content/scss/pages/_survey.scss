@@ -16,6 +16,12 @@
 	font-family: "Noto Sans JP";
 }
 
+button, .btn{
+	[class*="lang-"]:not(:first-child){
+		margin-left: .5rem;	
+	}	
+}
+
 .tool-title{
 	width: 100%;
 	text-align: center; //全題填寫方式
@@ -190,9 +196,6 @@
 				display: block;
 				@media screen and (min-width: 992px) {
 					display: inline-block;
-					&:not(:first-child){
-						margin-left: .5rem;	
-					}
 				}
 			}
 			.lang-en, .lang-jp{

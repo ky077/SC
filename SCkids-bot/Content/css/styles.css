@@ -461,6 +461,8 @@ ruby.blank rt { text-indent: -9999px; }
 
 .lang-jp { color: #988a85; font-size: 0.875rem; font-weight: 300; font-family: "Noto Sans JP"; }
 
+button [class*="lang-"]:not(:first-child), .btn [class*="lang-"]:not(:first-child) { margin-left: .5rem; }
+
 .tool-title { width: 100%; text-align: center; }
 .tool-title .lang-main { color: #fff; font-size: 1.5rem; }
 
@@ -496,8 +498,7 @@ ruby.blank rt { text-indent: -9999px; }
 .survey-quiz .btn-group-vertical .btn { border: 2px solid #533C34; border-radius: 0.5rem !important; padding: 0.5rem 1rem; text-align: left; }
 .survey-quiz .btn-group-vertical .btn::after { content: ""; display: block; width: calc(100% + 4px); height: calc(100% + 4px); position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; border: 1px solid #533C34; border-radius: 0.5rem !important; }
 .survey-quiz .btn-group-vertical .btn [class*="lang-"] { display: block; }
-@media screen and (min-width: 992px) { .survey-quiz .btn-group-vertical .btn [class*="lang-"] { display: inline-block; }
-  .survey-quiz .btn-group-vertical .btn [class*="lang-"]:not(:first-child) { margin-left: .5rem; } }
+@media screen and (min-width: 992px) { .survey-quiz .btn-group-vertical .btn [class*="lang-"] { display: inline-block; } }
 .survey-quiz .btn-group-vertical .btn .lang-en, .survey-quiz .btn-group-vertical .btn .lang-jp { color: #75635d; font-weight: 400; }
 .survey-quiz .btn-group-vertical .btn:hover { transform: scale(1.05); }
 .survey-quiz .btn-group-vertical .btn:hover::after { border: 1px solid transparent; transform: scale(1.05, 1.5); transition: all 2s cubic-bezier(0.19, 1, 0.22, 1); }
