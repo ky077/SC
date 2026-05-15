@@ -92,10 +92,10 @@ button, .btn{
 		}
 	}
 	.btn:not(.btn__submit){
-		[class*="lang"]{
-			display: none;
+		[class*="lang-"]{
+			display: none !important;
 			@media screen and (min-width: 576px) {
-			display: inline;	
+			display: inline !important;	
 			}
 		}
 	}
