@@ -463,7 +463,8 @@ ruby.blank rt { text-indent: -9999px; }
 
 button [class*="lang-"]:not(:first-child), .btn [class*="lang-"]:not(:first-child) { margin-left: .25rem; }
 
-.tool-title .lang-main { color: #fff; font-size: 1.5rem; }
+.tool-title .lang-main { color: #fff; font-size: 1.75rem; }
+@media screen and (min-width: 576px) { .tool-title .lang-main { font-size: 1.5rem; } }
 
 .survey-scroll-btn { border: 0; background-color: #f8dfcf; border-radius: 50rem; color: #b02a37 !important; font-size: 0.875rem !important; padding: 0.375rem 2rem; animation: bounce 1s infinite; }
 .survey-scroll-btn [class*="lang-"] { color: #b02a37 !important; font-size: 0.875rem !important; }
@@ -477,6 +478,8 @@ button [class*="lang-"]:not(:first-child), .btn [class*="lang-"]:not(:first-chil
 .survey-actions { display: flex; justify-content: space-between; }
 .survey-actions .btn [class*="lang-"] { color: #533C34 !important; font-size: 1.25rem !important; font-weight: 700 !important; }
 .survey-actions .btn-outline-primary:hover [class*="lang-"] { color: #fff !important; }
+.survey-actions :not(.btn__submit) [class*="lang"] { display: none; }
+@media screen and (min-width: 576px) { .survey-actions :not(.btn__submit) [class*="lang"] { display: inline; } }
 
 .survey-end { background-image: url("../images/clapping.png"); background-repeat: no-repeat; background-position: bottom center; background-size: 100% auto; }
 

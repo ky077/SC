@@ -25,7 +25,10 @@ button, .btn{
 .tool-title{
 	.lang-main{
 		color: $white;
-		font-size: $h4-font-size;
+		font-size: $h3-font-size;
+		@media screen and (min-width: 576px) {
+		font-size: $h4-font-size;	
+		}
 	}
 }
 
@@ -85,6 +88,14 @@ button, .btn{
 		&:hover{
 			[class*="lang-"]{
 				color: $white !important;		
+			}
+		}
+	}
+	:not(.btn__submit){
+		[class*="lang"]{
+			display: none;
+			@media screen and (min-width: 576px) {
+			display: inline;	
 			}
 		}
 	}
