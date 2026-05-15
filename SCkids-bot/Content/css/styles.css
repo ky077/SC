@@ -493,7 +493,7 @@ button [class*="lang-"]:not(:first-child), .btn [class*="lang-"]:not(:first-chil
 .survey-quiz .quiz-qa-group .quiz-qa-group-tool .recorded .btn__playTitle.btn-success { background-color: #198754 !important; }
 .survey-quiz .quiz-qa-group .quiz-qa-group-tool .recorded .btn__delete { margin-left: auto; margin-right: .75rem; }
 .survey-quiz .form-control { border-width: 2px; border-color: #533C34; border-radius: 0.5rem; padding: 0.5rem 1rem; }
-.survey-quiz .btn-group-vertical { display: flex; justify-content: flex-start; gap: 0.5rem; }
+.survey-quiz .btn-group-vertical { display: flex; justify-content: flex-start; gap: 1rem; }
 .survey-quiz .btn-group-vertical .btn { border: 2px solid #533C34; border-radius: 0.5rem !important; padding: 0.5rem 1rem; text-align: left; }
 .survey-quiz .btn-group-vertical .btn::after { content: ""; display: block; width: calc(100% + 4px); height: calc(100% + 4px); position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; border: 1px solid #533C34; border-radius: 0.5rem !important; }
 .survey-quiz .btn-group-vertical .btn [class*="lang-"] { display: block; }

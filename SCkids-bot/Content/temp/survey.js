@@ -2,6 +2,7 @@ $(function () {
   var surveyData = null;
   var currentIndex = 0;
   var totalQuestions = 0;
+  var currentLang = getCurrentLang();
 
   var $guide = $('.survey-guide');
   var $questions = $('.survey-Questions');
@@ -15,12 +16,14 @@ $(function () {
   init();
 
   function init() {
-    applyLanguageByQuery();
-
     $guide.show();
     $questions.hide();
     $actions.hide();
     $end.hide();
+
+    $previous.hide();
+    $next.hide();
+    $submit.hide();
 
     $('.quiz-qa-group-tool .recording').hide();
     $('.quiz-qa-group-tool .recorded').hide();
@@ -32,7 +35,11 @@ $(function () {
 
         renderSurvey(surveyData);
         bindEvents();
-        updateProgress();
+
+        // 修正 1：初始進度條為 0
+        setInitialProgress();
+
+        applyLanguageByQuery();
       })
       .fail(function () {
         console.error('survey.json 載入失敗，請確認路徑 Content/temp/survey.json 是否正確。');
@@ -105,8 +112,6 @@ $(function () {
 
     totalQuestions = data.questions.length;
     $('.progress-count span').eq(1).text(totalQuestions);
-
-    applyLanguageByQuery();
   }
 
   function renderTitle(data) {
@@ -169,6 +174,7 @@ $(function () {
     });
 
     $questions.html(html);
+    $('.survey-quiz').hide();
 
     $('.quiz-qa-group-tool .recording').hide();
     $('.quiz-qa-group-tool .recorded').hide();
@@ -178,14 +184,14 @@ $(function () {
     var html = '';
 
     if (question.type === 'select') {
+      var placeholderText = getLangText(question.placeholder);
+
       html += '<select class="form-select" name="' + escapeHtml(question.id) + '" aria-label="' + escapeHtml(question.id) + '">';
-      html += '  <option value="" selected>';
-      html += '    <span class="lang-main">' + escapeHtml(question.placeholder.zh) + '</span>';
-      html += '  </option>';
+      html += '  <option value="" selected>' + escapeHtml(placeholderText) + '</option>';
 
       $.each(question.options, function (_, option) {
         html += '<option value="' + escapeHtml(option.value) + '">';
-        html += escapeHtml(option.label.zh);
+        html += escapeHtml(getLangText(option.label));
         html += '</option>';
       });
 
@@ -223,7 +229,9 @@ $(function () {
       html += '      <span>錄製完成</span>';
       html += '      <button type="button" class="btn btn-link btn__delete" title="刪除"><i class="fa-regular fa-trash-can"></i></button>';
       html += '    </div>';
-      html += '    <button type="button" class="btn btn-primary btn-sm btn__record" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>';
+
+      // 保留 main.js 的 REC()，不可更改
+      html += '    <button type="button" class="btn btn-primary btn-sm btn__record ms-auto" onclick="REC(null, true)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>';
       html += '  </div>';
       html += '</div>';
     }
@@ -257,6 +265,13 @@ $(function () {
     } else {
       $submit.show();
     }
+  }
+
+  // 修正 1：初始狀態顯示 0/12，進度條 0%
+  function setInitialProgress() {
+    $('.progress-count span').eq(0).text(0);
+    $('.progress-count span').eq(1).text(totalQuestions);
+    $('.progress-bar-fill').css('width', '0%');
   }
 
   function updateProgress() {
@@ -304,17 +319,26 @@ $(function () {
     }
   }
 
+  // 修正 3：
+  // 點選錄製按鈕後，會先執行 inline onclick="REC(null, true)"
+  // REC() 會切換 .btn__record 的 active 狀態
+  // 所以這裡要依照 active 判斷目前是錄製中或已停止
   function bindRecordButton() {
     $(document).off('click.surveyRecord', '.btn__record').on('click.surveyRecord', '.btn__record', function () {
-      var $tool = $(this).closest('.quiz-qa-group-tool');
+      var $button = $(this);
+      var $tool = $button.closest('.quiz-qa-group-tool');
 
-      if (!$(this).hasClass('active')) {
-        $tool.find('.recording').show();
-        $tool.find('.recorded').hide();
-      } else {
-        $tool.find('.recording').hide();
-        $tool.find('.recorded').show();
-      }
+      setTimeout(function () {
+        if ($button.hasClass('active')) {
+          // 開始錄製
+          $tool.find('.recording').show();
+          $tool.find('.recorded').hide();
+        } else {
+          // 停止錄製
+          $tool.find('.recording').hide();
+          $tool.find('.recorded').show();
+        }
+      }, 0);
     });
 
     $(document).off('click.surveyDeleteRecord', '.btn__delete').on('click.surveyDeleteRecord', '.btn__delete', function () {
@@ -326,19 +350,44 @@ $(function () {
   }
 
   function applyLanguageByQuery() {
-    var params = new URLSearchParams(window.location.search);
-    var lang = params.get('lang');
-
-    if (lang === 'en') {
+    if (currentLang === 'en') {
       $('.lang-en').show();
       $('.lang-jp').remove();
-    } else if (lang === 'jp') {
+    } else if (currentLang === 'jp') {
       $('.lang-jp').show();
       $('.lang-en').remove();
     } else {
       $('.lang-en').remove();
       $('.lang-jp').remove();
     }
+  }
+
+  function getCurrentLang() {
+    var params = new URLSearchParams(window.location.search);
+    var lang = params.get('lang');
+
+    if (lang === 'en') return 'en';
+    if (lang === 'jp') return 'jp';
+
+    return 'zh';
+  }
+
+  // 修正 2：
+  // select 的 option 不能包 span，所以這裡直接輸出文字
+  // lang=en：請選擇年齡 Please select your age
+  // lang=jp：請選擇年齡 年齢を選んでください
+  function getLangText(obj) {
+    if (!obj) return '';
+
+    if (currentLang === 'en') {
+      return obj.zh + ' ' + obj.en;
+    }
+
+    if (currentLang === 'jp') {
+      return obj.zh + ' ' + obj.jp;
+    }
+
+    return obj.zh;
   }
 
   function textToHtml(text) {

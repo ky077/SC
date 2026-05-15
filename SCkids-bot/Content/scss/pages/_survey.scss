@@ -172,7 +172,7 @@ button, .btn{
 	.btn-group-vertical{
 		display: flex;
 		justify-content: flex-start;
-		gap: map-get($spacers, 2);
+		gap: map-get($spacers, 3);
 		.btn{
 			border: 2px solid $primary;
 			border-radius: $border-radius-lg !important;
