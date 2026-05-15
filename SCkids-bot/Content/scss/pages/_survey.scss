@@ -91,14 +91,14 @@ button, .btn{
 			}
 		}
 	}
-	:not(.btn__submit){
+	/*:not(.btn__submit){
 		[class*="lang"]{
 			display: none;
 			@media screen and (min-width: 576px) {
 			display: inline;	
 			}
 		}
-	}
+	}*/
 }
 .survey-end{
 	background-image: url("../images/clapping.png");
