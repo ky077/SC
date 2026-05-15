@@ -477,14 +477,7 @@ button [class*="lang-"]:not(:first-child), .btn [class*="lang-"]:not(:first-chil
 .survey-guide [class*="lang-"], .survey-end [class*="lang-"] { margin-bottom: 1.5rem; }
 .survey-guide .survey-scroll-btn, .survey-end .survey-scroll-btn { margin-top: 0.5rem; }
 
-.survey-actions { display: flex; justify-content: space-between; /*:not(.btn__submit){
-	[class*="lang"]{
-		display: none;
-		@media screen and (min-width: 576px) {
-		display: inline;	
-		}
-	}
-}*/ }
+.survey-actions { display: flex; justify-content: space-between; }
 .survey-actions .btn [class*="lang-"] { color: #533C34 !important; font-size: 1.25rem !important; font-weight: 700 !important; }
 .survey-actions .btn-outline-primary:hover [class*="lang-"] { color: #fff !important; }
 
