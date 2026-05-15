@@ -97,9 +97,8 @@ $(function () {
       }, 500);
     });
 
-    $('#Back').off('click').on('click', function (e) {
-      e.preventDefault();
-      goBackWithAiParam();
+    $('#Back').off('click').on('click', function () {
+      window.history.go(-2);
     });
 
     bindRecordButton();
@@ -231,9 +230,8 @@ $(function () {
       html += '      <button type="button" class="btn btn-link btn__delete" title="刪除"><i class="fa-regular fa-trash-can"></i></button>';
       html += '    </div>';
 
-      // 問卷錄音不直接使用 inline onclick，避免與委派事件順序衝突造成無法停止。
-      // 實際錄音狀態仍呼叫 main.js 的 REC(null, false)，不修改 main.js。
-      html += '    <button type="button" class="btn btn-primary btn-sm btn__record ms-auto" data-survey-record="true" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>';
+      // 保留 main.js 的 REC()，不可更改
+      html += '    <button type="button" class="btn btn-primary btn-sm btn__record ms-auto" onclick="REC(null, false)" title="錄製檔案"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>';
       html += '  </div>';
       html += '</div>';
     }
@@ -341,100 +339,34 @@ $(function () {
 		return surveyData.requiredAlert.zh || defaultMessage;
 	}
 
-  // Q12 問卷錄音：不修改 main.js，改由 survey.js 單一入口呼叫 REC(null, false)。
-  // 這樣可避免 HTML inline onclick 與 delegated click 同時處理，造成第二次點擊停止狀態判斷不穩。
+  // 修正 3：
+  // 點選錄製按鈕後，會先執行 inline onclick="REC()"
+  // REC() 會切換 .btn__record 的 active 狀態
+  // 所以這裡要依照 active 判斷目前是錄製中或已停止
   function bindRecordButton() {
-    $(document).off('click.surveyRecord', '.quiz-qa-group-tool .btn__record').on('click.surveyRecord', '.quiz-qa-group-tool .btn__record', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-
+    $(document).off('click.surveyRecord', '.btn__record').on('click.surveyRecord', '.btn__record', function () {
       var $button = $(this);
       var $tool = $button.closest('.quiz-qa-group-tool');
-      var wasRecording = $button.hasClass('active') || $button.attr('title') === '停止錄製';
-
-      if (typeof REC === 'function') {
-        REC(null, false);
-      } else {
-        // 若 main.js 尚未載入，仍保留按鈕視覺切換，避免介面卡住。
-        if (wasRecording) {
-          $button.attr('title', '錄製檔案')
-            .removeClass('active current')
-            .html('<i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i>');
-        } else {
-          $button.attr('title', '停止錄製')
-            .addClass('active current')
-            .html('<i class="fa-solid fa-stop" aria-hidden="true"></i>');
-        }
-      }
 
       setTimeout(function () {
-        var isRecordingNow = $button.hasClass('active') || $button.attr('title') === '停止錄製';
-
-        if (isRecordingNow) {
+        if ($button.hasClass('active')) {
+          // 開始錄製
           $tool.find('.recording').show();
           $tool.find('.recorded').hide();
         } else {
+          // 停止錄製
           $tool.find('.recording').hide();
-
-          if (wasRecording) {
-            $tool.find('.recorded').show();
-          }
+          $tool.find('.recorded').show();
         }
       }, 0);
     });
 
-    $(document).off('click.surveyDeleteRecord', '.btn__delete').on('click.surveyDeleteRecord', '.btn__delete', function (e) {
-      e.preventDefault();
-
+    $(document).off('click.surveyDeleteRecord', '.btn__delete').on('click.surveyDeleteRecord', '.btn__delete', function () {
       var $tool = $(this).closest('.quiz-qa-group-tool');
-      var $button = $tool.find('.btn__record');
 
       $tool.find('.recording').hide();
       $tool.find('.recorded').hide();
-      $button.attr('title', '錄製檔案')
-        .removeClass('active current')
-        .html('<i class="fa-solid fa-microphone fa-1x" aria-hidden="true"></i>');
     });
-  }
-
-  function goBackWithAiParam() {
-    var fallbackUrl = 'https://ky077.github.io/SC/SCkids/courseGame.html?ai=1';
-    var targetUrl = getSurveyBackTargetUrl(fallbackUrl);
-
-    window.location.href = addOrUpdateQueryParam(targetUrl, 'ai', '1');
-  }
-
-  function getSurveyBackTargetUrl(fallbackUrl) {
-    var params = new URLSearchParams(window.location.search);
-    var returnUrl = params.get('returnUrl') || params.get('backUrl');
-
-    if (returnUrl) {
-      return returnUrl;
-    }
-
-    var savedUrl = sessionStorage.getItem('surveyBackUrl');
-
-    if (savedUrl) {
-      return savedUrl;
-    }
-
-    if (document.referrer) {
-      var referrerUrl = new URL(document.referrer, window.location.href);
-
-      // survey 通常是從 chatInterface 進來；原本 history.go(-2) 會回到課程頁，
-      // 但無法在 history.go(-2) 時補 ai=1，因此直接回到指定課程頁。
-      if (!/chatInterface\.html$/i.test(referrerUrl.pathname)) {
-        return referrerUrl.href;
-      }
-    }
-
-    return fallbackUrl;
-  }
-
-  function addOrUpdateQueryParam(url, key, value) {
-    var target = new URL(url, window.location.href);
-    target.searchParams.set(key, value);
-    return target.href;
   }
 
   function applyLanguageByQuery() {
