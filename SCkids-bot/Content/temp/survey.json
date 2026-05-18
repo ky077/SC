@@ -30,27 +30,51 @@
         "jp": "年齢を選んでください"
       },
       "options": [{
-          "value": "3",
+          "value": "6",
           "label": {
-            "zh": "3歲",
-            "en": "3 years old",
-            "jp": "3歳"
+            "zh": "6歲",
+            "en": "6 years old",
+            "jp": "6歳"
           }
         },
         {
-          "value": "4",
+          "value": "7",
           "label": {
-            "zh": "4歲",
-            "en": "4 years old",
-            "jp": "4歳"
+            "zh": "7歲",
+            "en": "7 years old",
+            "jp": "7歳"
           }
         },
         {
-          "value": "5",
+          "value": "8",
           "label": {
-            "zh": "5歲",
-            "en": "5 years old",
-            "jp": "5歳"
+            "zh": "8歲",
+            "en": "8 years old",
+            "jp": "8歳"
+          }
+        },
+        {
+          "value": "9",
+          "label": {
+            "zh": "9歲",
+            "en": "9 years old",
+            "jp": "9歳"
+          }
+        },
+        {
+          "value": "10",
+          "label": {
+            "zh": "10歲",
+            "en": "10 years old",
+            "jp": "10歳"
+          }
+        },
+        {
+          "value": "11",
+          "label": {
+            "zh": "11歲",
+            "en": "11 years old",
+            "jp": "11歳"
           }
         }
       ]
